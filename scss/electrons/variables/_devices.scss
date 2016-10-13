@@ -1,0 +1,20 @@
+$phone: strip-unit($maximum-px-size-for-phone-view);
+$tablet: strip-unit($maximum-px-size-for-tablet-view);
+$desktop: strip-unit($maximum-px-size-for-normal-desktop-view);
+
+$devices: (
+  phone: (
+    to: #{$phone}px
+  ),
+  tablet: (
+    from: #{$phone + 1}px,
+    to: #{$tablet}px
+  ),
+  desktop: (
+    from: #{$tablet + 1}px,
+    to: #{$desktop}px
+  ),
+  large: (
+    from: #{$desktop + 1}px
+  )
+)

@@ -1,0 +1,8 @@
+@mixin link-style {
+  font-size: 85%;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  cursor: pointer;
+}

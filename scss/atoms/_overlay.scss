@@ -1,0 +1,7 @@
+.x-overlay {
+  @include overlay-style;
+
+  &.x-data-active {
+    @include overlay-style-active;
+  }
+}

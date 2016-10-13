@@ -1,0 +1,19 @@
+@mixin overlay-style {
+  @include fix(left);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($col-overlay, 0.3);
+  opacity: 0;
+  transition:
+    opacity timing() 0ms ease,
+    right 0ms timing(6) linear;
+}
+
+@mixin overlay-style-active {
+  right: 0;
+  opacity: 1;
+  transition:
+    opacity timing() 0ms ease,
+    right 0ms timing() linear;
+}

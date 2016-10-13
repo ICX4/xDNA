@@ -1,0 +1,16 @@
+@function mq($mq--size) {
+  @if $mq--size == phone {
+    @return $phone;
+  }
+
+  @else if $mq--size == tablet {
+    @return $tablet;
+  }
+
+  @else if $mq--size == desktop {
+    @return $desktop;
+  }
+  @else {
+    @return null;
+  }
+}

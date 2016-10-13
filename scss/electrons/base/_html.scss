@@ -1,0 +1,14 @@
+// 1. Change the default font family in all browsers (opinionated).
+// 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+// 3. Force the border-box model (opinionated)
+html {
+  box-sizing: border-box; // 3
+  font: {
+    family:
+      "Work Sans",
+      sans-serif; // 1
+    size: 100%;
+  }
+  -ms-text-size-adjust: 100%; // 2
+  -webkit-text-size-adjust: 100%; // 2
+}

@@ -1,0 +1,53 @@
+.x-carousel {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  position: relative;
+
+  &--control {
+    @include click;
+    @include z-depth(1);
+    display: block;
+    width: uom(3);
+    height: uom(3);
+    position: absolute;
+    top: calc(50% - #{uom(1.5)});
+    z-index: 1;
+    background-color: white;
+    border-radius: 50%;
+    line-height: uom(3);
+    text-align: center;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+    transition:
+      opacity timing(),
+      box-shadow timing();
+
+    &.-left {
+      left: uom(0.25);
+    }
+
+    &.-right {
+      right: uom(0.25);
+    }
+
+    &.-active {
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    &:hover {
+      @include z-depth(2);
+      background-color: $col-link;
+      color: white; // TODO change to variable
+    }
+  }
+  // overrides
+  .x-row {
+    flex-wrap: nowrap;
+    transform: translateX(0);
+    transition: transform timing(2);
+  }
+}

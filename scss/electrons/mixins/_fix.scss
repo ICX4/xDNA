@@ -1,0 +1,35 @@
+// applies a pre-definded position to an element
+// options:
+//   center | @include fix(center);
+//     places item dead center
+//     note: this uses transform to position the element
+//   cover | @include fix(cover)
+//     fixed to cover entire window
+//   top | @include fix(top)
+//     fixed left-to-right on the top of the window
+//   bottom | @include fix(bottom)
+//     fixed left-to-right on the bottom of the window
+//   left | @include fix(left)
+//     fixed top-to-bottom on the left side of the window
+//   right | @include fix(right)
+//     fixed top-to-bottom on the right side of the window
+@mixin fix($arg) {
+  position: fixed;
+  @if $arg == center {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  @if $arg == cover or $arg == top or $arg == left or $arg == right {
+    top: 0;
+  }
+  @if $arg == cover or $arg == top or $arg == bottom or $arg == right {
+    right: 0;
+  }
+  @if $arg == cover or $arg == bottom or $arg == left or $arg == right {
+    bottom: 0;
+  }
+  @if $arg == cover or $arg == top or $arg == bottom or $arg == left {
+    left: 0;
+  }
+}

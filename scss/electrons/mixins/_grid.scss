@@ -1,0 +1,126 @@
+// GRID-CALC (function)
+// the main function that interprets
+// the request into percentages
+@function grid-calc($args) {
+
+  // declaring variables
+  $grid-base: $number-of-columns-in-default-grid;
+  $numerator: null;
+  $denominator: null;
+
+  @if length($args) == 1 and type_of($args) != number {
+    // args is a single word (e.g.: "quarter")
+    // we simply convert those words into a fraction
+    // e.g.: quarter = 1/4
+    // we will then turn them into a percentage
+    @if $args == whole or $args == full or $args == block {
+      $numerator: 1;
+      $denominator: 1;
+    }
+    @else if $args == half {
+      $numerator: 1;
+      $denominator: 2;
+    }
+    @else if $args == third {
+      $numerator: 1;
+      $denominator: 3;
+    }
+    @else if $args == quarter {
+      $numerator: 1;
+      $denominator: 4;
+    }
+    @else if $args == fifth {
+      $numerator: 1;
+      $denominator: 5;
+    }
+  }
+  @else {
+    @if length($args) > 1 {
+      // we have received a list (e.g.: "2 of 8")
+      // so we need to extract the first and last item in the list
+      // to create our fraction
+      $numerator: first($args);
+      $denominator: last($args);
+    }
+    @else {
+      // args is a single number
+      // so we use that as a fraction
+      // of the default grid
+      $numerator: $args;
+      $denominator: $grid-base;
+    }
+  }
+  // if both items in the fraction are numbers
+  // we are good to turn them into a percentage
+  // and send them back
+  @if type_of($numerator) == number and type_of($denominator) == number {
+    @return percentage($numerator/$denominator);
+  }
+  @else {
+    // fail!
+    @return null;
+  }
+}
+
+// GRID CONTAINER (mixin)
+// contains the styles to include for the grid container
+// @include grid(container);
+// effectively you could also just @include grid-container;
+// 1. in case a list is being used
+// 2. by default the grid cells span the whole width
+//    (mobile first)
+@mixin grid-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  list-style: none;  // 1
+
+  & > * {
+    flex: 1 0 100%; // 2
+  }
+}
+
+// GRID (mixin)
+// main mixin to create the container/wrapper
+// and the grid cells
+// syntax:
+//   @include grid(<args>);
+//   options (<args>):
+//     see http://codepen.io/aepicos/pen/ALVxQN
+@mixin grid($args) {
+  @if $args == container or $args == wrapper {
+    @include grid-container;
+  }
+  @else {
+    $percentage: grid-calc($args);
+
+    @if $percentage != null {
+      max-width: $percentage;
+    }
+
+    // IGNORE
+    // purely for this example
+    // remove from actual code
+    &::after { content: "@include grid(#{$args});"; }
+    // end IGNORE
+  }
+}
+
+// GRID OFFSET (mixin)
+// to create empty space between grid cells
+// syntax:
+//   @include grid-offset(<side>, <args>);
+//   <side> decides which side has the empty space
+//   available options:
+//     - left
+//     - right
+//   <args>:
+//     same as above
+//     see see http://codepen.io/aepicos/pen/ALVxQN for details
+@mixin grid-offset($side, $args) {
+  $percentage: grid-calc($args);
+
+  @if $percentage != null and ($side == right or $side == left) {
+    margin-#{$side}: $percentage;
+  }
+}

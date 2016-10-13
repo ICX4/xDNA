@@ -1,0 +1,9 @@
+.screen-reader {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: -9000px;
+  left: -9000px;
+}

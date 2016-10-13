@@ -1,0 +1,4 @@
+@mixin no-input-focus {
+  box-shadow: none !important;
+  outline: 0 !important;
+}

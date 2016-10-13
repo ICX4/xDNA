@@ -1,0 +1,24 @@
+.x-card {
+  $i: 1;
+  $multiplier: 16;
+
+  @include margin-multiplied(right, 0.5);
+  @include margin-multiplied(bottom, 0.5);
+  display: block;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1); // TODO need color variable
+  list-style: none;
+
+  &:hover {
+    @include z-depth(1);
+  }
+
+
+  @while $i < 12 {
+    @media (min-width: #{uom($i * $multiplier)}) {
+      min-width: calc(#{percentage(1/($i + 1))} - #{uom(0.5)});
+      max-width: calc(#{percentage(1/($i + 1))} - #{uom(0.5)});
+    }
+    $i: $i + 1;
+  }
+}

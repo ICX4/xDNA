@@ -1,0 +1,34 @@
+.x-side-menu {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index--side-menu;
+
+  &--overlay {
+    @include overlay-style;
+
+    .x-side-menu.x-data-active & {
+      @include overlay-style-active;
+    }
+  }
+
+  &--menu {
+    @include fix(left);
+    @include padding(right, left);
+    @include z-depth(2);
+    display: block;
+    width: $side-menu-width;
+    background-color: $col-bg;
+    transform: translate3d(-#{$side-menu-width}, 0, 0);
+    transition: transform timing(0.3) ease;
+
+    .x-side-menu.x-data-active & {
+      transition: timing() ease;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

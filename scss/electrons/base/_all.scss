@@ -1,0 +1,8 @@
+// 1. Disseminate the box-sizing model (opinionated)
+// 2. Remove all default dimensioning (opinionated)
+* {
+  box-sizing: inherit; // 1
+  margin: 0; // 2
+  padding: 0; // 2
+  border: 0; // 2
+}

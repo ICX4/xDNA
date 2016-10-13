@@ -1,0 +1,3 @@
+@function uom($multiplier) {
+  @return $multiplier * $uom;
+}

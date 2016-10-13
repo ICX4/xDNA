@@ -1,0 +1,34 @@
+// desc create a media query from device size
+// @required
+//   electrons/variables/_devices.scss
+// @param
+//   {string} $min-width - device name for minimum size
+//   {string} $max-width - device name for maximum size
+@mixin device($min-width, $max-width: false) {
+  $request-min: false;
+  $request-max: false;
+  $min: 0px;
+  $max: false;
+
+  @if map-has-key($devices, $min-width) {
+    $request-min: map-get($devices, $min-width);
+
+    @if map-has-key($request-min, from) {
+      $min: map-get($request-min, from);
+    }
+  }
+
+  @if $max-width {
+    @if map-has-key($devices, $max-width) {
+      $request-max: map-get($devices, $max-width);
+
+      @if map-has-key($request-max, to) {
+        $max: map-get($request-max, to);
+      }
+    }
+    @media (min-width: $min) and (max-width: $max) { @content; }
+  }
+  @else {
+    @media (min-width: $min) { @content; }
+  }
+}

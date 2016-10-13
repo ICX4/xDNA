@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>xDNA &#124; businessDNA CSS</title>
+
+    <meta name="description" content="xDNA is the CSS framework for ICX4's businessDNA application." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link type="text/plain" rel="author" href="http://icx4.com/humans.txt" />
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/xdna.css?v=2016-09-28" />
+
+    <!--[if lt IE 9]>
+      <script>
+        'article aside details figcaption figure footer header main menu nav section summary'.replace(/\w+/g,function(a){document.createElement(a)})
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <svg width="0" height="0" class="screen-reader" aria-hidden>
+      <!-- icons go here -->
+    </svg>
+
+    <div class="x-global-notification" data-receive="notification-toggle">
+      <a class="x-close-icon" data-send="notification-toggle">&#10005;</a>
+      <p class="x-global-notification--message">Oh, you look wonderful today!</p>
+    </div>
+
+    <header class="x-global-header">
+      <div class="x-row -even">
+        <nav>
+          <p class="x-link" data-send="side-menu-toggle">&#9776; Menu</a>
+        </nav>
+        <nav>
+          <img src="img/bdna-logo.png" style="height:2rem;" />
+        </nav>
+        <nav>
+          <form class="x-fieldset -contain">
+            <select class="x-button -primary">
+              <option value="">select</option>
+              <option value="">don&#039;t select</option>
+            </select>
+            <input class="x-input" type="search" placeholder="search &hellip;" />
+            <button class="x-button">&#128269;</button>
+          </form>
+        </nav>
+      </div>
+    </header>
+
+    <div class="x-side-menu" data-receive="side-menu-toggle">
+      <div class="x-side-menu--overlay" data-send="side-menu-toggle"></div>
+      <div class="x-side-menu--menu">
+        <header class="x-header">
+          <h1>Menu</h1>
+          <p class="x-close-icon" data-send="side-menu-toggle">&#10005;</p>
+        </header>
+
+        <nav class="x-col">
+          <a class="x-link" href="#nogo">Link</a>
+          <a class="x-link" href="#nogo">Link</a>
+          <a class="x-link" href="#nogo">Link</a>
+          <a class="x-link" href="#nogo">Link</a>
+        </nav>
+        <nav class="x-col">
+          <a class="x-link" href="#nogo">Support</a>
+          <a class="x-link" href="#nogo" class="x-button">Log out</a>
+        </nav>
+      </div>
+    </div>
+
+    <header class="x-page--header">
+      <h1 class="x-title">Page title</h1>
+    </header>
+
+    <main>
+      <div class="x-fieldset">
+        <div class="x-row">
+          <input type="text" class="x-input" placeholder="where&hellip;" />
+          <button class="x-button">GO</button>
+        </div>
+      </div>
+
+      <div class="x-fieldset -contain">
+        <input type="text" class="x-input" placeholder="where&hellip;" />
+        <button class="x-button">GO</button>
+      </div>
+
+      <div class="x-row">
+        <button class="x-button -primary">Primary button</button>
+        <button class="x-button">Normal button</button>
+        <button class="x-button -secondary">Secondary button</button>
+      </div>
+
+      <button class="x-button" data-send="dialog-toggle">Dialog</button>
+
+      <div class="x-row">
+        <button class="x-button" data-notify="Howdy there, partner!">A notification</button>
+        <button class="x-button" data-notify="You look wonderful today!" data-notify-type="success">Good news</button>
+        <button class="x-button" data-notify="That&#8217;s another fine mess you've gotten me into!" data-notify-type="error">Bad news</button>
+        <button class="x-button" data-notify="<h1>They&#8217;re watching you!</h1>" data-notify-type="warning">Be careful</button>
+      </div>
+
+      <ul class="x-row">
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-01.jpg" alt="Img 1">
+          <div class="x-content">Pattern 1</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-02.jpg" alt="Img 2">
+          <div class="x-content">Pattern 2</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-03.jpg" alt="Img 3">
+          <div class="x-content">Pattern 3</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-04.jpg" alt="Img 4">
+          <div class="x-content">Pattern 4</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-05.jpg" alt="Img 5">
+          <div class="x-content">Pattern 5</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-06.jpg" alt="Img 6">
+          <div class="x-content">Pattern 6</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-07.jpg" alt="Img 7">
+          <div class="x-content">Pattern 7</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-08.jpg" alt="Img 8">
+          <div class="x-content">Pattern 8</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-09.jpg" alt="Img 9">
+          <div class="x-content">Pattern 9</div>
+        </li>
+        <li class="x-card">
+          <img src="http://www.noupe.com/wp-content/uploads/2009/10/pattern-10.jpg" alt="Img 10">
+          <div class="x-content">Pattern 10</div>
+        </li>
+      </ul>
+
+      <section class="x-carousel">
+        <ul class="x-row">
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-1.jpg" alt="pattern 1">
+            <div class="x-content">Pattern 1</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-2.jpg" alt="pattern 2">
+            <div class="x-content">Pattern 2</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-3.jpg" alt="pattern 3">
+            <div class="x-content">Pattern 3</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-4.jpg" alt="pattern 4">
+            <div class="x-content">Pattern 4</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-5.jpg" alt="pattern 5">
+            <div class="x-content">Pattern 5</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-6.jpg" alt="pattern 6">
+            <div class="x-content">Pattern 6</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-7.jpg" alt="pattern 7">
+            <div class="x-content">Pattern 7</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-8.jpg" alt="pattern 8">
+            <div class="x-content">Pattern 8</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-9.jpg" alt="pattern 9">
+            <div class="x-content">Pattern 9</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-10.jpg" alt="pattern 10">
+            <div class="x-content">Pattern 10</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-11.jpg" alt="pattern 11">
+            <div class="x-content">Pattern 11</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-12.jpg" alt="pattern 12">
+            <div class="x-content">Pattern 12</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-13.jpg" alt="pattern 13">
+            <div class="x-content">Pattern 13</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-14.jpg" alt="pattern 14">
+            <div class="x-content">Pattern 14</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-15.jpg" alt="pattern 15">
+            <div class="x-content">Pattern 15</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-16.jpg" alt="pattern 16">
+            <div class="x-content">Pattern 16</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-17.jpg" alt="pattern 17">
+            <div class="x-content">Pattern 17</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-18.jpg" alt="pattern 18">
+            <div class="x-content">Pattern 18</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-19.jpg" alt="pattern 19">
+            <div class="x-content">Pattern 19</div>
+          </li>
+          <li class="x-card">
+            <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-20.jpg" alt="pattern 20">
+            <div class="x-content">Pattern 20</div>
+          </li>
+        </ul>
+        <a class="x-carousel--control -left">
+          <span class="x-icon">&lt;</span>
+        </a>
+        <a class="x-carousel--control -right">
+          <span class="x-icon">&gt;</span>
+        </a>
+      </section>
+
+      <div style="width: 50%;">
+        <section class="x-carousel">
+          <ul class="x-row">
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-1.jpg" alt="pattern 1">
+              <div class="x-content">Pattern 1</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-2.jpg" alt="pattern 2">
+              <div class="x-content">Pattern 2</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-3.jpg" alt="pattern 3">
+              <div class="x-content">Pattern 3</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-4.jpg" alt="pattern 4">
+              <div class="x-content">Pattern 4</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-5.jpg" alt="pattern 5">
+              <div class="x-content">Pattern 5</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-6.jpg" alt="pattern 6">
+              <div class="x-content">Pattern 6</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-7.jpg" alt="pattern 7">
+              <div class="x-content">Pattern 7</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-8.jpg" alt="pattern 8">
+              <div class="x-content">Pattern 8</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-9.jpg" alt="pattern 9">
+              <div class="x-content">Pattern 9</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-10.jpg" alt="pattern 10">
+              <div class="x-content">Pattern 10</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-11.jpg" alt="pattern 11">
+              <div class="x-content">Pattern 11</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-12.jpg" alt="pattern 12">
+              <div class="x-content">Pattern 12</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-13.jpg" alt="pattern 13">
+              <div class="x-content">Pattern 13</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-14.jpg" alt="pattern 14">
+              <div class="x-content">Pattern 14</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-15.jpg" alt="pattern 15">
+              <div class="x-content">Pattern 15</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-16.jpg" alt="pattern 16">
+              <div class="x-content">Pattern 16</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-17.jpg" alt="pattern 17">
+              <div class="x-content">Pattern 17</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-18.jpg" alt="pattern 18">
+              <div class="x-content">Pattern 18</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-19.jpg" alt="pattern 19">
+              <div class="x-content">Pattern 19</div>
+            </li>
+            <li class="x-card">
+              <img src="http://graphicdesignjunction.com/wp-content/uploads/2011/05/pattern-20.jpg" alt="pattern 20">
+              <div class="x-content">Pattern 20</div>
+            </li>
+          </ul>
+          <a class="x-carousel--control -left">
+            <span class="x-icon">&lt;</span>
+          </a>
+          <a class="x-carousel--control -right">
+            <span class="x-icon">&gt;</span>
+          </a>
+        </section>
+      </div>
+
+      <ul class="x-grid-test">
+        <li>cell-1</li>
+        <li>cell-2</li>
+        <li>cell-3</li>
+        <li>cell-4</li>
+        <li>cell-5</li>
+        <li>cell-6</li>
+        <li>cell-7</li>
+        <li>cell-8</li>
+        <li>cell-9</li>
+        <li>cell-10</li>
+      </ul>
+
+      <table data-receive="table-toggle">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Employee id</th>
+            <th>email address</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Country</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Wedge Antilles</th>
+            <td>3575</td>
+            <td><a href="mailto:wedge.antilles@icx4.com">wedge.antilles@icx4.com</a></td>
+            <td>WuChang Guang Bu Tun 113Hao</td>
+            <td>Wuhan</td>
+            <td>China</td>
+          </tr>
+          <tr>
+            <th>Poe Dameron</th>
+            <td>9987</td>
+            <td><a href="mailto:poe.dameron@icx4.com">poe.dameron@icx4.com</a></td>
+            <td>No.1 Huangcheng Road</td>
+            <td>Xiangshan</td>
+            <td>China</td>
+          </tr>
+          <tr>
+            <th>Biggs Darklighter</th>
+            <td>2385</td>
+            <td><a href="mailto:biggs.darklighter@icx4.com">biggs.darklighter@icx4.com</a></td>
+            <td>Rua Dr. Raul Machado 52</td>
+            <td>Pinhal de Frades</td>
+            <td>Portugal</td>
+          </tr>
+          <tr>
+            <th>Garven Dreis</th>
+            <td>8735</td>
+            <td><a href="mailto:garven.dreis@icx4.com">garven.dreis@icx4.com</a></td>
+            <td>Unnamed Rd</td>
+            <td>Chibombo</td>
+            <td>Zambia</td>
+          </tr>
+          <tr>
+            <th>Theron Nett</th>
+            <td>5556</td>
+            <td><a href="mailto:theron.nett@icx4.com">theron.nett@icx4.com</a></td>
+            <td>Ấp 30/4, Xã Long Toàn</td>
+            <td>Duyên Hải</td>
+            <td>Vietnam</td>
+          </tr>
+          <tr>
+            <th>Sila Kott</th>
+            <td>3543</td>
+            <td><a href="mailto:sila.kott@icx4.com">sila.kott@icx4.com</a></td>
+            <td>Weiliu Rd 112</td>
+            <td>Lukou</td>
+            <td>China</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="x-button" data-send="table-toggle">Toggle table mode</button>
+
+    </main>
+
+    <div class="x-overlay" data-receive="dialog-toggle">
+      <div class="x-dialog">
+        <a class="x-close-icon" data-send="dialog-toggle">&#10005;</a>
+        <div id="global-dialog-content">
+          <h1 class="x-title">Hello world</h1>
+          <p>þú hatta fjúka lætur í loft þú regnhlíf snú á hvolf allt of oft ó nei, ég sé, ó</p>
+          <p>þú þök að fjúka út á brot sjó þú hári strjúka faldinum sló óhræsisstrákur</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/xdna.js"></script>
+  </body>
+</html>
