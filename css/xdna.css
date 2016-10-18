@@ -34,8 +34,8 @@
   font-weight: normal;
   font-style: normal; }
 html {
-  box-sizing: border-box;
   font-family: "Work Sans", sans-serif;
+  box-sizing: border-box;
   font-size: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%; }
@@ -91,9 +91,7 @@ a:hover {
   outline-width: 0; }
 
 abbr[title] {
-  border-bottom: none;
-  text-decoration: underline;
-  text-decoration: underline dotted; }
+  text-decoration: none; }
 
 b,
 strong {
@@ -260,6 +258,54 @@ textarea {
   text-transform: uppercase;
   cursor: pointer; }
 
+[data-tooltip],
+abbr {
+  position: relative;
+  border-bottom: 1px dashed mediumvioletred; }
+  [data-tooltip]::before, [data-tooltip]::after,
+  abbr::before,
+  abbr::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    z-index: 5100;
+    transform: translateX(-50%) translateY(1rem);
+    opacity: 0;
+    transition: transform 350ms ease, opacity 350ms ease;
+    pointer-events: none; }
+  [data-tooltip]::before,
+  abbr::before {
+    display: inline-block;
+    min-width: 10rem;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-align: center; }
+  [data-tooltip]::after,
+  abbr::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0.5rem 0.5rem 0 0.5rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent; }
+  [data-tooltip]:hover::before, [data-tooltip]:hover::after,
+  abbr:hover::before,
+  abbr:hover::after {
+    transform: translateX(-50%) translateY(0rem);
+    opacity: 1; }
+
+[data-tooltip]::before {
+  content: attr(data-tooltip); }
+
+abbr::before {
+  content: attr(title); }
+
 .x-input {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
@@ -330,7 +376,7 @@ textarea {
   max-height: 80vh;
   overflow: auto;
   position: relative;
-  z-index: 5300;
+  z-index: 5400;
   border-radius: 2px;
   background-color: whitesmoke; }
   .x-overlay.x-data-active .x-dialog {
@@ -504,7 +550,7 @@ textarea {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 5200; }
+  z-index: 5300; }
   .x-side-menu--overlay {
     position: fixed;
     top: 0;
@@ -551,7 +597,7 @@ textarea {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 5400;
+  z-index: 5500;
   background-color: RoyalBlue;
   color: white;
   font-weight: bold;

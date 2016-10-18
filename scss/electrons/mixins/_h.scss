@@ -8,11 +8,6 @@ $h1: $h2 * $font-increase-ratio;
 $h-sizes: $h1 $h2 $h3 $h4 $h5 $h6;
 
 @mixin h($size) {
-  font: {
-    family:
-      "Work Sans Light",
-      "Work Sans",
-      sans-serif;
-    size: nth($h-sizes, $size);
-  }
+  @include font-family(title);
+  font-size: nth($h-sizes, $size);
 }

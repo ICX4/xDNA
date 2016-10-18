@@ -1,0 +1,16 @@
+@mixin font-family($family: body) {
+  @if $family == header or $family == title {
+    font-family:
+      "Work Sans Light",
+      "Work Sans",
+      sans-serif;
+  }
+  @else if $family == mono or $family == monospace {
+    font-family: monospace;
+  }
+  @else {
+    font-family:
+      "Work Sans",
+      sans-serif;
+  }
+}

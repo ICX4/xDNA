@@ -13,7 +13,7 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <link rel="stylesheet" href="css/xdna.css?v=2016-09-28" />
+    <link rel="stylesheet" href="css/xdna.css?v=2016-10-18" />
 
     <!--[if lt IE 9]>
       <script>
@@ -74,7 +74,8 @@
     </div>
 
     <header class="x-page--header">
-      <h1 class="x-title">Page title</h1>
+      <h1 class="x-title">xDNA</h1>
+      <h2 class="x-sub-title">The <abbr title="Cascading Style Sheets">CSS</abbr> framework of businessDNA of <abbr title="Oh... Well... It means... Damn, get Mark to explain it.">ICX4</abbr></h2>
     </header>
 
     <main>
@@ -96,13 +97,16 @@
         <button class="x-button -secondary">Secondary button</button>
       </div>
 
+      <p>Hey, I have a <span data-tooltip="I&#8217;m the tooltip. Exciting, isn&#8217; it?" data-test="500px">tool tip</span>!</p>
+      <button class="x-button">I&#8217;m a button with a <span data-tooltip="Oooh! Look at me!">tool tip</span></button>
+
       <button class="x-button" data-send="dialog-toggle">Dialog</button>
 
       <div class="x-row">
-        <button class="x-button" data-notify="Howdy there, partner!">A notification</button>
-        <button class="x-button" data-notify="You look wonderful today!" data-notify-type="success">Good news</button>
-        <button class="x-button" data-notify="That&#8217;s another fine mess you've gotten me into!" data-notify-type="error">Bad news</button>
-        <button class="x-button" data-notify="<h1>They&#8217;re watching you!</h1>" data-notify-type="warning">Be careful</button>
+        <button class="x-button" onclick="x.notification.post('Howdy there, partner!');">A notification</button>
+        <button class="x-button" data-notification="You look wonderful today!" data-notification-type="success">Good news</button>
+        <button class="x-button" onclick="x.notification.post('That&#8217;s another fine mess you&#8217;ve gotten me into!', 'error');">Bad news</button>
+        <button class="x-button" data-notification="<img src='http://www.animatedimages.org/data/media/35/animated-eye-image-0031.gif' \/><h1>They&#8217;re watching you!</h1>" data-notification-type="warning">A warning</button>
       </div>
 
       <ul class="x-row">

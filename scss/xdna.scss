@@ -38,6 +38,7 @@
 
 // mixins
 @import 'electrons/mixins/link-style';
+@import 'electrons/mixins/font-family';
 @import 'electrons/mixins/h';
 @import 'electrons/mixins/margin';
 @import 'electrons/mixins/padding';
@@ -72,6 +73,7 @@
 
 // atoms
 @import 'atoms/link';
+@import 'atoms/tooltip';
 @import 'atoms/input';
 @import 'atoms/button';
 @import 'atoms/dialog';

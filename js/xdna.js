@@ -52,37 +52,46 @@ var x = {
   },
 
   // object
-  // NOTIFY
-  notify: {
+  // NOTIFICATION
+  notification: {
     panel: el.get('.x-global-notification'),
     panelText: el.get('.x-global-notification--message'),
-    triggers: el.getAll('[data-notify]'),
+    triggers: el.getAll('[data-notification]'),
 
     animate: function() {
-      x.notify.panel.classList.remove('x-data-active');
-      void x.notify.panel.offsetWidth;
-      x.notify.panel.classList.add('x-data-active');
+      x.notification.panel.classList.remove('x-data-active');
+      void x.notification.panel.offsetWidth;
+      x.notification.panel.classList.add('x-data-active');
     },
 
     setType: function(_type) {
-      x.notify.panel.classList.toggle('-success', _type === 'success');
-      x.notify.panel.classList.toggle('-warning', _type === 'warning');
-      x.notify.panel.classList.toggle('-error', _type === 'error');
+      x.notification.panel.classList.toggle('-success', _type === 'success');
+      x.notification.panel.classList.toggle('-warning', _type === 'warning');
+      x.notification.panel.classList.toggle('-error', _type === 'error');
     },
 
     setMessage: function(_text) {
-      x.notify.panelText.innerHTML = _text;
+      x.notification.panelText.innerHTML = _text;
+    },
+
+    post: function(_message, _type) {
+      var messageType = _type ? _type : 'info';
+
+      x.notification.setType(messageType);
+      x.notification.setMessage(_message);
+      x.notification.animate();
     },
 
     init: function() {
-      var triggers = x.notify.triggers;
+      var triggers = x.notification.triggers;
       var messageType = false;
 
-      for (var i = 0, ii = x.notify.triggers.length; i < ii; i++) {
+      for (var i = 0, ii = x.notification.triggers.length; i < ii; i++) {
         triggers[i].addEventListener('click', function() {
-          x.notify.setType(this.hasAttribute('data-notify-type') ? this.getAttribute('data-notify-type') : 'info');
-          x.notify.setMessage(this.getAttribute('data-notify'));
-          x.notify.animate();
+          var msg = this.getAttribute('data-notification');
+          var msgType = this.hasAttribute('data-notification-type') ? this.getAttribute('data-notification-type') : 'info';
+
+          x.notification.post(msg, msgType);
         }, false);
       }
     }
@@ -149,10 +158,27 @@ var x = {
         }
       }
     }
+  },
+
+  hideTitles: {
+
+    for: function(_elements) {
+      var elements = el.getAll(_elements + '[title]');
+
+      for (var i = 0, ii = elements.length; i < ii; i++) {
+        elements[i].addEventListener('mouseover', function(_event) {
+          _event.preventDefault();
+        }, false);
+      }
+    }
   }
 };
 
 x.dataSenders();
 x.adjustPagePadding();
 x.carousels.init();
-x.notify.init();
+x.notification.init();
+
+x.hideTitles.for('abbr');
+
+x.notification.post('WELCOME TO xDNA!');

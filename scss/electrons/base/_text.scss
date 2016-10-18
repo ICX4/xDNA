@@ -1,9 +1,7 @@
-// 1. Remove the bottom border in Firefox 39-.
-// 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+// 1. remove the text decoration
+//    !!! remember to set another visual queue
 abbr[title] {
-  border-bottom: none; // 1
-  text-decoration: underline; // 2
-  text-decoration: underline dotted; // 2
+  text-decoration: none; // 1
 }
 
 // Prevent the duplicate application of `bolder` by the next rule in Safari 6.
