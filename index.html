@@ -13,7 +13,8 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <link rel="stylesheet" href="css/xdna.css?v=2016-10-18" />
+    <link rel="stylesheet" href="css/xdna.css?v=2016-10-20" />
+    <link rel="stylesheet" href="css/site.css?v=2016-10-20" />
 
     <!--[if lt IE 9]>
       <script>
@@ -23,7 +24,18 @@
   </head>
   <body>
     <svg width="0" height="0" class="screen-reader" aria-hidden>
-      <!-- icons go here -->
+      <symbol id="icon--search" viewBox="0 0 16 16">
+        <title>Search</title>
+        <path d="M15.857,15.183L11.4,10.727c0.984-1.14,1.6-2.604,1.6-4.228c0-3.59-2.91-6.5-6.5-6.5S0,2.909,0,6.499s2.91,6.5,6.5,6.5 c1.623,0,3.088-0.616,4.227-1.6l4.457,4.457c0.186,0.186,0.488,0.186,0.674,0C16.043,15.67,16.043,15.368,15.857,15.183z M6.5,11.999c-3.038,0-5.5-2.462-5.5-5.5c0-3.037,2.462-5.5,5.5-5.5c3.037,0,5.5,2.463,5.5,5.5C12,9.537,9.537,11.999,6.5,11.999z" />
+      </symbol>
+      <symbol id="icon--chevron-left" viewBox="0 0 16 16">
+        <title>Left chevron</title>
+        <path d="M6.18,7.983l5.676-5.196c0.188-0.187,0.188-0.489,0-0.676c-0.186-0.186-0.488-0.186-0.676,0c0,0-6.045,5.492-6.067,5.515 C5.013,7.725,4.97,7.855,4.976,7.985C4.971,8.113,5.015,8.243,5.113,8.341c0.022,0.021,6.067,5.515,6.067,5.515 c0.186,0.187,0.488,0.187,0.676,0s0.188-0.489,0-0.676L6.18,7.983z"/>
+      </symbol>
+      <symbol id="icon--chevron-right" viewBox="0 0 16 16">
+        <title>Right chevron</title>
+        <path d="M11.357,7.643c-0.023-0.022-6.041-5.5-6.041-5.5c-0.186-0.186-0.488-0.186-0.674,0s-0.186,0.487,0,0.674L10.295,8 l-5.651,5.183c-0.186,0.186-0.186,0.487,0,0.674c0.186,0.186,0.488,0.186,0.674,0c0,0,6.017-5.479,6.038-5.501 c0.098-0.098,0.143-0.227,0.137-0.354C11.498,7.872,11.455,7.741,11.357,7.643z"/>
+      </symbol>
     </svg>
 
     <div class="x-global-notification" data-receive="notification-toggle">
@@ -36,17 +48,17 @@
         <nav>
           <p class="x-link" data-send="side-menu-toggle">&#9776; Menu</a>
         </nav>
-        <nav>
+        <nav class="x-global-header--logo -center">
           <img src="img/bdna-logo.png" style="height:2rem;" />
         </nav>
         <nav>
           <form class="x-fieldset -contain">
-            <select class="x-button -primary">
-              <option value="">select</option>
-              <option value="">don&#039;t select</option>
-            </select>
             <input class="x-input" type="search" placeholder="search &hellip;" />
-            <button class="x-button">&#128269;</button>
+            <button class="x-button">
+              <svg class="x-icon -search">
+                <use xlink:href="#icon--search"></use>
+              </svg>
+            </button>
           </form>
         </nav>
       </div>
@@ -56,7 +68,7 @@
       <div class="x-side-menu--overlay" data-send="side-menu-toggle"></div>
       <div class="x-side-menu--menu">
         <header class="x-header">
-          <h1>Menu</h1>
+          <h1>xDNA</h1>
           <p class="x-close-icon" data-send="side-menu-toggle">&#10005;</p>
         </header>
 
@@ -74,8 +86,13 @@
     </div>
 
     <header class="x-page--header">
-      <h1 class="x-title">xDNA</h1>
-      <h2 class="x-sub-title">The <abbr title="Cascading Style Sheets">CSS</abbr> framework of businessDNA of <abbr title="Oh... Well... It means... Damn, get Mark to explain it.">ICX4</abbr></h2>
+      <div class="xdna-hero js-scroll-focus">
+        <article>
+          <h1 class="x-title">xDNA</h1>
+          <p>xDNA is a modified form of <span data-help="dna-help">DNA</span> with 8 nucleobases: the four natural bases A, C, G, and T, and four artificial modifications of these made longer by the addition of an extra benzene ring: xA, xC, xG, and xT. A pairs with xT, C pairs with xG, G pairs with xC, and T pairs with xA, so the distance between the two halves of the double helix is consistently greater. The double helix is thus wider and has a longer pitch. <a href="https://en.wikipedia.org/wiki/XDNA">[Wikipedia]</a></p>
+          <p>xDNA is also the <abbr title="Cascading Style Sheets">CSS</abbr> framework of <abbr title="Oh... Well... It means... Damn, get Mark to explain it.">ICX4</abbr>&#8217;s businessDNA.</p>
+        </article>
+      </div>
     </header>
 
     <main>
@@ -100,7 +117,9 @@
       <p>Hey, I have a <span data-tooltip="I&#8217;m the tooltip. Exciting, isn&#8217; it?" data-test="500px">tool tip</span>!</p>
       <button class="x-button">I&#8217;m a button with a <span data-tooltip="Oooh! Look at me!">tool tip</span></button>
 
-      <button class="x-button" data-send="dialog-toggle">Dialog</button>
+      <p>I have a <span data-tooltip="A tool tip">tool tip</span> and a <span data-help="example-help">help dialog</span>.</p>
+
+      <button class="x-button" onclick="x.dialog.post('I am your message, you purposeless barnacle!', 'Ooh, title');">Dialog</button>
 
       <div class="x-row">
         <button class="x-button" onclick="x.notification.post('Howdy there, partner!');">A notification</button>
@@ -236,10 +255,14 @@
           </li>
         </ul>
         <a class="x-carousel--control -left">
-          <span class="x-icon">&lt;</span>
+          <svg class="x-icon -chevron-left">
+            <use xlink:href="#icon--chevron-left"></use>
+          </svg>
         </a>
         <a class="x-carousel--control -right">
-          <span class="x-icon">&gt;</span>
+          <svg class="x-icon -chevron-right">
+            <use xlink:href="#icon--chevron-right"></use>
+          </svg>
         </a>
       </section>
 
@@ -328,10 +351,14 @@
             </li>
           </ul>
           <a class="x-carousel--control -left">
-            <span class="x-icon">&lt;</span>
+            <svg class="x-icon -chevron-left">
+              <use xlink:href="#icon--chevron-left"></use>
+            </svg>
           </a>
           <a class="x-carousel--control -right">
-            <span class="x-icon">&gt;</span>
+            <svg class="x-icon -chevron-right">
+              <use xlink:href="#icon--chevron-right"></use>
+            </svg>
           </a>
         </section>
       </div>
@@ -416,17 +443,28 @@
 
     </main>
 
-    <div class="x-overlay" data-receive="dialog-toggle">
-      <div class="x-dialog">
-        <a class="x-close-icon" data-send="dialog-toggle">&#10005;</a>
-        <div id="global-dialog-content">
-          <h1 class="x-title">Hello world</h1>
-          <p>þú hatta fjúka lætur í loft þú regnhlíf snú á hvolf allt of oft ó nei, ég sé, ó</p>
-          <p>þú þök að fjúka út á brot sjó þú hári strjúka faldinum sló óhræsisstrákur</p>
-        </div>
+    <div id="global-overlay" class="x-overlay">
+      <div id="global-dialog" class="x-dialog">
+        <a class="x-close-icon" onclick="x.dialog.close();">&#10005;</a>
+        <div id="global-dialog-content"></div>
       </div>
     </div>
 
-    <script src="js/xdna.js"></script>
+    <script src="js/xdna.js?v=2016-10-20"></script>
+
+    <template id="dna-help">
+      <h1>DNA</h1>
+      <p>Deoxyribo-Nucleic acid (DNA) is a molecule that carries the genetic instructions used in the growth, development, functioning and reproduction of all known living organisms.</p>
+      <a href="https://en.wikipedia.org/wiki/DNA" class="x-link">More &hellip;</a>
+    </template>
+
+    <template id="example-help">
+      <h1>Help</h1>
+      <p>This is <i>help text</i>. It can contain <code>HTML</code>.<br /><br /></p>
+      <div class="x-row">
+        <a href="javascript:alert('DO!');" class="x-button">Do</a>
+        <a href="javascript:alert('DO NOT!')" class="x-button -secondary">Do not</a>
+      </div>
+    </template>
   </body>
 </html>

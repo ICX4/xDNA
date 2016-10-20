@@ -1,4 +1,5 @@
 .x-link {
   @include dim(item);
   @include link-style;
+  @include click;
 }

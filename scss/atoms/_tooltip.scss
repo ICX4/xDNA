@@ -21,7 +21,7 @@ abbr {
 
   &::before {
     display: inline-block;
-    min-width: 10rem;
+    width: uom(10);
     margin-bottom: uom(0.5);
     padding: uom(0.25) uom(0.5);
     border-radius: $border-radius;

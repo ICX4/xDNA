@@ -19,6 +19,16 @@
   font-weight: normal;
   font-style: normal; }
 @font-face {
+  font-family: "Work Sans Hairline";
+  src: url("../fonts/work-sans/worksans-hairline-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-hairline-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans Thin";
+  src: url("../fonts/work-sans/worksans-thin-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: "Work Sans Light";
   src: url("../fonts/work-sans/worksans-light-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-light-webfont.woff") format("woff");
   font-weight: normal;
@@ -75,12 +85,8 @@ template,
 [hidden] {
   display: none; }
 
-audio:not([controls]) {
-  display: none;
-  height: 0; }
-
-progress {
-  vertical-align: baseline; }
+article * + * {
+  margin-bottom: 1rem; }
 
 a {
   background-color: transparent;
@@ -234,6 +240,13 @@ textarea {
   -webkit-appearance: button;
   font: inherit; }
 
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+progress {
+  vertical-align: baseline; }
+
 .screen-reader {
   display: block;
   width: 0;
@@ -257,6 +270,14 @@ textarea {
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer; }
+  .x-link:active {
+    transform: scale3d(0.9, 0.9, 1); }
+
+.x-icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor; }
 
 [data-tooltip],
 abbr {
@@ -276,12 +297,12 @@ abbr {
   [data-tooltip]::before,
   abbr::before {
     display: inline-block;
-    min-width: 10rem;
+    width: 10rem;
     margin-bottom: 0.5rem;
     padding: 0.25rem 0.5rem;
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: whitesmoke;
+    color: #fff;
     font-size: 0.8rem;
     font-weight: normal;
     text-align: center; }
@@ -305,6 +326,47 @@ abbr {
 
 abbr::before {
   content: attr(title); }
+
+[data-help] {
+  position: relative;
+  border-bottom: 1px dashed mediumvioletred;
+  cursor: pointer; }
+  [data-help]::after {
+    content: "\02691";
+    padding-left: 0.5em;
+    color: mediumvioletred; }
+
+.x-help {
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: block;
+  width: 20rem;
+  margin-bottom: 0.5rem;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  z-index: 5100;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  border-radius: 2px;
+  text-align: left; }
+  .x-help::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 5100;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-width: 0.5rem 0.5rem 0 0.5rem;
+    border-style: solid;
+    border-color: #fff transparent; }
 
 .x-input {
   margin-right: 0.5rem;
@@ -358,7 +420,7 @@ abbr::before {
   .x-button:active {
     transform: scale3d(0.9, 0.9, 1); }
   .x-button.-primary {
-    color: whitesmoke;
+    color: #fff;
     background-color: mediumvioletred;
     border-color: mediumvioletred; }
   .x-button.-secondary {
@@ -378,8 +440,8 @@ abbr::before {
   position: relative;
   z-index: 5400;
   border-radius: 2px;
-  background-color: whitesmoke; }
-  .x-overlay.x-data-active .x-dialog {
+  background-color: #fff; }
+  .x-overlay.-active .x-dialog {
     display: block; }
 
 .x-overlay {
@@ -393,7 +455,7 @@ abbr::before {
   background-color: rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: opacity 350ms 0ms ease, right 0ms 2100ms linear; }
-  .x-overlay.x-data-active {
+  .x-overlay.-active {
     right: 0;
     opacity: 1;
     transition: opacity 350ms 0ms ease, right 0ms 350ms linear; }
@@ -410,7 +472,7 @@ abbr::before {
   border-radius: 50%;
   line-height: 2rem;
   text-align: center;
-  text-shadow: 0 0 3px whitesmoke, 0 0 3px whitesmoke, 0 0 3px whitesmoke;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
   cursor: pointer; }
   .x-close-icon:focus, .x-close-icon:hover {
     outline: 0;
@@ -490,8 +552,13 @@ abbr::before {
   overflow-x: hidden;
   position: relative; }
   .x-carousel--control {
+    box-shadow: 0 0 0 0px hotpink;
+    transition: background-color 350ms ease, color 350ms ease, box-shadow 0s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    display: block;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
     width: 3rem;
     height: 3rem;
     position: absolute;
@@ -499,12 +566,14 @@ abbr::before {
     z-index: 1;
     background-color: white;
     border-radius: 50%;
-    line-height: 3rem;
-    text-align: center;
     opacity: 0;
     cursor: pointer;
     pointer-events: none;
     transition: opacity 350ms, box-shadow 350ms; }
+    .x-carousel--control:focus, .x-carousel--control:hover {
+      outline: 0;
+      box-shadow: 0 0 0 10px rgba(255, 105, 180, 0);
+      transition: background-color 350ms ease, color 350ms ease, box-shadow 700ms ease; }
     .x-carousel--control:active {
       transform: scale3d(0.9, 0.9, 1); }
     .x-carousel--control.-left {
@@ -541,6 +610,10 @@ abbr::before {
   z-index: 5000;
   display: block;
   background-color: white; }
+  .x-global-header--logo.-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); }
 
 .x-side-menu {
   display: block;
@@ -576,7 +649,7 @@ abbr::before {
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: block;
     width: 300px;
-    background-color: whitesmoke;
+    background-color: #fff;
     transform: translate3d(-300px, 0, 0);
     transition: transform 105ms ease; }
     .x-side-menu.x-data-active .x-side-menu--menu {
@@ -708,7 +781,7 @@ table.x-data-active th {
   padding-bottom: 1rem; }
 
 .x-title {
-  font-family: "Work Sans Light", "Work Sans", sans-serif;
+  font-family: "Work Sans Hairline", "Work Sans", sans-serif;
   font-size: 3.02791rem; }
 
 .x-page--header {
@@ -727,7 +800,7 @@ body {
     background: #ccc;
     border-width: 3px;
     border-style: solid;
-    border-color: whitesmoke;
+    border-color: #fff;
     border-radius: 6px; }
     ::-webkit-scrollbar-thumb:hover {
       background-color: mediumvioletred; }

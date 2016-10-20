@@ -1,0 +1,6 @@
+article {
+
+  * + * {
+    @include margin(bottom);
+  }
+}

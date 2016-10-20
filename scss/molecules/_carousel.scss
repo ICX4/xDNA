@@ -6,9 +6,13 @@
   position: relative;
 
   &--control {
+    @include input-focus;
     @include click;
     @include z-depth(1);
-    display: block;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
     width: uom(3);
     height: uom(3);
     position: absolute;
@@ -16,8 +20,6 @@
     z-index: 1;
     background-color: white;
     border-radius: 50%;
-    line-height: uom(3);
-    text-align: center;
     opacity: 0;
     cursor: pointer;
     pointer-events: none;

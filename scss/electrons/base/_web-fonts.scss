@@ -27,6 +27,22 @@
 }
 
 @font-face {
+  font-family: "Work Sans Hairline";
+  src: url("../fonts/work-sans/worksans-hairline-webfont.woff2") format("woff2"),
+       url("../fonts/work-sans/worksans-hairline-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Work Sans Thin";
+  src: url("../fonts/work-sans/worksans-thin-webfont.woff2") format("woff2"),
+       url("../fonts/work-sans/worksans-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Work Sans Light";
   src: url("../fonts/work-sans/worksans-light-webfont.woff2") format("woff2"),
        url("../fonts/work-sans/worksans-light-webfont.woff") format("woff");

@@ -1,7 +1,7 @@
 @mixin font-family($family: body) {
   @if $family == header or $family == title {
     font-family:
-      "Work Sans Light",
+      "Work Sans Hairline",
       "Work Sans",
       sans-serif;
   }

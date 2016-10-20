@@ -2,9 +2,8 @@
 
 // * { border: 1px solid lightblue !important; }
 
-.x-global-header {
-  //transform: translate3d(0, 0, 0);
-}
+
+
 
 
 .x-fieldset.-contain {
@@ -138,7 +137,7 @@ table.x-data-active {
 body {
   min-height: 200vh; // REMOVE
   background: {
-    color: $col-bg;
+    color: $col-application-bg;
     //image: linear-gradient(to bottom, #eee 0vh, #fff 80vh);
     //repeat: no-repeat;
   }

@@ -5,4 +5,10 @@
   z-index: $z-index--global-header;
   display: block;
   background-color: white; // TODO replace with sensible variable name
+
+  &--logo.-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

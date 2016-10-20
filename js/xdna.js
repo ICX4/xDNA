@@ -12,6 +12,15 @@ var el = {
     return document.querySelectorAll(_selector);
   },
 
+  create: function(_tagName, _className) {
+    var newElement = document.createElement(_tagName);
+
+    if (_className) {
+      newElement.classList.add(_className);
+    }
+    return newElement;
+  },
+
   combinedChildrenDim: function(_parent) {
       var totalChildrenDim = {
         width: 0,
@@ -48,6 +57,28 @@ var x = {
           }
         }, false);
       }
+    }
+  },
+
+  // object
+  // DIALOG
+  dialog: {
+    overlay: el.get('#global-overlay'),
+    content: el.get('#global-dialog-content'),
+    activeClass: '-active',
+
+    post: function(_body, _title) {
+      if (_body) {
+        var title = _title ? '<h1 class="x-title">' + _title + '<\/h1>' : '';
+        var body = '<div class="x-content">' + _body + '<\/div>';
+
+        x.dialog.content.innerHTML = title + body;
+        x.dialog.overlay.classList.add(x.dialog.activeClass);
+      }
+    },
+
+    close: function() {
+      x.dialog.overlay.classList.remove(x.dialog.activeClass);
     }
   },
 
@@ -160,16 +191,74 @@ var x = {
     }
   },
 
-  hideTitles: {
+  // object
+  // SCROLL FOCUS
+  scrollFocus: {
 
-    for: function(_elements) {
-      var elements = el.getAll(_elements + '[title]');
+    applyTo: '.js-scroll-focus',
+    margin: 200,
+    class: '-in-focus',
 
-      for (var i = 0, ii = elements.length; i < ii; i++) {
-        elements[i].addEventListener('mouseover', function(_event) {
-          _event.preventDefault();
-        }, false);
+    getAllSections: function() {
+      return el.getAll(x.scrollFocus.applyTo);
+    },
+
+    isInView: function(_element) {
+      var windowHeight = window.innerHeight - x.scrollFocus.margin;
+      var elementTop = _element.getBoundingClientRect().top;
+      var elementBottom = _element.getBoundingClientRect().bottom;
+
+      return ((elementTop < windowHeight) && (elementBottom > x.scrollFocus.margin));
+    },
+
+    detect: function() {
+      var sections = x.scrollFocus.getAllSections();
+
+      for (var i = 0, ii = sections.length; i < ii; i++) {
+        var audios = sections[i].querySelectorAll('audio');
+        var videos = sections[i].querySelectorAll('video');
+
+        sections[i].classList.toggle(x.scrollFocus.class, x.scrollFocus.isInView(sections[i]));
+
+        for (var j = 0, jj = videos.length; j < jj; j++) {
+          x.scrollFocus.isInView(sections[i]) ? audios[j].play() : audios[j].pause();
+        }
+        for (var j = 0, jj = videos.length; j < jj; j++) {
+          x.scrollFocus.isInView(sections[i]) ? videos[j].play() : videos[j].pause();
+        }
       }
+    },
+
+    init: function() {
+      x.scrollFocus.detect();
+      document.addEventListener('scroll', function() {
+        x.scrollFocus.detect();
+      });
+    }
+  },
+
+  // HELP
+  help: function() {
+    var helpClass = 'x-help';
+    var requests = el.getAll('[data-help]');
+
+    for (var i = 0, ii = requests.length; i < ii; i++) {
+      requests[i].addEventListener('click', function() {
+        if (!!this.querySelector('.x-help')) {
+          this.removeChild(this.querySelector('.x-help'));
+        }
+        else {
+          var template = el.get('#' + this.getAttribute('data-help'));
+          var clone = document.importNode(template.content, true);
+          var helpDiv = el.create('div', helpClass);
+          var closeX = el.create('span', 'x-close-icon');
+
+          closeX.innerText = '\u2715';
+          helpDiv.appendChild(closeX);
+          helpDiv.appendChild(clone);
+          this.appendChild(helpDiv);
+        }
+      }, false);
     }
   }
 };
@@ -178,7 +267,5 @@ x.dataSenders();
 x.adjustPagePadding();
 x.carousels.init();
 x.notification.init();
-
-x.hideTitles.for('abbr');
-
-x.notification.post('WELCOME TO xDNA!');
+x.scrollFocus.init();
+x.help();

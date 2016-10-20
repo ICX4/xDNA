@@ -4,55 +4,14 @@
  * Copyright (c) 2016 by ICX4.LTD
  */
 
- // this is the main file for xDNA
- // collating all the files
- // this file should contain only @imports
- // no css to go in here
+// this is the main file for xDNA
+// collating all the files
+// this file should contain only @imports
+// no css to go in here
 
- // settings
- // (user set variables)
- @import 'settings';
-
- // defaults
- // default fallbacks for above settings
- @import 'electrons/variables/defaults';
-
- // functions (that may be required for variables)
- @import 'electrons/functions/strip-unit';
- @import 'electrons/functions/list-functions';
- @import 'electrons/functions/hex-to-rgb';
-
-// variables
-@import 'electrons/variables/devices';
-@import 'electrons/variables/dimensions';
-@import 'electrons/variables/z-index';
-@import 'electrons/variables/colors';
-@import 'electrons/variables/styles';
-@import 'electrons/variables/grid';
-@import 'electrons/variables/transitions';
-
-// functions (that require variable input)
-@import 'electrons/functions/uom';
-@import 'electrons/functions/px';
-@import 'electrons/functions/timing';
-
-// mixins
-@import 'electrons/mixins/link-style';
-@import 'electrons/mixins/font-family';
-@import 'electrons/mixins/h';
-@import 'electrons/mixins/margin';
-@import 'electrons/mixins/padding';
-@import 'electrons/mixins/grid';
-@import 'electrons/mixins/fix';
-@import 'electrons/mixins/z-depth';
-@import 'electrons/mixins/input-focus';
-@import 'electrons/mixins/no-input-focus';
-@import 'electrons/mixins/click';
-@import 'electrons/mixins/overlay-style';
-@import 'electrons/mixins/dim';
-@import 'electrons/mixins/device';
-
-@import 'electrons/mixins/grid';
+// helpers
+// see this file for specifics
+@import 'helpers';
 
 // base
 @import 'electrons/base/web-fonts';
@@ -60,8 +19,7 @@
 @import 'electrons/base/all';
 @import 'electrons/base/body';
 @import 'electrons/base/html5';
-@import 'electrons/base/audio';
-@import 'electrons/base/progress';
+@import 'electrons/base/article';
 @import 'electrons/base/a';
 @import 'electrons/base/text';
 @import 'electrons/base/hr';
@@ -69,11 +27,15 @@
 @import 'electrons/base/img';
 @import 'electrons/base/svg';
 @import 'electrons/base/forms';
+@import 'electrons/base/audio';
+@import 'electrons/base/progress';
 @import 'electrons/base/screen-reader';
 
 // atoms
 @import 'atoms/link';
+@import 'atoms/icon';
 @import 'atoms/tooltip';
+@import 'atoms/help';
 @import 'atoms/input';
 @import 'atoms/button';
 @import 'atoms/dialog';
