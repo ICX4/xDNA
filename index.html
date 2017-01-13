@@ -72,16 +72,157 @@
           <p class="x-close-icon" data-send="side-menu-toggle">&#10005;</p>
         </header>
 
-        <nav class="x-col">
-          <a class="x-link" href="#nogo">Link</a>
-          <a class="x-link" href="#nogo">Link</a>
-          <a class="x-link" href="#nogo">Link</a>
-          <a class="x-link" href="#nogo">Link</a>
-        </nav>
-        <nav class="x-col">
-          <a class="x-link" href="#nogo">Support</a>
-          <a class="x-link" href="#nogo" class="x-button">Log out</a>
-        </nav>
+        <div class="x-nested-menu--container">
+          <nav class="x-nested-menu x-data-active" data-receive="mm-0">
+            <a class="x-link" href="#nogo">Home</a>
+            <a class="x-link" data-send="mm-1, mm-0">Data:View</a>
+            <a class="x-link" data-send="mm-2, mm-0">Case:Flow</a>
+            <a class="x-link" data-send="mm-3, mm-0">Alignment</a>
+            <a class="x-link" data-send="mm-4, mm-0">Admin:View</a>
+            <a class="x-link" href="#nogo">Support</a>
+            <a class="x-link" href="#nogo" class="x-button">Log out</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-1">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-1">Home</li>
+              <li class="x-nested-menu--breadcrumb">Data:View</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-0, mm-1">Back</a>
+            <a class="x-link" data-send="mm-1-1, mm-1">Internal data management</a>
+            <a class="x-link" data-send="mm-1-2, mm-1">External data management</a>
+            <a class="x-link" href="#nogo">Dataflow monitoring</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-1-1">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-1-1">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-1, mm-1-1">Data:View</li>
+              <li class="x-nested-menu--breadcrumb">Internal data management</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-1, mm-1-1">Back</a>
+            <a class="x-link" data-send="mm-1-1-1, mm-1-1">Production</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-1-1-1">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-1-1-1">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-1, mm-1-1-1">Data:View</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-1-1, mm-1-1-1">Internal data management</li>
+              <li class="x-nested-menu--breadcrumb">Production</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-1-1, mm-1-1-1">Back</a>
+            <a class="x-link" href="#nogo">Organisations by source</a>
+            <a class="x-link" href="#nogo">CRDS analysis</a>
+            <a class="x-link" href="#nogo">CRDS historical analysis</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-1-2">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-1-2">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-1, mm-1-2">Data:View</li>
+                <li class="x-nested-menu--breadcrumb">External data management</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-1, mm-1-2">Back</a>
+            <a class="x-link" href="#nogo">Organisations by source</a>
+            <a class="x-link" href="#nogo">Organisations matched</a>
+            <a class="x-link" href="#nogo">Sanctioned organisation matches</a>
+            <a class="x-link" href="#nogo">Sanctioned organisations</a>
+            <a class="x-link" href="#nogo">Number of instruments by source</a>
+            <a class="x-link" href="#nogo">Instruments by security type</a>
+            <a class="x-link" href="#nogo">Instruments with issuers</a>
+            <a class="x-link" href="#nogo">Number of people by source</a>
+            <a class="x-link" href="#nogo">People matched</a>
+            <a class="x-link" href="#nogo">Sanctioned people matches</a>
+            <a class="x-link" href="#nogo">Sanctioned people</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-2">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-2">Home</li>
+              <li class="x-nested-menu--breadcrumb">Case:Flow</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-0, mm-2">Back</a>
+            <a class="x-link" data-send="mm-2-1, mm-2">Case management report</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-2-1">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-2-1">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-2, mm-2-1">Case:Flow</li>
+              <li class="x-nested-menu--breadcrumb">Case management report</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-2, mm-2-1">Back</a>
+            <a class="x-link" data-send="mm-2-1-1, mm-2-1">Unmatched cases</a>
+            <a class="x-link" data-send="mm-2-1-2, mm-2-1">Attribute cases</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-2-1-1">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-2-1-1">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-2, mm-2-1-1">Case:Flow</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-2-1, mm-2-1-1">Case management report</li>
+              <li class="x-nested-menu--breadcrumb">Unmatched cases</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-2-1, mm-2-1-1">Back</a>
+            <a class="x-link" href="#nogo">Case processing by source system and type</a>
+            <a class="x-link" href="#nogo">Case processing performance</a>
+            <a class="x-link" href="#nogo">Case processing performance average</a>
+            <a class="x-link" href="#nogo">Supervisor case processing</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-2-1-2">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-2-1-1">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-2, mm-2-1-1">Case:Flow</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-2-1, mm-2-1-1">Case management report</li>
+              <li class="x-nested-menu--breadcrumb">Attribute cases</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-2-1, mm-2-1-2">Back</a>
+            <a class="x-link" href="#nogo">Attribute case report by processor</a>
+            <a class="x-link" href="#nogo">Attribute case report by case type</a>
+            <a class="x-link" href="#nogo">User processing performance</a>
+            <a class="x-link" href="#nogo">User processing performance average</a>
+            <a href="#nogo" class="x-link">Supervisor case processing</a>
+            <a href="#nogo" class="x-link">Attribute case ageing report</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-3">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-3">Home</li>
+              <li class="x-nested-menu--breadcrumb">Alignment</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-0, mm-3">Back</a>
+            <a class="x-link" href="#nogo">All fields</a>
+            <a class="x-link" href="#nogo">Fields by source</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-4">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-4">Home</li>
+              <li class="x-nested-menu--breadcrumb">Admin:View</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-0, mm-4">Back</a>
+            <a class="x-link" data-send="mm-4-1, mm-4">Configure case flow</a>
+            <a class="x-link" href="#nogo">User management</a>
+            <a class="x-link" href="#nogo">About</a>
+          </nav>
+
+          <nav class="x-nested-menu" data-receive="mm-4-1">
+            <ul>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-0, mm-4-1">Home</li>
+              <li class="x-nested-menu--breadcrumb" data-send="mm-4, mm-4-1">Admin:View</li>
+              <li class="x-nested-menu--breadcrumb">Configure case flow</li>
+            </ul>
+            <a class="x-nested-menu--back" data-send="mm-4, mm-4-1">Back</a>
+            <a class="x-link" href="#nogo">Configure case assignment</a>
+            <a class="x-link" href="#nogo">Configure case types</a>
+            <a class="x-link" href="#nogo">Configure attribute groups</a>
+            <a class="x-link" href="#nogo">Configure source systems</a>
+            <a class="x-link" href="#nogo">Configure user groups</a>
+          </nav>
+
+        </div>
       </div>
     </div>
 

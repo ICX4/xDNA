@@ -1,4 +1,3 @@
-
 var el = {
 
   usesClassList: typeof document !== 'undefined' && ('classList' in document.documentElement),
@@ -49,11 +48,16 @@ var x = {
       for (var i = 0, ii = dataSenders.length; i < ii; i++) {
 
         dataSenders[i].addEventListener('click', function() {
-          var broadcast = this.getAttribute('data-send');
-          var dataReceivers = el.getAll('[data-receive="' + broadcast + '"]');
+          var broadcasts = this.getAttribute('data-send').split(',');
 
-          for (var j = 0, jj = dataReceivers.length; j < jj; j++) {
-            dataReceivers[j].classList.toggle('x-data-active');
+          for (var j = 0, jj = broadcasts.length; j < jj; j++) {
+
+            var broadcast = broadcasts[j].trim();
+            var dataReceivers = el.getAll('[data-receive="' + broadcast + '"]');
+
+            for (var k = 0, kk = dataReceivers.length; k < kk; k++) {
+              dataReceivers[k].classList.toggle('x-data-active');
+            }
           }
         }, false);
       }
@@ -132,9 +136,9 @@ var x = {
   // ADJUST PAGE PADDING
   adjustPagePadding: function() {
     var globalHeader = el.get('.x-global-header');
-    var pageHeader = el.get('.x-page--header');
+    var page = el.get('main');
 
-    pageHeader.style['padding-top'] = globalHeader.offsetHeight + 'px';
+    page.style['padding-top'] = globalHeader.offsetHeight + 'px';
   },
 
   // object

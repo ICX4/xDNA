@@ -101,7 +101,7 @@
     // IGNORE
     // purely for this example
     // remove from actual code
-    &::after { content: "@include grid(#{$args});"; }
+//&::after { content: "@include grid(#{$args});"; }
     // end IGNORE
   }
 }

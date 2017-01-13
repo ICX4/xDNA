@@ -1,0 +1,79 @@
+body {
+  background-color: white; }
+
+@media (min-width: 0px) {
+  .x-page {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    list-style: none; }
+    .x-page > * {
+      flex: 1 0 100%; }
+    .x-page > * {
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: auto; }
+    .x-page .filters-section {
+      max-width: 16.66667%; }
+    .x-page .results-section {
+      max-width: 33.33333%; }
+    .x-page .preview-section {
+      max-width: 50%; } }
+.filters--header {
+  display: block;
+  padding: 1rem 0.5rem 0.5rem 0;
+  font-family: "Work Sans Hairline", "Work Sans", sans-serif;
+  font-size: 1.044rem; }
+.filters--group {
+  display: block;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 350ms ease; }
+  .filters--toggle:checked + .filters--group {
+    max-height: 100vh; }
+
+.results-table {
+  display: flex;
+  flex-flow: column nowrap; }
+  .results-table > tr {
+    display: block;
+    margin-bottom: 1rem; }
+
+.search-result {
+  display: block;
+  padding: 1rem;
+  position: relative;
+  background-color: whitesmoke; }
+  .search-result header {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1rem; }
+    .search-result header .x-icon {
+      font-family: "Work Sans Hairline", "Work Sans", sans-serif;
+      font-size: 2.32024rem;
+      margin-right: 0.5rem; }
+    .search-result header h1 {
+      font-family: "Work Sans Hairline", "Work Sans", sans-serif;
+      font-size: 1.77796rem; }
+    .search-result header h2 {
+      font-family: "Work Sans Hairline", "Work Sans", sans-serif;
+      font-size: 1.044rem; }
+  .search-result footer a {
+    display: flex;
+    flex-flow: row nowrap; }
+    .search-result footer a > *:first-child {
+      margin-right: 0.5rem; }
+  .search-result.-active {
+    background-color: Gold; }
+  .search-result.-active::before {
+    content: "";
+    display: block;
+    width: 0.5rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: Gold; }
+
+/*# sourceMappingURL=search-results.css.map */

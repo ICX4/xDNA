@@ -1,11 +1,9 @@
 .x-side-menu {
+  @include fix(left);
   display: block;
   width: 0;
   height: 0;
   overflow: visible;
-  position: fixed;
-  top: 0;
-  left: 0;
   z-index: $z-index--side-menu;
 
   &--overlay {
@@ -18,10 +16,14 @@
 
   &--menu {
     @include fix(left);
-    @include padding(right, left);
     @include z-depth(2);
-    display: block;
+    display: flex;
+    flex-flow: column nowrap;
     width: $side-menu-width;
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
     background-color: $col-bg;
     transform: translate3d(-#{$side-menu-width}, 0, 0);
     transition: transform timing(0.3) ease;

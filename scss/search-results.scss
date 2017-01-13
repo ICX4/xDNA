@@ -1,0 +1,124 @@
+// still going to import
+// all our helpers from xDNA
+@import 'helpers';
+
+body {
+  background-color: white;
+}
+
+// LAYOUT
+@include device($desktop) {
+  .x-page {
+    @include grid(container);
+
+    & > * {
+      height: 100vh;
+      overflow: {
+        x: hidden;
+        y: auto;
+      }
+    }
+
+    .filters-section {
+      @include grid(2);
+    }
+
+    .results-section {
+      @include grid(4);
+      //background-color: rgba(black, 0.1);
+    }
+
+    .preview-section {
+      @include grid(6);
+    }
+  }
+}
+
+
+// FILTERS
+.filters {
+
+  &--header {
+    display: block;
+    padding: uom(1) uom(0.5) uom(0.5) 0;
+    @include h(5);
+  }
+
+  &--group {
+    display: block;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 350ms ease;
+
+    .filters--toggle:checked + & {
+      max-height: 100vh;
+    }
+  }
+}
+
+.results-table {
+  display: flex;
+  flex-flow: column nowrap;
+
+  > tr {
+    display: block;
+    margin-bottom: uom(1);
+  }
+}
+
+.search-result {
+  display: block;
+  //margin-bottom: uom(1);
+  padding: uom(1);
+  position: relative;
+  background-color: whitesmoke; //rgba($col-fg, 0.1);
+
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: uom(1);
+
+    .x-icon {
+      @include h(2);
+      margin: {
+        right: uom(0.5);
+      }
+    }
+
+    h1 {
+      @include h(3);
+    }
+
+    h2 {
+      @include h(5);
+    }
+  }
+
+  footer {
+
+    a {
+      display: flex;
+      flex-flow: row nowrap;
+
+      > *:first-child {
+        margin-right: uom(0.5);
+      }
+    }
+  }
+
+  &.-active {
+    background-color: Gold;
+  }
+
+  &.-active::before {
+    content: "";
+    display: block;
+    width: uom(0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: Gold;
+  }
+}
