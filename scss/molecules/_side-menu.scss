@@ -17,6 +17,7 @@
   &--menu {
     @include fix(left);
     @include z-depth(2);
+    @include padding(right, left);
     display: flex;
     flex-flow: column nowrap;
     width: $side-menu-width;

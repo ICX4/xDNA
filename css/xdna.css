@@ -646,6 +646,8 @@ abbr::before {
     bottom: 0;
     left: 0;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-right: 1rem;
+    padding-left: 1rem;
     display: flex;
     flex-flow: column nowrap;
     width: 300px;
@@ -660,7 +662,7 @@ abbr::before {
 
 .x-nested-menu {
   display: block;
-  width: 100%;
+  width: calc(100% - 1rem);
   position: absolute;
   top: auto;
   opacity: 0;
@@ -678,26 +680,32 @@ abbr::before {
     overflow: scroll; }
   .x-nested-menu--breadcrumb {
     display: block;
-    list-style: none; }
+    list-style: none;
+    color: rgba(199, 21, 133, 0.5); }
     .x-nested-menu--breadcrumb[data-send] {
-      display: inline-block; }
+      display: inline-block;
+      font-size: 80%;
+      cursor: pointer; }
       .x-nested-menu--breadcrumb[data-send]::after {
         content: " > "; }
   .x-nested-menu--back {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    margin-left: -1rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
     display: block;
     color: mediumvioletred;
     background-color: rgba(199, 21, 133, 0.1); }
-  .x-nested-menu .x-link {
-    display: block; }
-    .x-nested-menu .x-link:hover {
-      background-color: rgba(199, 21, 133, 0.1); }
-    .x-nested-menu .x-link[data-send]::after {
-      content: " >";
-      float: right; }
+    .x-nested-menu--back::before {
+      content: "< "; }
+  .x-nested-menu .x-link:hover {
+    color: mediumvioletred; }
+  .x-nested-menu .x-link[data-send]::after {
+    content: "\0203A";
+    float: right;
+    font-size: 200%; }
 
 @keyframes x-notification-drop-down {
   0%, 100% {
