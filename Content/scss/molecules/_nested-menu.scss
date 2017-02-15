@@ -1,0 +1,86 @@
+.x-nested-menu {
+  display: block;
+  width: calc(100% - 1rem);
+  position: absolute;
+  top: auto;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition:
+    opacity 350ms ease,
+    transform 350ms ease;
+
+  &.x-active {
+    opacity: 1;
+    transform: translateX(0);
+
+    ~ .x-nested-menu {
+      transform: translate(100%);
+    }
+  }
+
+  &--container {
+    @include padding(top, bottom);
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+  }
+
+  &--breadcrumb {
+    @include padding-multiplied(top, 0.3);
+    display: block;
+    list-style: none;
+    color: rgba(color(app), 0.5);
+
+    &[data-send] {
+      display: inline-block;
+      font-size: 80%;
+      cursor: pointer;
+
+      &::after {
+        @include padding-multiplied(right, 0.3);
+        @include padding-multiplied(left, 0.3);
+        content: "\0203A";
+        display: inline-block;
+      }
+    }
+  }
+
+  &--back {
+    @include margin-multiplied(top, 0.5);
+    @include margin-multiplied(bottom, 0.5);
+    @include margin-multiplied(left, -1);
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+    @include padding-multiplied(left, 0.2);
+    display: block;
+    color: rgba(color(app), 0.5);
+    background-color: rgba(color(app), 0.1);
+
+    &::before {
+      content: "< ";
+    }
+  }
+
+  // overrides
+
+  .x-link {
+    @include padding(top, bottom);
+    height: calc(#{$base-font-size} + #{uom(2)});
+    position: relative;
+
+    &[data-send]::after {
+      content: url(../img/icon/chevron-right--grey.svg);
+      display: block;
+      width: 1.4em;
+      height: 1.4em;
+      position: absolute;
+      top: 1.2em;
+      right: -0.2em;
+      fill: white;
+    }
+  }
+}

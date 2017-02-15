@@ -1,0 +1,21 @@
+.search-hero {
+  @include margin-multiplied(left, -1);
+  @include margin-multiplied(right, -1);
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  height: 60vh;
+
+  background-color: color(backdrop);
+
+  form {
+    @include padding();
+    @include z-depth(2);
+    display: block;
+    width: 60vw;
+    min-width: 500px;
+    max-width: calc(100% - #{uom(2)});
+    background-color: color(app);
+    border-radius: $border-radius;
+  }
+}

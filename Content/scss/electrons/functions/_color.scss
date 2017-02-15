@@ -1,0 +1,32 @@
+// Creates SASS map from the colours set in _settings.scss or _defaults.scss
+// and returns colour based on key
+// @param $color - The key for the value to return
+// @example
+//   background-color: color(bg);
+//   @returns the colour in the map associated with the key 'bg'
+
+$color-scheme: (
+  app: $application-color,
+  text: $text-color,
+  link: $button-and-link-color,
+  highlight: $highlight-color,
+
+  tooltip: $tooltip-background-color,
+  tooltip-text: $tooltip-text-color,
+
+  overlay: $overlay-base-color,
+
+  backdrop: mix($text-color, $application-color, 3%),
+  shadow: $text-color,
+  focus: mix($button-and-link-color, $application-color, 50%),
+  divider: mix($text-color, $application-color, 15%)
+);
+
+@function color($color) {
+  @if map-has-key($color-scheme, to-lower-case($color)) {
+    @return map-get($color-scheme, to-lower-case($color));
+  }
+  @else {
+    @return $color;
+  }
+}

@@ -1,0 +1,52 @@
+.x-side-menu {
+  @include fix(left);
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  z-index: $z-index--side-menu;
+  color: white;
+
+  &--overlay {
+    @include overlay-style;
+
+    .x-side-menu.x-active & {
+      @include overlay-style-active;
+    }
+  }
+
+  &--menu {
+    @include fix(left);
+    @include z-depth(2);
+    @include padding(right, left);
+    display: flex;
+    flex-flow: column nowrap;
+    width: $side-menu-width;
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+    background-color: #262626; // TODO replace with variable
+    transform: translate3d(-#{$side-menu-width}, 0, 0);
+    transition: transform timing(0.3) ease;
+
+    .x-side-menu.x-active & {
+      transition: timing() ease;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .x-header {
+    border-bottom: 1px solid color(divider);
+  }
+
+  // overrides
+
+  .x-link {
+    color: white; // TODO replace with variable
+
+    .x-icon {
+      fill: #7f7f7f; // TODO replace with var
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@mixin dim($type) {
+  @if $type == block {
+    @include margin-multiplied(bottom, 0.5);
+    @include padding-multiplied(top, 0.5);
+    @include padding(left);
+    display: block;
+  }
+
+  @if $type == item or $type == input {
+    @include margin-multiplied(right, 0.5);
+    // @include margin-multiplied(bottom, 0.5); // TODO review
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+    display: block;
+    height: calc(#{$base-font-size} + #{uom()});
+    border: {
+      width: 1px;
+      style: solid;
+    }
+    line-height: $base-font-size;
+  }
+
+  @if $type == item {
+    border-color: transparent;
+  }
+}

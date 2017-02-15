@@ -1,0 +1,74 @@
+.xdna-hero {
+  @include margin-multiplied(left, -1);
+  @include margin-multiplied(right, -1);
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  background-color: color(text);
+  background: {
+    image: url("../img/css.jpg");
+    size: cover;
+  }
+  color: color(app);
+  text-align: center;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: {
+      image: url("../img/dna.jpg");
+      position: center center;
+      size: cover;
+    }
+    transform: scale(1);
+    transition:
+      transform timing(3) timing(0),
+      opacity timing(2) timing(1);
+  }
+  &::before { opacity: 1; }
+  &::after { opacity: 0.7; }
+
+  &:hover {
+
+    &::before,
+    &::after {
+      opacity: 0;
+      transition:
+        transform timing(18) timing(0),
+        opacity timing(15) timing(3);
+    }
+    &::before { transform: scale(1.2) translateX(-3vw) rotate(-14deg); }
+    &::after { transform: scale(1.6) translateX(5vw) rotate(24deg); }
+  }
+
+  // additional styles
+  // for scroll focus interaction
+  &.js-scroll-focus {
+    opacity: 0;
+    transition: opacity timing(2);
+
+    &.-in-focus {
+      opacity: 1;
+    }
+  }
+
+  // overrides
+  article {
+    max-width: 40rem;
+    position: relative;
+    z-index: 1;
+
+    a {
+      color: color(link);
+    }
+  }
+}

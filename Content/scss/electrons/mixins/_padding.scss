@@ -1,0 +1,11 @@
+
+@mixin padding($edges...) {
+  @if length($edges) == 0 {
+    padding: $default-padding;
+  }
+  @else {
+    @each $edge in $edges {
+      padding-#{$edge}: $default-padding;
+    }
+  }
+}

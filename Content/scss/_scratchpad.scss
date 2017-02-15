@@ -1,0 +1,195 @@
+ .TEST, .test { border: 1px dashed red !important; }
+
+// * { border: 1px solid lightblue !important; }
+
+.x-fieldset.-contain {
+  @include margin-multiplied(bottom, 0.5);
+  @include input-focus;
+  border-radius: $border-radius;
+  display: flex;
+  flex-flow: row nowrap;
+  width: fit-content;
+  border: 1px solid silver;
+  background-color: white;
+
+  & > .x-input {
+    background-color: transparent;
+  }
+
+  & > * {
+    @include no-input-focus;
+    @include margin-multiplied(bottom, 0);
+    border-width: 0;
+    //background-color: transparent;
+
+    &:last-child {
+      @include margin-multiplied(right, 0);
+    }
+  }
+}
+
+ main {
+  @include padding(right, left);
+
+  & > * {
+    margin-top: uom(2);
+  }
+}
+
+table {
+  width: 100%;
+}
+
+table {
+  border: {
+    collapse: collapse;
+    spacing: 0;
+  }
+}
+
+thead {
+  font-size: 85%;
+  color: color(link);
+  border-bottom: 2px solid;
+
+  tr:nth-child(1n) {
+    background-color: transparent;
+  }
+}
+
+tbody {
+  border-bottom: 1px solid color(link);
+}
+
+th, td {
+  text-align: left;
+}
+
+th, td {
+  @include padding-multiplied(top, 0.5);
+  @include padding-multiplied(right, 0.5);
+  @include padding-multiplied(bottom, 0.5);
+  @include padding-multiplied(left, 0.5);
+}
+tr:nth-child(2n) {
+  background-color: whitesmoke;
+}
+tr:nth-child(2n-1) {
+  background-color: white;
+}
+
+table.x-active {
+
+  &, tr, th, td { display: block; }
+  thead { display: none; }
+  tbody {
+    display: flex;
+    flex-flow: row wrap;
+    border-bottom: 0;
+  }
+  tr {
+    @include margin-multiplied(right, 0.5);
+    @include margin-multiplied(bottom, 0.5);
+    @include padding(top, right, bottom, left);
+    @include z-depth(1);
+    transition: box-shadow timing();
+
+    &:nth-child(1n) {
+      background-color: white;
+    }
+
+    &:hover {
+      @include z-depth(2);
+    }
+  }
+
+  th {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+
+
+
+
+
+.x-header {
+  height: auto;
+  //overflow: auto; TODO
+  @include padding(top, bottom);
+}
+
+.x-title {
+  @include h(1);
+}
+
+.x-page {
+
+  &--header {
+    @include padding(right, left);
+  }
+}
+
+body {
+  min-height: 200vh; // REMOVE
+  background-color: color(app);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+
+  &-thumb {
+    background: #ccc; // USE VARIABLE
+    border: {
+      width: 3px;
+      style: solid;
+      color: color(app);
+      radius: 6px;
+    }
+
+    &:hover {
+      background-color:color(link);
+    }
+  }
+}
+
+
+
+.x-content {
+  @include padding(top, right, bottom, left);
+}
+
+
+.x-card {
+  //height: 230px;
+}
+
+.x-grid-test {
+  @include grid(container);
+
+  & > * {
+    height: 75px;
+    background-color: lavender;
+    box-shadow: 0 0 0 2px whitesmoke inset;
+
+    @include device(tablet) {
+      &:nth-child(1) { @include grid(3 of 12); }
+      &:nth-child(2) { @include grid(5 of 12); }
+      &:nth-child(3) { @include grid(4 of 12); }
+      &:nth-child(n+4):nth-child(-n+9) { @include grid(half); }
+    }
+
+    @include device(desktop) {
+      &:nth-child(1) { @include grid(3 of 12); }
+      &:nth-child(2) { @include grid(5 of 12); }
+      &:nth-child(3) { @include grid(4 of 12); }
+      &:nth-child(n+4):nth-child(-n+9) { @include grid(4); }
+      &:nth-child(7) {
+        @include grid-offset(left, third);
+        @include grid-offset(right, third);
+      }
+    }
+  }
+}

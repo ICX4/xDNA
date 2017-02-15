@@ -1,0 +1,43 @@
+.x-navbar {
+  @include row;
+  list-style: none;
+
+  > * {
+    @include margin-multiplied(right, 0.5);
+    position: relative;
+  }
+
+  &--dropdown {
+    //@include col;
+    @include padding(left, right);
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+    @include z-depth(2);
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    list-style: none;
+    border-radius: $border-radius;
+    background-color: color(link);
+
+    &.x-active {
+      @include col;
+    }
+
+    .x-navbar--dropdown {
+      @include z-depth(0);
+      padding-top: 0;
+      position: static;
+    }
+
+    > * {
+      white-space: nowrap;
+      position: relative;
+    }
+
+    *, *:hover {
+      color: white; // todo: replace with variable
+    }
+  }
+}

@@ -1,0 +1,4 @@
+@mixin col {
+  display: flex;
+  flex-flow: column nowrap;
+}

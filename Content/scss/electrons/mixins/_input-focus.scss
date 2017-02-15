@@ -1,0 +1,24 @@
+@mixin input-focus {
+  @if $use-xdna-input-focus-styles {
+    box-shadow: 0 0 0 0px rgba(color(focus), 1);
+    transition:
+      background-color timing() ease,
+    	color timing() ease,
+    	box-shadow 0s;
+
+    &:focus,
+    &:hover {
+      outline: 0;
+      box-shadow: 0 0 0 10px rgba(color(focus), 0);
+      transition:
+        background-color timing() ease,
+        color timing() ease,
+        box-shadow timing(2) ease;
+    }
+  }
+  @else {
+    &:focus {
+      outline: 2px solid Highlight;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.x-input {
+  @include dim(input);
+  @include input-focus;
+  @include padding-multiplied(right, 0.5);
+  @include padding-multiplied(left, 0.5);
+  border: {
+    color: silver;
+    radius: $border-radius;
+  }
+
+  &:focus {
+    border-color: color(link);
+  }
+}

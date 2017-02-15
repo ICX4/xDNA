@@ -1,0 +1,23 @@
+// 1. used for multiple content inside link (e.g. icons)
+//    note: if multiple content it must all be tags
+//          yes: .x-link > ( .x-icon + span{"text"} )
+//          no: .x-link > ( .x-icon + "text")
+.x-link {
+  @include dim(item);
+  @include link-style;
+  @include click;
+  @include row; // 1
+
+  &:hover {
+    color: color(link);
+  }
+
+  > * {
+    @include margin-multiplied(left, 0.5);
+    flex: auto;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  } // 1
+}

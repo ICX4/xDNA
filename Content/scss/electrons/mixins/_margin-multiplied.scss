@@ -1,0 +1,3 @@
+@mixin margin-multiplied($edge, $multiplier) {
+  margin-#{$edge}: #{$multiplier * $default-padding};
+}
