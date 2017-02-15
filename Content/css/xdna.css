@@ -693,7 +693,7 @@ abbr::before {
         border-color: transparent; }
       .x-global-menu--item.-search > input {
         margin-right: 0rem;
-        width: 12rem; }
+        width: 16vw; }
       .x-global-menu--item.-search > button {
         position: absolute;
         top: 0.5rem;
