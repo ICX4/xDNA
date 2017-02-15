@@ -19,6 +19,7 @@
 @import 'electrons/base/all';
 @import 'electrons/base/body';
 @import 'electrons/base/html5';
+@import 'electrons/base/main';
 @import 'electrons/base/article';
 @import 'electrons/base/a';
 @import 'electrons/base/text';
@@ -49,7 +50,7 @@
 @import 'molecules/carousel';
 @import 'molecules/col';
 @import 'molecules/navbar';
-@import 'molecules/global-header';
+@import 'molecules/global-menu';
 @import 'molecules/side-menu';
 @import 'molecules/nested-menu';
 @import 'molecules/global-notification';

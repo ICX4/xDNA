@@ -261,15 +261,6 @@ var x = {
     }
   },
 
-  // function
-  // ADJUST PAGE PADDING
-  adjustPagePadding: function() {
-    var globalHeader = el.get('.x-global-header');
-    var page = el.get('main');
-
-    page.style['padding-top'] = globalHeader.offsetHeight + 'px';
-  },
-
   // object
   // CAROUSEL
   carousels: {
@@ -398,7 +389,6 @@ var x = {
 
 x.nestedMenu.init(menuJSON);
 x.dataSenders(el.getAll('[data-send]'));
-x.adjustPagePadding();
 x.carousels.init();
 x.notification.init();
 x.scrollFocus.init();

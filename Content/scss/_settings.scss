@@ -2,6 +2,10 @@
 // color scheme
 $application-color: #fff;
 $text-color: #000;
+
+$global-menu-background-color: #fff;
+$global-menu-text-color: #333;
+
 $button-and-link-color: #4472c4;
 $highlight-color: #fbfcc5;
 
@@ -23,3 +27,6 @@ $default-transition-time-in-ms: 350;
 
 // input focus
 $use-xdna-input-focus-styles: true;
+
+// height of global menu
+$global-menu-height: 4rem;

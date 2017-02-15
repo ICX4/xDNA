@@ -1,0 +1,7 @@
+main {
+  padding-top: $global-menu-height;
+
+  > * {
+    @include margin(bottom);
+  }
+}

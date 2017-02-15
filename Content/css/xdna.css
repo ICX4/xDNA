@@ -85,6 +85,11 @@ template,
 [hidden] {
   display: none; }
 
+main {
+  padding-top: 4rem; }
+  main > * {
+    margin-bottom: 1rem; }
+
 article * + * {
   margin-bottom: 1rem; }
 
@@ -647,30 +652,58 @@ abbr::before {
     .x-navbar--dropdown *, .x-navbar--dropdown *:hover {
       color: white; }
 
-.x-global-header {
-  margin-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  padding-left: 1rem;
-  display: block;
+.x-global-menu {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 4rem;
   z-index: 5000;
-  background-color: white;
+  background-color: #fff;
   border-bottom: 1px solid #d9d9d9; }
-  .x-global-header--group {
+  .x-global-menu--group {
     display: flex;
     flex-flow: row nowrap;
     width: auto; }
-    .x-global-header--group.-right {
+    .x-global-menu--group.-right {
       margin-left: auto; }
-  .x-global-header--logo.-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); }
+  .x-global-menu--item {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    border-right: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    color: #333;
+    line-height: 4rem;
+    cursor: pointer; }
+    .x-global-menu--item + .x-global-menu--item {
+      border-left: 0; }
+    .x-global-menu--item.-search {
+      padding: 0.5rem;
+      position: relative; }
+      .x-global-menu--item.-search > * {
+        padding-right: 0rem;
+        padding-left: 0rem;
+        height: 3rem;
+        background-color: transparent;
+        border-color: transparent; }
+      .x-global-menu--item.-search > input {
+        margin-right: 0rem;
+        width: 12rem; }
+      .x-global-menu--item.-search > button {
+        position: absolute;
+        top: 0.5rem;
+        right: 0; }
+    .x-global-menu--item.-user {
+      background-color: crimson;
+      color: #fff; }
+  .x-global-menu .x-fieldset.-contain {
+    margin-bottom: 0;
+    border-color: transparent; }
 
 .x-side-menu {
   position: fixed;
@@ -703,7 +736,6 @@ abbr::before {
     top: 0;
     bottom: 0;
     left: 0;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding-right: 1rem;
     padding-left: 1rem;
     display: flex;

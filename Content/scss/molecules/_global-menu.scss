@@ -1,0 +1,72 @@
+.x-global-menu {
+  @include fix(top);
+  @include row;
+  height: $global-menu-height;
+  //@include z-depth(1);
+  z-index: $z-index--global-menu;
+  background-color: color(global-menu);
+  border-bottom: 1px solid color(divider);
+
+  &--group {
+    @include row;
+    width: auto;
+
+    &.-right {
+      margin-left: auto;
+    }
+  }
+
+  &--item {
+    @include padding();
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    min-width: $global-menu-height;
+    border: {
+      right: 1px solid color(divider);
+      left: 1px solid color(divider);
+    }
+    color: color(global-menu-text);
+    line-height: $global-menu-height;
+    cursor: pointer;
+
+    + .x-global-menu--item {
+      border-left: 0;
+    }
+
+    &.-search {
+      padding: uom(0.5);
+      position: relative;
+
+      > * {
+        @include padding-multiplied(right, 0);
+        @include padding-multiplied(left, 0);
+        height: #{$global-menu-height - uom()};
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      > input {
+        @include margin-multiplied(right, 0);
+        width: uom(12);
+      }
+
+      > button {
+        position: absolute;
+        top: uom(0.5);
+        right: 0;
+      }
+    }
+
+    &.-user {
+      background-color: crimson;
+      color: color(app);
+    }
+  }
+
+  // overrides
+  .x-fieldset.-contain {
+    margin-bottom: 0;
+    border-color: transparent;
+  }
+}

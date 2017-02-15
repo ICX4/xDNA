@@ -83,32 +83,30 @@
       <p class="x-global-notification--message">Oh, you look wonderful today!</p>
     </div>
 
-    <header class="x-global-header">
-      <div class="x-global-header--group">
-        <nav>
-          <a class="x-link" data-send="side-menu-toggle">
-            <svg class="x-icon -menu" viewBox="0 0 16 16">
-              <use xlink:href="#icon--menu"></use>
+    <header class="x-global-menu">
+      <nav class="x-global-menu--group">
+        <a class="x-global-menu--item" data-send="side-menu-toggle">
+          <svg class="x-icon -menu" viewBox="0 0 16 16">
+            <use xlink:href="#icon--menu"></use>
+          </svg>
+          <span>Menu</span>
+        </a>
+      </nav>
+      <nav class="x-global-menu--group -right">
+        <form class="x-global-menu--item -search">
+          <input class="x-input" type="search" placeholder="search &hellip;" />
+          <button class="x-button">
+            <svg class="x-icon -search">
+              <use xlink:href="#icon--search"></use>
             </svg>
-            <span>Menu</span>
-          </a>
-        </nav>
-        <nav class="x-global-header--group -right">
-          <form class="x-fieldset -contain">
-            <input class="x-input" type="search" placeholder="search &hellip;" />
-            <button class="x-button">
-              <svg class="x-icon -search">
-                <use xlink:href="#icon--search"></use>
-              </svg>
-            </button>
-          </form>
-          <a class="x-link">
-            <svg class="x-icon -user" viewBox="0 0 16 16">
-              <use xlink:href="#icon--user"></use>
-            </svg>
-          </a>
-        </nav>
-      </div>
+          </button>
+        </form>
+        <a class="x-global-menu--item -user">
+          <svg class="x-icon -user" viewBox="0 0 16 16">
+            <use xlink:href="#icon--user"></use>
+          </svg>
+        </a>
+      </nav>
     </header>
 
     <div class="x-side-menu" data-receive="side-menu-toggle">
@@ -123,17 +121,17 @@
       </div>
     </div>
 
-    <header class="x-page--header">
-      <div class="xdna-hero js-scroll-focus">
-        <article>
-          <h1 class="x-title">xDNA</h1>
-          <p>xDNA is a modified form of <span data-help="dna-help">DNA</span> with 8 nucleobases: the four natural bases A, C, G, and T, and four artificial modifications of these made longer by the addition of an extra benzene ring: xA, xC, xG, and xT. A pairs with xT, C pairs with xG, G pairs with xC, and T pairs with xA, so the distance between the two halves of the double helix is consistently greater. The double helix is thus wider and has a longer pitch. <a href="https://en.wikipedia.org/wiki/XDNA">[Wikipedia]</a></p>
-          <p>xDNA is also the <abbr title="Cascading Style Sheets">CSS</abbr> framework of <abbr title="Oh... Well... It means... Damn, get Mark to explain it.">ICX4</abbr>&#8217;s businessDNA.</p>
-        </article>
-      </div>
-    </header>
-
     <main>
+      <header class="x-page--header">
+        <div class="xdna-hero js-scroll-focus">
+          <article>
+            <h1 class="x-title">xDNA</h1>
+            <p>xDNA is a modified form of <span data-help="dna-help">DNA</span> with 8 nucleobases: the four natural bases A, C, G, and T, and four artificial modifications of these made longer by the addition of an extra benzene ring: xA, xC, xG, and xT. A pairs with xT, C pairs with xG, G pairs with xC, and T pairs with xA, so the distance between the two halves of the double helix is consistently greater. The double helix is thus wider and has a longer pitch. <a href="https://en.wikipedia.org/wiki/XDNA">[Wikipedia]</a></p>
+            <p>xDNA is also the <abbr title="Cascading Style Sheets">CSS</abbr> framework of <abbr title="Oh... Well... It means... Damn, get Mark to explain it.">ICX4</abbr>&#8217;s businessDNA.</p>
+          </article>
+        </div>
+      </header>
+
       <div class="x-fieldset">
         <div class="x-row">
           <input type="text" class="x-input" placeholder="where&hellip;" />
