@@ -21,7 +21,7 @@ var el = {
     return newElement;
   },
 
-  createIcon(_href) {
+  createIcon: function(_href) {
     var icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     var use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 

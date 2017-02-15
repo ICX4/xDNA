@@ -842,12 +842,13 @@ abbr::before {
     .x-fieldset.-contain > *:last-child {
       margin-right: 0rem; }
 
-main {
-  padding-right: 1rem;
-  padding-left: 1rem; }
-  main > * {
-    margin-top: 2rem; }
+/*main {
+  @include padding(right, left);
 
+  & > * {
+    margin-top: uom(2);
+  }
+}*/
 table {
   width: 100%; }
 

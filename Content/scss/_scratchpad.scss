@@ -28,13 +28,13 @@
   }
 }
 
- main {
+/*main {
   @include padding(right, left);
 
   & > * {
     margin-top: uom(2);
   }
-}
+}*/
 
 table {
   width: 100%;
