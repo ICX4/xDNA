@@ -173,17 +173,14 @@ var x = {
 
   // function
   // DATA SENDERS
-  dataSenders: function() {
-    var dataSenders = el.getAll('[data-send]');
+  dataSenders: function (_dataSenders) {
+    if (!!_dataSenders) {
+      for (var i = 0, ii = _dataSenders.length; i < ii; i++) {
 
-    if (!!dataSenders) {
-      for (var i = 0, ii = dataSenders.length; i < ii; i++) {
-
-        dataSenders[i].addEventListener('click', function() {
+        _dataSenders[i].addEventListener('click', function () {
           var broadcasts = this.getAttribute('data-send').split(',');
 
           for (var j = 0, jj = broadcasts.length; j < jj; j++) {
-
             var broadcast = broadcasts[j].trim();
             var dataReceivers = el.getAll('[data-receive="' + broadcast + '"]');
 
@@ -400,7 +397,7 @@ var x = {
 };
 
 x.nestedMenu.init(menuJSON);
-x.dataSenders();
+x.dataSenders(el.getAll('[data-send]'));
 x.adjustPagePadding();
 x.carousels.init();
 x.notification.init();
