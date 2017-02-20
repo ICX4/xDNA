@@ -49,8 +49,6 @@ var el = {
     }
 };
 
-
-
 var x = {
 
   // object
@@ -220,7 +218,7 @@ var x = {
   notification: {
     panel: el.get('.x-global-notification'),
     panelText: el.get('.x-global-notification--message'),
-    triggers: el.getAll('[data-notification]'),
+    triggers: '[data-notification]',
 
     animate: function() {
       x.notification.panel.classList.remove('x-active');
@@ -247,10 +245,12 @@ var x = {
     },
 
     init: function() {
-      var triggers = x.notification.triggers;
+      var triggers = el.getAll(x.notification.triggers);
       var messageType = false;
 
-      for (var i = 0, ii = x.notification.triggers.length; i < ii; i++) {
+      console.log(triggers.length);
+
+      for (var i = 0, ii = triggers.length; i < ii; i++) {
         triggers[i].addEventListener('click', function() {
           var msg = this.getAttribute('data-notification');
           var msgType = this.hasAttribute('data-notification-type') ? this.getAttribute('data-notification-type') : 'info';
@@ -387,9 +387,11 @@ var x = {
   }
 };
 
-x.nestedMenu.init(menuJSON);
-x.dataSenders(el.getAll('[data-send]'));
-x.carousels.init();
-x.notification.init();
-x.scrollFocus.init();
-x.help();
+setTimeout(function() {
+  x.nestedMenu.init(menuJSON);
+  x.dataSenders(el.getAll('[data-send]'));
+  x.carousels.init();
+  x.notification.init();
+  x.scrollFocus.init();
+  x.help();
+}, 5000);

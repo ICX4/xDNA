@@ -2,6 +2,17 @@
 
 // * { border: 1px solid lightblue !important; }
 
+
+.section-header {
+  @include margin(bottom);
+  border-bottom: 1px solid color(divider);
+
+  h3 {
+    font-weight: 100;
+    font-size: 2rem;
+  }
+}
+
 .x-fieldset.-contain {
   @include margin-multiplied(bottom, 0.5);
   @include input-focus;
@@ -157,8 +168,19 @@ body {
 
 
 
+
+.fonts--open-sans {
+
+}
+
+
+
 .x-content {
   @include padding(top, right, bottom, left);
+
+  > * + * {
+    @include margin(bottom);
+  }
 }
 
 
@@ -171,8 +193,9 @@ body {
 
   & > * {
     height: 75px;
-    background-color: lavender;
-    box-shadow: 0 0 0 2px whitesmoke inset;
+    background-color: rgba(black, 0.1);
+    @include padding();
+    box-shadow: 0 0 0 2px white inset;
 
     @include device(tablet) {
       &:nth-child(1) { @include grid(3 of 12); }

@@ -22,7 +22,12 @@ $color-scheme: (
   backdrop: mix($text-color, $application-color, 3%),
   shadow: $text-color,
   focus: mix($button-and-link-color, $application-color, 50%),
-  divider: mix($text-color, $application-color, 15%)
+  divider: mix($text-color, $application-color, 15%),
+  
+  icx4-green: #70af47,
+  icx4-red: #ee257b,
+  icx4-blue: #2ec0cf,
+  icx4-grey: #3a3a3c
 );
 
 @function color($color) {

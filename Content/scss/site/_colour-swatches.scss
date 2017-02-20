@@ -1,0 +1,17 @@
+.colour-swatch {
+  width: 100%;
+  height: 6rem;
+
+  &.-app { background-color: color(app); }
+  &.-text { background-color: color(text); }
+  &.-link { background-color: color(link); }
+  &.-highlight { background-color: color(highlight); }
+  &.-overlay { background-color: color(overlay); }
+  &.-backdrop { background-color: color(backdrop); }
+  &.-focus { background-color: color(focus); }
+  &.-divider { background-color: color(divider); }
+  &.-icx4-green { background-color: color(icx4-green); }
+  &.-icx4-red { background-color: color(icx4-red); }
+  &.-icx4-blue { background-color: color(icx4-blue); }
+  &.-icx4-grey { background-color: color(icx4-grey); }
+}
