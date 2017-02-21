@@ -2,10 +2,15 @@
   @include fix(top);
   @include row;
   height: $global-menu-height;
-  //@include z-depth(1);
   z-index: $z-index--global-menu;
   background-color: color(global-menu);
   border-bottom: 1px solid color(divider);
+  transform: translateY(-100%);
+  transition: transform 350ms ease;
+
+  &.-show {
+    transform: translateY(0%);
+  }
 
   &--group {
     @include row;

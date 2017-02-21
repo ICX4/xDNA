@@ -179,7 +179,7 @@ body {
   @include padding(top, right, bottom, left);
 
   > * + * {
-    @include margin(bottom);
+    @include margin(top);
   }
 }
 

@@ -62,7 +62,12 @@ var x = {
       'case:flow': 'puzzle-piece',
       'alignment': 'shuffle',
       'admin:view': 'cog',
-      'support': 'life-ring'
+      'support': 'life-ring',
+
+      'global': 'global',
+      'atoms': 'atom',
+      'molecules': 'molecule',
+      'organisms': 'organism'
     },
 
     createNav: function(_id) {
@@ -170,6 +175,35 @@ var x = {
   },
 
   // function
+  // NESTED MENU
+  globalMenu: function() {
+    var className = 'x-global-menu';
+    var activeClass = '-show';
+    var menu = el.get('.' + className);
+    var menuHeight = menu.offsetHeight;
+    var lastScrollTop = 0;
+
+    document.addEventListener('scroll', function() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+        // scrolling down
+        if (scrollTop > menuHeight && menu.classList.contains(activeClass)) {
+            menu.classList.remove(activeClass);
+        }
+      }
+      else {
+        // scrolling up
+        if (!menu.classList.contains(activeClass)) {
+          menu.classList.add(activeClass);
+        }
+      }
+
+      lastScrollTop = scrollTop;
+    }, false);
+  },
+
+  // function
   // DATA SENDERS
   dataSenders: function (_dataSenders) {
     if (!!_dataSenders) {
@@ -247,8 +281,6 @@ var x = {
     init: function() {
       var triggers = el.getAll(x.notification.triggers);
       var messageType = false;
-
-      console.log(triggers.length);
 
       for (var i = 0, ii = triggers.length; i < ii; i++) {
         triggers[i].addEventListener('click', function() {
@@ -389,6 +421,7 @@ var x = {
 
 setTimeout(function() {
   x.nestedMenu.init(menuJSON);
+  x.globalMenu();
   x.dataSenders(el.getAll('[data-send]'));
   x.carousels.init();
   x.notification.init();

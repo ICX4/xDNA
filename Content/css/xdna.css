@@ -662,7 +662,11 @@ abbr::before {
   height: 4rem;
   z-index: 5000;
   background-color: #fff;
-  border-bottom: 1px solid #d9d9d9; }
+  border-bottom: 1px solid #d9d9d9;
+  transform: translateY(-100%);
+  transition: transform 350ms ease; }
+  .x-global-menu.-show {
+    transform: translateY(0%); }
   .x-global-menu--group {
     display: flex;
     flex-flow: row nowrap;
@@ -980,7 +984,7 @@ body {
   padding-bottom: 1rem;
   padding-left: 1rem; }
   .x-content > * + * {
-    margin-bottom: 1rem; }
+    margin-top: 1rem; }
 
 .x-grid-test {
   display: flex;
