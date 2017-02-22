@@ -5,7 +5,7 @@
 } */
 
 var include = {
-  folder: 'includes',
+  folder: 'Content\/includes',
   fileType: 'html',
   selector: 'data-include-html',
   DOMselector: function() {
