@@ -107,5 +107,10 @@ var menuJSON = [
          "ChildMenuItems":[]
        }
      ]
+   },
+   {
+     "Text":"Build your own",
+     "Link":"#nogo",
+     "ChildMenuItems": []
    }
 ]

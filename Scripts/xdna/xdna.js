@@ -67,7 +67,8 @@ var x = {
       'global': 'global',
       'atoms': 'atom',
       'molecules': 'molecule',
-      'organisms': 'organism'
+      'organisms': 'organism',
+      'build your own': 'puzzle-piece'
     },
 
     createNav: function(_id) {
