@@ -1,0 +1,68 @@
+$x-spinner--width: 4px;
+$x-spinner--diameter: 5rem;
+$x-spinner--timing: 1500ms;
+$x-spinner--color: color(link);
+
+@keyframes spinner {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 359.999deg);
+  }
+}
+
+@keyframes spinner-before {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 90deg);
+  }
+}
+
+@keyframes spinner-after {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+}
+
+
+.x-spinner {
+  animation: spinner $x-spinner--timing linear infinite;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: content-box;
+    display: block;
+    width: $x-spinner--diameter;
+    height: $x-spinner--diameter;
+    position: relative;
+    border: {
+      width: 4px;
+      style: solid;
+      color: transparent $x-spinner--color transparent transparent;
+      radius: 50%;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: -#{$x-spinner--width};
+    left: -#{$x-spinner--width};
+  }
+
+  &::before {
+    animation: spinner-before $x-spinner--timing ease-in-out infinite alternate;
+  }
+
+  &::after {
+    animation: spinner-after $x-spinner--timing ease-in-out infinite alternate;
+  }
+}

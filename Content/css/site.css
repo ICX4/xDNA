@@ -94,4 +94,45 @@
   .colour-swatch.-icx4-grey {
     background-color: #3a3a3c; }
 
+.section-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #d9d9d9; }
+  .section-header h3 {
+    font-weight: 100;
+    font-size: 2rem; }
+
+.grid-test {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  list-style: none; }
+  .grid-test > * {
+    flex: 1 0 100%; }
+  .grid-test > * {
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    box-shadow: 0 0 0 2px white inset; }
+    @media (min-width: 481px) {
+      .grid-test > *:nth-child(1) {
+        max-width: 25%; }
+      .grid-test > *:nth-child(2) {
+        max-width: 41.66667%; }
+      .grid-test > *:nth-child(3) {
+        max-width: 33.33333%; }
+      .grid-test > *:nth-child(n+4):nth-child(-n+9) {
+        max-width: 50%; } }
+    @media (min-width: 1025px) {
+      .grid-test > *:nth-child(1) {
+        max-width: 25%; }
+      .grid-test > *:nth-child(2) {
+        max-width: 41.66667%; }
+      .grid-test > *:nth-child(3) {
+        max-width: 33.33333%; }
+      .grid-test > *:nth-child(n+4):nth-child(-n+9) {
+        max-width: 33.33333%; }
+      .grid-test > *:nth-child(7) {
+        margin-left: 33.33333%;
+        margin-right: 33.33333%; } }
+
 /*# sourceMappingURL=site.css.map */

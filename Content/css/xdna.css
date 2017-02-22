@@ -509,6 +509,43 @@ abbr::before {
     opacity: 1;
     transition: opacity 350ms 0ms ease, right 0ms 350ms linear; }
 
+@keyframes spinner {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg); }
+  100% {
+    transform: rotate3d(0, 0, 1, 359.999deg); } }
+@keyframes spinner-before {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg); }
+  100% {
+    transform: rotate3d(0, 0, 1, 90deg); } }
+@keyframes spinner-after {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg); }
+  100% {
+    transform: rotate3d(0, 0, 1, 180deg); } }
+.x-spinner {
+  animation: spinner 1500ms linear infinite; }
+  .x-spinner, .x-spinner::before, .x-spinner::after {
+    box-sizing: content-box;
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent #4472c4 transparent transparent;
+    border-radius: 50%; }
+  .x-spinner::before, .x-spinner::after {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px; }
+  .x-spinner::before {
+    animation: spinner-before 1500ms ease-in-out infinite alternate; }
+  .x-spinner::after {
+    animation: spinner-after 1500ms ease-in-out infinite alternate; }
+
 .x-close-icon {
   box-shadow: 0 0 0 0px #a2b9e2;
   transition: background-color 350ms ease, color 350ms ease, box-shadow 0s;
@@ -889,13 +926,6 @@ abbr::before {
 .TEST, .test {
   border: 1px dashed red !important; }
 
-.section-header {
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #d9d9d9; }
-  .section-header h3 {
-    font-weight: 100;
-    font-size: 2rem; }
-
 .x-fieldset.-contain {
   margin-bottom: 0.5rem;
   box-shadow: 0 0 0 0px #a2b9e2;
@@ -920,13 +950,6 @@ abbr::before {
     .x-fieldset.-contain > *:last-child {
       margin-right: 0rem; }
 
-/*main {
-  @include padding(right, left);
-
-  & > * {
-    margin-top: uom(2);
-  }
-}*/
 table {
   width: 100%; }
 
@@ -997,7 +1020,6 @@ table.x-active th {
   padding-left: 1rem; }
 
 body {
-  min-height: 200vh;
   background-color: #fff; }
 
 ::-webkit-scrollbar {
@@ -1020,39 +1042,5 @@ body {
   padding-left: 1rem; }
   .x-content > * + * {
     margin-top: 1rem; }
-
-.x-grid-test {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-  list-style: none; }
-  .x-grid-test > * {
-    flex: 1 0 100%; }
-  .x-grid-test > * {
-    height: 75px;
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    box-shadow: 0 0 0 2px white inset; }
-    @media (min-width: 481px) {
-      .x-grid-test > *:nth-child(1) {
-        max-width: 25%; }
-      .x-grid-test > *:nth-child(2) {
-        max-width: 41.66667%; }
-      .x-grid-test > *:nth-child(3) {
-        max-width: 33.33333%; }
-      .x-grid-test > *:nth-child(n+4):nth-child(-n+9) {
-        max-width: 50%; } }
-    @media (min-width: 1025px) {
-      .x-grid-test > *:nth-child(1) {
-        max-width: 25%; }
-      .x-grid-test > *:nth-child(2) {
-        max-width: 41.66667%; }
-      .x-grid-test > *:nth-child(3) {
-        max-width: 33.33333%; }
-      .x-grid-test > *:nth-child(n+4):nth-child(-n+9) {
-        max-width: 33.33333%; }
-      .x-grid-test > *:nth-child(7) {
-        margin-left: 33.33333%;
-        margin-right: 33.33333%; } }
 
 /*# sourceMappingURL=xdna.css.map */
