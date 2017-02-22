@@ -15,7 +15,7 @@
 
 .x-fieldset.-contain {
   @include margin-multiplied(bottom, 0.5);
-  @include input-focus;
+  @include input-focus();
   border-radius: $border-radius;
   display: flex;
   flex-flow: row nowrap;

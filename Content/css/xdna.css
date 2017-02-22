@@ -449,6 +449,11 @@ abbr::before {
     padding-right: 0.2rem;
     padding-left: 0.2rem;
     border-color: transparent; }
+  .x-button[disabled] {
+    border-color: #d9d9d9;
+    color: #d9d9d9; }
+    .x-button[disabled], .x-button[disabled]:focus, .x-button[disabled]:hover, .x-button[disabled]:hover, .x-button[disabled]:hover:focus, .x-button[disabled]:hover:hover {
+      box-shadow: none; }
 
 .x-tab {
   margin-top: 0.5rem;

@@ -1,19 +1,28 @@
-@mixin input-focus {
+@mixin input-focus($state: enabled) {
   @if $use-xdna-input-focus-styles {
-    box-shadow: 0 0 0 0px rgba(color(focus), 1);
-    transition:
-      background-color timing() ease,
-    	color timing() ease,
-    	box-shadow 0s;
-
-    &:focus,
-    &:hover {
-      outline: 0;
-      box-shadow: 0 0 0 10px rgba(color(focus), 0);
+    @if $state == enabled {
+      box-shadow: 0 0 0 0px rgba(color(focus), 1);
       transition:
         background-color timing() ease,
-        color timing() ease,
-        box-shadow timing(2) ease;
+      	color timing() ease,
+      	box-shadow 0s;
+
+      &:focus,
+      &:hover {
+        outline: 0;
+        box-shadow: 0 0 0 10px rgba(color(focus), 0);
+        transition:
+          background-color timing() ease,
+          color timing() ease,
+          box-shadow timing(2) ease;
+      }
+    }
+    @else {
+      &,
+      &:focus,
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
   @else {

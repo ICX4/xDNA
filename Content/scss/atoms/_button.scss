@@ -2,7 +2,7 @@
   @include dim(input);
   @include padding(right, left);
   @include link-style;
-  @include input-focus;
+  @include input-focus();
   @include click;
   width: auto;
   width: fit-content;
@@ -25,5 +25,15 @@
       left: #{$default-padding * 0.2};
     }
     border-color: transparent;
+  }
+
+  &[disabled] {
+    border-color: color(divider);
+    color: color(divider);
+
+    &,
+    &:hover {
+      @include input-focus(none);
+    }
   }
 }

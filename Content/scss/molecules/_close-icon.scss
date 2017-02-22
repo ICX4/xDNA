@@ -1,5 +1,5 @@
 .x-close-icon {
-  @include input-focus;
+  @include input-focus();
   display: block;
   width: 2rem;
   height: 2rem;
