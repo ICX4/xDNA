@@ -55,6 +55,11 @@ var menuJSON = [
            "ChildMenuItems":[]
          },
          {
+           "Text":"Tabs",
+           "Link":"#tab",
+           "ChildMenuItems":[]
+         },
+         {
            "Text":"Table",
            "Link":"#table",
            "ChildMenuItems":[]
@@ -90,6 +95,11 @@ var menuJSON = [
      "Text":"Molecules",
      "Link":"",
      "ChildMenuItems":[
+       {
+         "Text":"Tab-bar",
+         "Link":"#tab-bar",
+         "ChildMenuItems":[]
+       },
        {
          "Text":"Carousel",
          "Link":"#carousel",

@@ -1,0 +1,28 @@
+.x-tab {
+  @include margin-multiplied(top, 0.5);
+  @include margin-multiplied(bottom, 0.5);
+  @include padding(right, left);
+  border-left: 1px solid color(divider);
+  color: #999; // TODO change to variable
+
+  &:first-of-type,
+  &.-active + .x-tab {
+    border-left: 0;
+  }
+
+  &.-active {
+    @include margin-multiplied(top, 0);
+    @include margin-multiplied(bottom, 0);
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+    display: inline-block;
+    border: {
+      width: 1px 1px 0 1px;
+      style: solid;
+      color: color(divider);
+      radius: 3px 3px 0 0; // TODO replace with variable
+    }
+    background-color: color(app);
+    color: color(link);
+  }
+}

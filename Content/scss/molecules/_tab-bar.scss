@@ -1,0 +1,6 @@
+.x-tab-bar {
+  @include dim(block);
+  background: {
+    image: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 1px), #{color(divider)} calc(100% - 10px), #{color(divider)} 100%);
+  }
+}

@@ -95,7 +95,8 @@ article * + * {
 
 a {
   background-color: transparent;
-  -webkit-text-decoration-skip: objects; }
+  -webkit-text-decoration-skip: objects;
+  cursor: pointer; }
 
 a:active,
 a:hover {
@@ -449,6 +450,28 @@ abbr::before {
     padding-left: 0.2rem;
     border-color: transparent; }
 
+.x-tab {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid #d9d9d9;
+  color: #999; }
+  .x-tab:first-of-type, .x-tab.-active + .x-tab {
+    border-left: 0; }
+  .x-tab.-active {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #d9d9d9;
+    border-radius: 3px 3px 0 0;
+    background-color: #fff;
+    color: #4472c4; }
+
 .x-dialog {
   padding-top: 1rem;
   padding-right: 1rem;
@@ -566,6 +589,13 @@ abbr::before {
     padding-bottom: 1rem; }
     .x-row.-padded > * + * {
       margin-left: 1rem; }
+
+.x-tab-bar {
+  margin-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  display: block;
+  background-image: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 1px), #d9d9d9 calc(100% - 10px), #d9d9d9 100%); }
 
 .x-carousel {
   display: block;
