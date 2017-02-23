@@ -8,7 +8,7 @@
 
   @if $type == item or $type == input {
     @include margin-multiplied(right, 0.5);
-    // @include margin-multiplied(bottom, 0.5); // TODO review
+    @include margin-multiplied(bottom, 0.5); // TODO review
     @include padding-multiplied(top, 0.5);
     @include padding-multiplied(bottom, 0.5);
     display: block;

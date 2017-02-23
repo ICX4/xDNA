@@ -1,3 +1,8 @@
+@keyframes rotate-clockwise {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg); }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg); } }
 .xdna-hero {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -109,7 +114,6 @@
 
 .example-code {
   display: block;
-  margin-top: 1rem;
   background-color: whitesmoke;
   border: 1px solid silver;
   border-radius: 3px; }

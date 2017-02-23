@@ -3,37 +3,20 @@ $x-spinner--diameter: 5rem;
 $x-spinner--timing: 1500ms;
 $x-spinner--color: color(link);
 
-@keyframes rotate {
-  0% {
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-  100% {
-    transform: rotate3d(0, 0, 1, 360deg);
-  }
-}
-
 @keyframes x-spinner-before {
-  0% {
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-  100% {
-    transform: rotate3d(0, 0, 1, 90deg);
-  }
+  0% { transform: rotate3d(0, 0, 1, 0deg); }
+  100% { transform: rotate3d(0, 0, 1, 90deg); }
 }
 
 @keyframes x-spinner-after {
-  0% {
-    transform: rotate3d(0, 0, 1, 0deg);
-  }
-  100% {
-    transform: rotate3d(0, 0, 1, 180deg);
-  }
+  0% { transform: rotate3d(0, 0, 1, 0deg); }
+  100% { transform: rotate3d(0, 0, 1, 180deg); }
 }
 
 
 .x-spinner {
   position: relative;
-  animation: rotate $x-spinner--timing linear infinite;
+  animation: rotate-clockwise $x-spinner--timing linear infinite;
 
   &,
   &::before,

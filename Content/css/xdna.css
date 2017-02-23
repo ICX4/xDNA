@@ -3,6 +3,11 @@
  * CSS framework for businessDNA
  * Copyright (c) 2016 by ICX4.LTD
  */
+@keyframes rotate-clockwise {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg); }
+  100% {
+    transform: rotate3d(0, 0, 1, 360deg); } }
 @font-face {
   font-family: "Merlo Light";
   src: url("../fonts/merlo/merlo-light-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-light-webfont.woff") format("woff");
@@ -267,6 +272,7 @@ progress {
 
 .x-link {
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: block;
@@ -300,6 +306,8 @@ progress {
   margin-top: -0.2em;
   margin-bottom: -0.2em;
   fill: currentColor; }
+  .x-icon.-loading {
+    animation: rotate-clockwise 1s linear infinite; }
 
 [data-tooltip],
 abbr {
@@ -392,6 +400,7 @@ abbr::before {
 
 .x-input {
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: block;
@@ -414,6 +423,7 @@ abbr::before {
 
 .x-button {
   margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: block;
@@ -421,6 +431,8 @@ abbr::before {
   border-width: 1px;
   border-style: solid;
   line-height: 0.8rem;
+  display: flex;
+  flex-flow: row nowrap;
   padding-right: 1rem;
   padding-left: 1rem;
   font-size: 85%;
@@ -441,6 +453,8 @@ abbr::before {
     transition: background-color 350ms ease, color 350ms ease, box-shadow 700ms ease; }
   .x-button:active {
     transform: scale3d(0.9, 0.9, 1); }
+  .x-button > *:not(:first-child) {
+    padding-left: 0.5rem; }
   .x-button.-primary {
     color: #fff;
     background-color: #4472c4;
@@ -509,11 +523,6 @@ abbr::before {
     opacity: 1;
     transition: opacity 350ms 0ms ease, right 0ms 350ms linear; }
 
-@keyframes rotate {
-  0% {
-    transform: rotate3d(0, 0, 1, 0deg); }
-  100% {
-    transform: rotate3d(0, 0, 1, 360deg); } }
 @keyframes x-spinner-before {
   0% {
     transform: rotate3d(0, 0, 1, 0deg); }
@@ -526,7 +535,7 @@ abbr::before {
     transform: rotate3d(0, 0, 1, 180deg); } }
 .x-spinner {
   position: relative;
-  animation: rotate 1500ms linear infinite; }
+  animation: rotate-clockwise 1500ms linear infinite; }
   .x-spinner, .x-spinner::before, .x-spinner::after {
     box-sizing: content-box;
     display: block;
@@ -967,6 +976,7 @@ table {
   width: 100%; }
 
 table {
+  margin-bottom: 1rem;
   border-collapse: collapse;
   border-spacing: 0; }
 

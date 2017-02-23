@@ -6,7 +6,7 @@ setTimeout(function() {
   for (var i = 0, ii = symbols.length; i < ii; i++) {
     innerHTML += '<div class="x-card">';
     innerHTML += '  <div class="x-content">';
-    innerHTML += '    <svg class="x-icon -menu">';
+    innerHTML += '    <svg class="x-icon -' + symbols[i].id.substring(6) + '">';
     innerHTML += '      <use xlink:href="#' + symbols[i].id + '"></use>';
     innerHTML += '    <\/svg>';
     innerHTML += '    <p>';
@@ -17,15 +17,4 @@ setTimeout(function() {
   }
 
   target.innerHTML = innerHTML + '<\/div>';
-
-
-
-var examples = document.querySelectorAll('.example');
-
-for (var i = 0, ii = examples.length; i < ii; i++) {
-  var pre = el.create('pre', 'example-code');
-  pre.textContent = examples[i].innerHTML;
-  examples[i].parentNode.insertBefore(pre, examples[i].nextSibling);
-}
-
 }, 5000);

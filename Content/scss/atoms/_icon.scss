@@ -11,4 +11,8 @@
     bottom: -0.2em;
   }
   fill: currentColor;
+
+  &.-loading {
+    animation: rotate-clockwise 1s linear infinite;
+  }
 }

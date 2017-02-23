@@ -1,5 +1,6 @@
 .x-button {
   @include dim(input);
+  @include row();
   @include padding(right, left);
   @include link-style;
   @include input-focus();
@@ -11,6 +12,10 @@
   border: {
     color: currentColor;
     radius: $border-radius;
+  }
+
+  > *:not(:first-child) {
+    @include padding-multiplied(left, 0.5);
   }
 
   &.-primary {

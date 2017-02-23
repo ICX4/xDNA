@@ -31,6 +31,7 @@ table {
 }
 
 table {
+  @include margin(bottom);
   border: {
     collapse: collapse;
     spacing: 0;
