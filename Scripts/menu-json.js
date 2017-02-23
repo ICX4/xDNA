@@ -101,6 +101,11 @@ var menuJSON = [
          "ChildMenuItems":[]
        },
        {
+         "Text":"Pagination",
+         "Link":"#pagination",
+         "ChildMenuItems":[]
+       },
+       {
          "Text":"Carousel",
          "Link":"#carousel",
          "ChildMenuItems":[]

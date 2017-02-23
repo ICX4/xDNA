@@ -100,6 +100,7 @@
     background-color: #3a3a3c; }
 
 .section-header {
+  margin-top: 3rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #d9d9d9; }
   .section-header h3 {

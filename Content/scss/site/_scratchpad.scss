@@ -1,6 +1,7 @@
 
 
 .section-header {
+  @include margin-multiplied(top, 3);
   @include margin(bottom);
   border-bottom: 1px solid color(divider);
 

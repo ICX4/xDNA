@@ -1,0 +1,16 @@
+.x-pagination {
+  display: block;
+  width: fit-content;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+
+  &--of {
+    display: inline-block;
+    @include padding-multiplied(top, 0.5);
+    @include padding(right);
+    @include padding-multiplied(bottom, 0.5);
+    color: #ccc; // TODO change to variable
+  }
+}

@@ -661,6 +661,18 @@ abbr::before {
   display: block;
   background-image: linear-gradient(to bottom, transparent 0%, transparent calc(100% - 1px), #d9d9d9 calc(100% - 10px), #d9d9d9 100%); }
 
+.x-pagination {
+  display: block;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto; }
+  .x-pagination--of {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    color: #ccc; }
+
 .x-carousel {
   display: block;
   width: 100%;
