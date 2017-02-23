@@ -12,9 +12,24 @@
 }
 
 
-.example.-row {
-  display: flex;
-  flex-direction: row;
+.example {
+
+  &.-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &.-hidden {
+    display: none;
+  }
+}
+
+.example-code {
+  display: block;
+  margin-top: 1rem;
+  background-color: whitesmoke;
+  border: 1px solid silver;
+  border-radius: 3px;
 }
 
 .grid-test {
