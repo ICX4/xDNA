@@ -3,16 +3,16 @@ $x-spinner--diameter: 5rem;
 $x-spinner--timing: 1500ms;
 $x-spinner--color: color(link);
 
-@keyframes spinner {
+@keyframes rotate {
   0% {
     transform: rotate3d(0, 0, 1, 0deg);
   }
   100% {
-    transform: rotate3d(0, 0, 1, 359.999deg);
+    transform: rotate3d(0, 0, 1, 360deg);
   }
 }
 
-@keyframes spinner-before {
+@keyframes x-spinner-before {
   0% {
     transform: rotate3d(0, 0, 1, 0deg);
   }
@@ -21,7 +21,7 @@ $x-spinner--color: color(link);
   }
 }
 
-@keyframes spinner-after {
+@keyframes x-spinner-after {
   0% {
     transform: rotate3d(0, 0, 1, 0deg);
   }
@@ -33,7 +33,7 @@ $x-spinner--color: color(link);
 
 .x-spinner {
   position: relative;
-  animation: spinner $x-spinner--timing linear infinite;
+  animation: rotate $x-spinner--timing linear infinite;
 
   &,
   &::before,
@@ -59,11 +59,11 @@ $x-spinner--color: color(link);
   }
 
   &::before {
-    animation: spinner-before $x-spinner--timing ease-in-out infinite alternate;
+    animation: x-spinner-before $x-spinner--timing ease-in-out infinite alternate;
   }
 
   &::after {
-    animation: spinner-after $x-spinner--timing ease-in-out infinite alternate;
+    animation: x-spinner-after $x-spinner--timing ease-in-out infinite alternate;
   }
 
   &.-large {

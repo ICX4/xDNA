@@ -509,24 +509,24 @@ abbr::before {
     opacity: 1;
     transition: opacity 350ms 0ms ease, right 0ms 350ms linear; }
 
-@keyframes spinner {
+@keyframes rotate {
   0% {
     transform: rotate3d(0, 0, 1, 0deg); }
   100% {
-    transform: rotate3d(0, 0, 1, 359.999deg); } }
-@keyframes spinner-before {
+    transform: rotate3d(0, 0, 1, 360deg); } }
+@keyframes x-spinner-before {
   0% {
     transform: rotate3d(0, 0, 1, 0deg); }
   100% {
     transform: rotate3d(0, 0, 1, 90deg); } }
-@keyframes spinner-after {
+@keyframes x-spinner-after {
   0% {
     transform: rotate3d(0, 0, 1, 0deg); }
   100% {
     transform: rotate3d(0, 0, 1, 180deg); } }
 .x-spinner {
   position: relative;
-  animation: spinner 1500ms linear infinite; }
+  animation: rotate 1500ms linear infinite; }
   .x-spinner, .x-spinner::before, .x-spinner::after {
     box-sizing: content-box;
     display: block;
@@ -542,9 +542,9 @@ abbr::before {
     top: -4px;
     left: -4px; }
   .x-spinner::before {
-    animation: spinner-before 1500ms ease-in-out infinite alternate; }
+    animation: x-spinner-before 1500ms ease-in-out infinite alternate; }
   .x-spinner::after {
-    animation: spinner-after 1500ms ease-in-out infinite alternate; }
+    animation: x-spinner-after 1500ms ease-in-out infinite alternate; }
   .x-spinner.-large, .x-spinner.-large::before, .x-spinner.-large::after {
     width: 7.5rem;
     height: 7.5rem; }
