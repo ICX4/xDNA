@@ -101,6 +101,10 @@
     font-weight: 100;
     font-size: 2rem; }
 
+.example.-row {
+  display: flex;
+  flex-direction: row; }
+
 .grid-test {
   display: flex;
   flex-flow: row wrap;

@@ -12,6 +12,10 @@
 }
 
 
+.example.-row {
+  display: flex;
+  flex-direction: row;
+}
 
 .grid-test {
   @include grid(container);

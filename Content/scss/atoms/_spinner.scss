@@ -32,6 +32,7 @@ $x-spinner--color: color(link);
 
 
 .x-spinner {
+  position: relative;
   animation: spinner $x-spinner--timing linear infinite;
 
   &,
@@ -41,9 +42,8 @@ $x-spinner--color: color(link);
     display: block;
     width: $x-spinner--diameter;
     height: $x-spinner--diameter;
-    position: relative;
     border: {
-      width: 4px;
+      width: $x-spinner--width;
       style: solid;
       color: transparent $x-spinner--color transparent transparent;
       radius: 50%;
@@ -64,5 +64,39 @@ $x-spinner--color: color(link);
 
   &::after {
     animation: spinner-after $x-spinner--timing ease-in-out infinite alternate;
+  }
+
+  &.-large {
+    &,
+    &::before,
+    &::after {
+      width: #{$x-spinner--diameter * 1.5};
+      height: #{$x-spinner--diameter * 1.5};
+    }
+  }
+
+  &.-small {
+    &,
+    &::before,
+    &::after {
+      width: #{$x-spinner--diameter / 2};
+      height: #{$x-spinner--diameter / 2};
+    }
+  }
+
+  &.-mini {
+    &,
+    &::before,
+    &::after {
+      width: uom();
+      height: uom();
+      border-width: #{$x-spinner--width / 2};
+    }
+
+    &::before,
+    &::after {
+      top: -#{$x-spinner--width / 2};
+      left: -#{$x-spinner--width / 2};
+    }
   }
 }

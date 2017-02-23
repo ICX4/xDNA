@@ -525,13 +525,13 @@ abbr::before {
   100% {
     transform: rotate3d(0, 0, 1, 180deg); } }
 .x-spinner {
+  position: relative;
   animation: spinner 1500ms linear infinite; }
   .x-spinner, .x-spinner::before, .x-spinner::after {
     box-sizing: content-box;
     display: block;
     width: 5rem;
     height: 5rem;
-    position: relative;
     border-width: 4px;
     border-style: solid;
     border-color: transparent #4472c4 transparent transparent;
@@ -545,6 +545,19 @@ abbr::before {
     animation: spinner-before 1500ms ease-in-out infinite alternate; }
   .x-spinner::after {
     animation: spinner-after 1500ms ease-in-out infinite alternate; }
+  .x-spinner.-large, .x-spinner.-large::before, .x-spinner.-large::after {
+    width: 7.5rem;
+    height: 7.5rem; }
+  .x-spinner.-small, .x-spinner.-small::before, .x-spinner.-small::after {
+    width: 2.5rem;
+    height: 2.5rem; }
+  .x-spinner.-mini, .x-spinner.-mini::before, .x-spinner.-mini::after {
+    width: 1rem;
+    height: 1rem;
+    border-width: 2px; }
+  .x-spinner.-mini::before, .x-spinner.-mini::after {
+    top: -2px;
+    left: -2px; }
 
 .x-close-icon {
   box-shadow: 0 0 0 0px #a2b9e2;
