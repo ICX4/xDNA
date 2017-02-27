@@ -108,6 +108,36 @@
         <div data-include-html="molecules/pagination, replace"></div>
         <div data-include-html="molecules/carousel, replace"></div>
 
+        <div class="x-dialog">
+          <h1 class="x-title">Log in</h1>
+          <div class="x-fieldset -contain">
+            <label for="username" class="x-label">
+              <svg class="x-icon -user">
+                <use xlink:href="#icon--user"></use>
+              </svg>
+            </label>
+            <input id="username" type="text" class="x-input" required />
+          </div>
+
+          <div class="x-fieldset -contain">
+            <label for="password" class="x-label">
+              <svg class="x-icon -padlock">
+                <use xlink:href="#icon--padlock"></use>
+              </svg>
+            </label>
+            <input id="password" type="password" class="x-input" required />
+          </div>
+
+          <div class="x-fieldset">
+            <input id="remember-me" type="checkbox" class="x-checkbox" />
+            <label for="remember-me" class="x-label">Remember me</label>
+          </div>
+
+          <div class="x-fieldset">
+            <button class="x-button -primary">Log in</button>
+          </div>
+        </div>
+
         <!-- organisms -->
         <!-- div data-include-html="organisms/alien, replace"></div -->
 
@@ -115,18 +145,18 @@
     </main>
 
     <div id="global-overlay" class="x-overlay">
-      <div id="global-dialog" class="x-dialog">
+      <div id="global-dialog" class="x-dialog -inactive">
         <a class="x-close-icon" onclick="x.dialog.close();">&#10005;</a>
         <div id="global-dialog-content"></div>
       </div>
     </div>
 
-<script src="Content/includes/js/include.js"></script>
-<script src="Content/includes/js/icons.js"></script>
-<script src="Content/includes/js/example-code.js"></script>
+<script src="Content/includes/js/include.js?v=2017-02-23"></script>
+<script src="Content/includes/js/icons.js?v=2017-02-23"></script>
+<script src="Content/includes/js/example-code.js?v=2017-02-23"></script>
 
-    <script src="Scripts/menu-json.js?v=2017-02-13"></script>
-    <script src="Scripts/xdna/xdna.js?v=2017-02-14"></script>
+    <script src="Scripts/menu-json.js?v=2017-02-23"></script>
+    <script src="Scripts/xdna/xdna.js?v=2017-02-23"></script>
 
     <template id="dna-help">
       <h1>DNA</h1>

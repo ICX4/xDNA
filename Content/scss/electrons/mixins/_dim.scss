@@ -12,7 +12,9 @@
     @include padding-multiplied(top, 0.5);
     @include padding-multiplied(bottom, 0.5);
     display: block;
+    min-width: uom();
     height: calc(#{$base-font-size} + #{uom()});
+    min-height: uom();
     border: {
       width: 1px;
       style: solid;
@@ -22,5 +24,16 @@
 
   @if $type == item {
     border-color: transparent;
+  }
+
+  @if $type == input {
+    @include padding-multiplied(right, 0.5);
+    @include padding-multiplied(left, 0.5);
+    @include input-focus();
+    border: {
+      color: silver; // TODO change to variable
+      radius: $border-radius;
+    }
+    background-color: color(app);
   }
 }
