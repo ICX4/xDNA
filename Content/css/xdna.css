@@ -261,7 +261,7 @@ audio:not([controls]) {
 progress {
   vertical-align: baseline; }
 
-.screen-reader, input[type="file"] {
+.screen-reader, .x-file-input {
   display: block;
   width: 0.1px;
   height: 0.1px;
@@ -322,7 +322,7 @@ abbr {
     position: absolute;
     bottom: 100%;
     left: 50%;
-    z-index: 5100;
+    z-index: 5200;
     transform: translateX(-50%) translateY(1rem);
     opacity: 0;
     transition: transform 350ms ease, opacity 350ms ease;
@@ -381,7 +381,7 @@ abbr::before {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  z-index: 5100;
+  z-index: 5200;
   transform: translateX(-50%);
   background-color: #fff;
   color: #000;
@@ -393,7 +393,7 @@ abbr::before {
     position: absolute;
     top: 100%;
     left: 50%;
-    z-index: 5100;
+    z-index: 5200;
     transform: translateX(-50%);
     width: 0;
     height: 0;
@@ -426,6 +426,14 @@ abbr::before {
     transition: background-color 350ms ease, color 350ms ease, box-shadow 700ms ease; }
   .x-input:focus {
     border-color: #4472c4; }
+  .x-input.-size-2 {
+    height: calc(0.8rem + 2rem);
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .x-input.-size-3 {
+    height: calc(0.8rem + 3rem);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem; }
 
 input[type="checkbox" i].x-checkbox {
   width: 1.4rem;
@@ -510,6 +518,14 @@ input[type="checkbox" i].x-checkbox {
     color: #d9d9d9; }
     .x-button[disabled], .x-button[disabled]:focus, .x-button[disabled]:hover, .x-button[disabled]:hover, .x-button[disabled]:hover:focus, .x-button[disabled]:hover:hover {
       box-shadow: none; }
+  .x-button.-size-2 {
+    height: calc(0.8rem + 2rem);
+    padding-top: 1rem;
+    padding-bottom: 1rem; }
+  .x-button.-size-3 {
+    height: calc(0.8rem + 3rem);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem; }
 
 .x-tab {
   margin-top: 0.5rem;
@@ -543,7 +559,7 @@ input[type="checkbox" i].x-checkbox {
   max-height: 80vh;
   overflow: auto;
   position: relative;
-  z-index: 5400;
+  z-index: 5500;
   border-radius: 2px;
   background-color: #fff; }
   .x-dialog.-inactive {
@@ -808,7 +824,7 @@ input[type="checkbox" i].x-checkbox {
   display: flex;
   flex-flow: row nowrap;
   height: 4rem;
-  z-index: 5000;
+  z-index: 5100;
   background-color: #fff;
   border-bottom: 1px solid #d9d9d9;
   transform: translateY(-100%);
@@ -997,7 +1013,7 @@ input[type="checkbox" i].x-checkbox {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 5500;
+  z-index: 5600;
   background-color: RoyalBlue;
   color: white;
   font-weight: bold;
@@ -1011,6 +1027,55 @@ input[type="checkbox" i].x-checkbox {
     background-color: FireBrick; }
   .x-global-notification.x-active, .x-global-notification.x-play-animation {
     animation: x-notification-drop-down 3000ms; }
+
+.x-global-search {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  color: #000;
+  z-index: 5000;
+  opacity: 0;
+  transform-origin: top right;
+  transform: translateY(-8rem) scale(0.5);
+  pointer-events: none;
+  transition: 100ms ease; }
+  .x-global-search::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: #fff, 10%; }
+    .x-global-search::-webkit-scrollbar-thumb {
+      border-width: 3px;
+      border-style: solid;
+      border-color: #fff;
+      border-radius: 6px;
+      background-color: rgba(0, 0, 0, 0.2); }
+      .x-global-search::-webkit-scrollbar-thumb:hover {
+        background-color: #4472c4; }
+  .x-global-search.x-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: 350ms ease; }
+  .x-global-search--backdrop {
+    padding-top: calc(8rem + 4rem);
+    padding-right: 8rem;
+    padding-bottom: 8rem;
+    padding-left: 8rem;
+    background-color: #f7f7f7; }
+  .x-global-search .x-close-icon {
+    top: 4rem; }
+  .x-global-search--box {
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    margin-right: auto;
+    margin-left: auto; }
+  .x-global-search .x-fieldset.-contain {
+    width: 100%; }
+  .x-global-search .x-input {
+    flex: 1; }
 
 .TEST, .test {
   border: 1px dashed red !important; }

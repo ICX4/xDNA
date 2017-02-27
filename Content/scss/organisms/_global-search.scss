@@ -1,0 +1,48 @@
+.x-global-search {
+  @include fix(cover);
+  @include theme(color(app));
+  z-index: $z-index--search;
+  opacity: 0;
+  transform-origin: top right;
+  transform: translateY(-#{uom(8)}) scale(0.5);
+  pointer-events: none;
+  transition: 100ms ease;
+
+  &.x-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition: 350ms ease;
+  }
+
+  &--backdrop {
+    padding: {
+      top: calc(#{uom(8)} + #{$global-menu-height});
+      right: uom(8);
+      bottom: uom(8);
+      left: uom(8);
+    }
+    background-color: color(backdrop);
+  }
+
+  .x-close-icon {
+    top: $global-menu-height;
+  }
+
+  &--box {
+    @include z-depth(2);
+    display: block;
+    margin: {
+      right: auto;
+      left: auto;
+    }
+  }
+
+  .x-fieldset.-contain {
+    width: 100%;
+  }
+
+  .x-input {
+    flex: 1;
+  }
+}

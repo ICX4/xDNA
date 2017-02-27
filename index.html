@@ -13,7 +13,7 @@
 
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-    <link rel="stylesheet" href="Content/css/xdna.css?v=2017-02-13" />
+    <link rel="stylesheet" href="Content/css/xdna.css?v=2017-02-27" />
     <link rel="stylesheet" href="Content/css/site.css?v=2017-02-13" />
 
     <!--[if lt IE 9]>
@@ -40,14 +40,19 @@
         </a>
       </nav>
       <nav class="x-global-menu--group -right">
-        <form class="x-global-menu--item -search">
+        <a class="x-global-menu--item" data-send="global-search">
+          <svg class="x-icon -search">
+            <use xlink:href="#icon--search"></use>
+          </svg>
+        </a>
+        <!--form class="x-global-menu--item -search">
           <input class="x-input" type="search" placeholder="search &hellip;" />
           <button class="x-button">
             <svg class="x-icon -search">
               <use xlink:href="#icon--search"></use>
             </svg>
           </button>
-        </form>
+        </form -->
         <a class="x-global-menu--item -user">
           <svg class="x-icon -user">
             <use xlink:href="#icon--user"></use>
@@ -139,7 +144,7 @@
         </div>
 
         <!-- organisms -->
-        <!-- div data-include-html="organisms/alien, replace"></div -->
+        <div data-include-html="organisms/global-search, replace"></div>
 
       </div>
     </main>
@@ -151,12 +156,28 @@
       </div>
     </div>
 
+    <div id="global-search" class="x-global-search" data-receive="global-search">
+      <a class="x-close-icon" data-send="global-search">&#10005;</a>
+      <div class="x-global-search--backdrop">
+        <div class="x-global-search--box">
+          <div class="x-fieldset -contain">
+            <input type="text" class="x-input -size-3" placeholder="search &hellip;" />
+            <button class="x-button -size-3">
+              <svg class="x-icon -search">
+                <use xlink:href="#icon--search"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 <script src="Content/includes/js/include.js?v=2017-02-23"></script>
 <script src="Content/includes/js/icons.js?v=2017-02-23"></script>
 <script src="Content/includes/js/example-code.js?v=2017-02-23"></script>
 
-    <script src="Scripts/menu-json.js?v=2017-02-23"></script>
-    <script src="Scripts/xdna/xdna.js?v=2017-02-23"></script>
+    <script src="Scripts/menu-json.js?v=2017-02-27"></script>
+    <script src="Scripts/xdna/xdna.js?v=2017-02-27"></script>
 
     <template id="dna-help">
       <h1>DNA</h1>

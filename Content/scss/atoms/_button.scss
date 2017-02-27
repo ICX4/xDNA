@@ -41,4 +41,14 @@
       @include input-focus(none);
     }
   }
+
+  @for $i from 2 through 3 {
+    &.-size-#{$i} {
+      height: calc(#{$base-font-size} + #{uom($i)});
+      padding: {
+        top: #{uom($i * 0.5)};
+        bottom: #{uom($i * 0.5)};
+      }
+    }
+  }
 }

@@ -117,8 +117,8 @@ var menuJSON = [
      "Link":"",
      "ChildMenuItems":[
        {
-         "Text":"Australopeticus",
-         "Link":"#nogo",
+         "Text":"Global search",
+         "Link":"#global-search",
          "ChildMenuItems":[]
        }
      ]
