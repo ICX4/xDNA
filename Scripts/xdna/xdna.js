@@ -230,8 +230,10 @@ var x = {
   // DIALOG
   dialog: {
     overlay: el.get('#global-overlay'),
+    dialog: el.get('#global-dialog'),
     content: el.get('#global-dialog-content'),
     activeClass: '-active',
+    inactiveClass: '-inactive',
 
     post: function(_body, _title) {
       if (_body) {
@@ -240,11 +242,13 @@ var x = {
 
         x.dialog.content.innerHTML = title + body;
         x.dialog.overlay.classList.add(x.dialog.activeClass);
+        x.dialog.dialog.classList.remove(x.dialog.inactiveClass);
       }
     },
 
     close: function() {
       x.dialog.overlay.classList.remove(x.dialog.activeClass);
+      x.dialog.dialog.classList.add(x.dialog.inactiveClass);
     }
   },
 
@@ -294,8 +298,31 @@ var x = {
     }
   },
 
+  // function
+  // FILE INPUT
+  fileInput: function(_fileInputs) {
+    Array.prototype.forEach.call(_fileInputs, function(fileInput) {
+      var label	 = fileInput.nextElementSibling;
+      var labelValue = label.innerHTML;
+
+      fileInput.addEventListener('change', function(_event) {
+        var fileName = '';
+
+        if (this.files && this.files.length === 1) {
+          fileName = _event.target.value.split('\\').pop();
+        }
+        if (fileName) {
+          label.querySelector('span').innerHTML = fileName;
+        }
+        else {
+          label.innerHTML = labelValue;
+        }
+      });
+    });
+  },
+
   // object
-  // CAROUSEL
+  // CAROUSELS
   carousels: {
     activeControls: function(_carousel, _rowX) {
       var carousel = _carousel;
@@ -424,6 +451,7 @@ setTimeout(function() {
   x.nestedMenu.init(menuJSON);
   x.globalMenu();
   x.dataSenders(el.getAll('[data-send]'));
+  x.fileInput(el.getAll('.x-file-input'));
   x.carousels.init();
   x.notification.init();
   x.scrollFocus.init();
