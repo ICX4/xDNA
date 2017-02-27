@@ -1,0 +1,3 @@
+@function is-dark-color($color) {
+  @return (230 - red($color) - green($color) - blue($color) > 0);
+}

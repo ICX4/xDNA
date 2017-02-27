@@ -1,0 +1,8 @@
+@mixin theme($theme-color) {
+  background-color: $theme-color;
+  color: if(is-dark-color($theme-color), color(text-inverted), color(text));
+
+  &::-webkit-scrollbar {
+    @include scrollbar-inner($theme-color);
+  }
+}

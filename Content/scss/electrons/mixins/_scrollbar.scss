@@ -1,0 +1,25 @@
+@mixin scrollbar-inner($background-color) {
+  width: 12px;
+  height: 12px;
+  background-color: $background-color, 10%;
+
+  &-thumb {
+    border: {
+      width: 3px;
+      style: solid;
+      color: $background-color;
+      radius: 6px;
+    }
+    background-color: rgba(if(is-dark-color($background-color), white, black), 0.2);
+
+    &:hover {
+      background-color: color(link);
+    }
+  }
+}
+
+@mixin scrollbar($background-color: #fff) {
+  ::-webkit-scrollbar {
+    @include scrollbar-inner($background-color);
+  }
+}

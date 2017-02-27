@@ -25,6 +25,7 @@
 @import 'electrons/functions/uom';
 @import 'electrons/functions/px';
 @import 'electrons/functions/timing';
+@import 'electrons/functions/is-dark-color';
 
 // mixins
 @import 'electrons/mixins/row';
@@ -43,8 +44,10 @@
 @import 'electrons/mixins/no-input-focus';
 @import 'electrons/mixins/click';
 @import 'electrons/mixins/overlay-style';
+@import 'electrons/mixins/theme';
 @import 'electrons/mixins/dim';
 @import 'electrons/mixins/device';
+@import 'electrons/mixins/scrollbar';
 
 @import 'electrons/mixins/grid';
 

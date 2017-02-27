@@ -1,3 +1,5 @@
+$side-menu-background-color: #262626; // TODO replace with variable
+
 .x-side-menu {
   @include fix(left);
   display: block;
@@ -18,6 +20,7 @@
   &--menu {
     @include fix(left);
     @include padding(right, left);
+    @include theme($side-menu-background-color);
     display: flex;
     flex-flow: column nowrap;
     width: $side-menu-width;
@@ -25,7 +28,6 @@
       x: hidden;
       y: auto;
     }
-    background-color: #262626; // TODO replace with variable
     transform: translate3d(-#{$side-menu-width}, 0, 0);
     transition: transform timing(0.3) ease;
 
@@ -42,10 +44,10 @@
   // overrides
 
   .x-link {
-    color: white; // TODO replace with variable
+    color: if(is-dark-color($side-menu-background-color), color(text-inverted), color(text));
 
     .x-icon {
-      fill: #7f7f7f; // TODO replace with var
+      fill: rgba(if(is-dark-color($side-menu-background-color), color(text-inverted), color(text)), 0.5);
     }
   }
 }

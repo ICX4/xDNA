@@ -8,6 +8,7 @@
 $color-scheme: (
   app: $application-color,
   text: $text-color,
+  text-inverted: $text-color-inverted,
   link: $button-and-link-color,
   highlight: $highlight-color,
 
@@ -23,7 +24,7 @@ $color-scheme: (
   shadow: $text-color,
   focus: mix($button-and-link-color, $application-color, 50%),
   divider: mix($text-color, $application-color, 15%),
-  
+
   icx4-green: #70af47,
   icx4-red: #ee257b,
   icx4-blue: #2ec0cf,
