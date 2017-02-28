@@ -114,10 +114,13 @@
   display: none; }
 
 .example-code {
+  margin-bottom: 1rem;
   display: block;
   background-color: whitesmoke;
   border: 1px solid silver;
-  border-radius: 3px; }
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
 
 .grid-test {
   display: flex;

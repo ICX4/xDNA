@@ -98,6 +98,10 @@ main {
 article * + * {
   margin-bottom: 1rem; }
 
+p {
+  margin-bottom: 0.5rem;
+  line-height: 1.3; }
+
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -1079,6 +1083,10 @@ input[type="checkbox" i].x-checkbox {
 
 .TEST, .test {
   border: 1px dashed red !important; }
+
+blockquote {
+  padding-left: 1.5rem;
+  border-left: 0.5rem solid #a2b9e2; }
 
 .x-fieldset.-contain {
   margin-bottom: 0.5rem;

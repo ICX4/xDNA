@@ -1,6 +1,9 @@
  .TEST, .test { border: 1px dashed red !important; }
 
-
+blockquote {
+  @include padding-multiplied(left, 1.5);
+  border-left: uom(0.5) solid color(focus);
+}
 
 .x-fieldset.-contain {
   @include margin-multiplied(bottom, 0.5);

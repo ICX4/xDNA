@@ -25,10 +25,13 @@
 }
 
 .example-code {
+  @include margin(bottom);
   display: block;
   background-color: whitesmoke;
   border: 1px solid silver;
   border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .grid-test {
