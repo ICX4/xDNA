@@ -1,9 +1,10 @@
-// Creates SASS map from the colours set in _settings.scss or _defaults.scss
-// and returns colour based on key
-// @param $color - The key for the value to return
-// @example
-//   background-color: color(bg);
-//   @returns the colour in the map associated with the key 'bg'
+/// @name color
+/// Creates SASS map from the colours set in _settings.scss or _defaults.scss
+/// and returns colour based on key
+/// @param {string} $color - The key for the value to return
+/// @example
+///   background-color: color(app);
+///   @returns the colour in the map associated with the key 'app'
 
 $color-scheme: (
   app: $application-color,

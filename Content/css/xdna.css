@@ -1053,6 +1053,9 @@ input[type="checkbox" i].x-checkbox {
   background-color: #f7f7f7; }
   .x-login .x-dialog {
     width: 30rem; }
+  .x-login img {
+    max-width: 16rem;
+    height: auto; }
   .x-login .x-fieldset.-contain {
     width: 100%; }
   .x-login .x-input {

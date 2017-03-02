@@ -1,0 +1,28 @@
+.x-login {
+  @include fix(cover);
+  @include z-index(overlay);
+  @include center-content();
+  @include padding-multiplied(top, 4);
+  @include padding-multiplied(right, 4);
+  @include padding-multiplied(bottom, 4);
+  @include padding-multiplied(left, 4);
+  background-color: color(backdrop);
+
+  .x-dialog {
+    width: 30rem;
+  }
+
+  img {
+    //border: 1px solid red;
+    max-width: 16rem;
+    height: auto;
+  }
+
+  .x-fieldset.-contain {
+    width: 100%;
+  }
+
+  .x-input {
+    flex: 1;
+  }
+}

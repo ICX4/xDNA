@@ -117,6 +117,11 @@ var menuJSON = [
      "Link":"",
      "ChildMenuItems":[
        {
+         "Text":"Log in",
+         "Link":"#login",
+         "ChildMenuItems":[]
+       },
+       {
          "Text":"Global search",
          "Link":"#global-search",
          "ChildMenuItems":[]
