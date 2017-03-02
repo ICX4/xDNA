@@ -3,6 +3,273 @@
     transform: rotate3d(0, 0, 1, 0deg); }
   100% {
     transform: rotate3d(0, 0, 1, 360deg); } }
+@font-face {
+  font-family: "Merlo Light";
+  src: url("../fonts/merlo/merlo-light-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Merlo Medium";
+  src: url("../fonts/merlo/merlo-medium-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans";
+  src: url("../fonts/work-sans/worksans-regular-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans Hairline";
+  src: url("../fonts/work-sans/worksans-hairline-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-hairline-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans Thin";
+  src: url("../fonts/work-sans/worksans-thin-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans Light";
+  src: url("../fonts/work-sans/worksans-light-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Work Sans Medium";
+  src: url("../fonts/work-sans/worksans-medium-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("../fonts/alegreya/alegreya-italic-webfont.woff2") format("woff2"), url("../fonts/alegreya/alegreya-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+html {
+  font-family: "Work Sans", sans-serif;
+  box-sizing: border-box;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+  font-size: 0.8rem; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+template,
+[hidden] {
+  display: none; }
+
+main {
+  padding-top: 4rem; }
+  main > * {
+    margin-bottom: 1rem; }
+
+article * + * {
+  margin-bottom: 1rem; }
+
+p {
+  margin-bottom: 0.5rem;
+  line-height: 1.3; }
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  cursor: pointer; }
+
+a:active,
+a:hover {
+  outline-width: 0; }
+
+abbr[title] {
+  text-decoration: none; }
+
+b,
+strong {
+  font-weight: inherit; }
+
+b,
+strong {
+  font-weight: bolder; }
+
+dfn {
+  font-style: italic; }
+
+/*
+// Correct the font size and margin on `h1` elements within `section` and
+// `article` contexts in Chrome, Firefox, and Safari.
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+*/
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+li {
+  vertical-align: bottom; }
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+figure {
+  margin: 1em 40px; }
+
+img {
+  display: block;
+  border-style: none;
+  width: auto;
+  max-width: 100%; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0; }
+
+optgroup {
+  font-weight: bold; }
+
+button,
+input {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal; }
+
+textarea {
+  overflow: auto; }
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px; }
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54; }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+progress {
+  vertical-align: baseline; }
+
+.screen-reader {
+  display: block;
+  width: 0.1px;
+  height: 0.1px;
+  overflow: hidden;
+  position: fixed;
+  top: -9000px;
+  left: -9000px;
+  opacity: 0; }
+
 .xdna-hero {
   margin-left: -1rem;
   margin-right: -1rem;

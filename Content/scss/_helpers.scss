@@ -4,52 +4,74 @@
 
 // defaults
 // default fallbacks for above settings
-@import 'electrons/variables/defaults';
+@import 'helpers/variables/defaults';
 
 // functions (that may be required for variables)
-@import 'electrons/functions/color';
-@import 'electrons/functions/parse-int';
-@import 'electrons/functions/strip-unit';
-@import 'electrons/functions/list-functions';
-@import 'electrons/functions/hex-to-rgb';
+@import 'helpers/functions/color';
+@import 'helpers/functions/parse-int';
+@import 'helpers/functions/strip-unit';
+@import 'helpers/functions/list-functions';
+@import 'helpers/functions/hex-to-rgb';
 
 // variables
-@import 'electrons/variables/devices';
-@import 'electrons/variables/z-index';
-@import 'electrons/variables/styles';
-@import 'electrons/variables/grid';
-@import 'electrons/variables/transitions';
+@import 'helpers/variables/devices';
+@import 'helpers/variables/z-index';
+@import 'helpers/variables/styles';
+@import 'helpers/variables/grid';
+@import 'helpers/variables/transitions';
 
 // functions (that require variable input)
-@import 'electrons/functions/uom';
-@import 'electrons/functions/px';
-@import 'electrons/functions/timing';
-@import 'electrons/functions/is-dark-color';
+@import 'helpers/functions/uom';
+@import 'helpers/functions/px';
+@import 'helpers/functions/timing';
+@import 'helpers/functions/is-dark-color';
 
 // mixins
-@import 'electrons/mixins/row';
-@import 'electrons/mixins/col';
-@import 'electrons/mixins/link-style';
-@import 'electrons/mixins/font-family';
-@import 'electrons/mixins/h';
-@import 'electrons/mixins/margin';
-@import 'electrons/mixins/margin-multiplied';
-@import 'electrons/mixins/padding';
-@import 'electrons/mixins/padding-multiplied';
-@import 'electrons/mixins/grid';
-@import 'electrons/mixins/fix';
-@import 'electrons/mixins/z-index';
-@import 'electrons/mixins/center-content';
-@import 'electrons/mixins/z-depth';
-@import 'electrons/mixins/input-focus';
-@import 'electrons/mixins/no-input-focus';
-@import 'electrons/mixins/click';
-@import 'electrons/mixins/overlay-style';
-@import 'electrons/mixins/theme';
-@import 'electrons/mixins/dim';
-@import 'electrons/mixins/device';
-@import 'electrons/mixins/scrollbar';
+@import 'helpers/mixins/row';
+@import 'helpers/mixins/col';
+@import 'helpers/mixins/link-style';
+@import 'helpers/mixins/font-family';
+@import 'helpers/mixins/h';
+@import 'helpers/mixins/margin';
+@import 'helpers/mixins/margin-multiplied';
+@import 'helpers/mixins/padding';
+@import 'helpers/mixins/padding-multiplied';
+@import 'helpers/mixins/grid';
+@import 'helpers/mixins/fix';
+@import 'helpers/mixins/z-index';
+@import 'helpers/mixins/center-content';
+@import 'helpers/mixins/z-depth';
+@import 'helpers/mixins/input-focus';
+@import 'helpers/mixins/no-input-focus';
+@import 'helpers/mixins/click';
+@import 'helpers/mixins/overlay-style';
+@import 'helpers/mixins/theme';
+@import 'helpers/mixins/dim';
+@import 'helpers/mixins/device';
+@import 'helpers/mixins/scrollbar';
 
-@import 'electrons/mixins/grid';
+@import 'helpers/mixins/grid';
 
-@import 'electrons/animations/rotate-clockwise';
+@import 'helpers/animations/rotate-clockwise';
+
+// base
+// normalises html elements
+@import 'helpers/base/web-fonts';
+@import 'helpers/base/html';
+@import 'helpers/base/all';
+@import 'helpers/base/body';
+@import 'helpers/base/html5';
+@import 'helpers/base/main';
+@import 'helpers/base/article';
+@import 'helpers/base/p';
+@import 'helpers/base/a';
+@import 'helpers/base/text';
+@import 'helpers/base/li';
+@import 'helpers/base/hr';
+@import 'helpers/base/figure';
+@import 'helpers/base/img';
+@import 'helpers/base/svg';
+@import 'helpers/base/forms';
+@import 'helpers/base/audio';
+@import 'helpers/base/progress';
+@import 'helpers/base/screen-reader';
