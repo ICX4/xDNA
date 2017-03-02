@@ -14,6 +14,7 @@ $help--color: color(app);
 
 .x-help {
   @include padding(top, right, bottom, left);
+  @include z-index(tooltip);
   @include z-depth(2);
   display: block;
   width: uom(20);
@@ -21,7 +22,6 @@ $help--color: color(app);
   position: absolute;
   bottom: 100%;
   left: 50%;
-  z-index: $z-index--tooltip;
   transform: translateX(-50%);
   background-color: $help--color;
   color: color(text);
@@ -29,12 +29,12 @@ $help--color: color(app);
   text-align: left;
 
   &::after {
+    @include z-index(tooltip);
     content: "";
     display: block;
     position: absolute;
     top: 100%;
     left: 50%;
-    z-index: $z-index--tooltip;
     transform: translateX(-50%);
     width: 0;
     height: 0;

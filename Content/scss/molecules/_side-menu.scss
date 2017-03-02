@@ -2,11 +2,11 @@ $side-menu-background-color: #262626; // TODO replace with variable
 
 .x-side-menu {
   @include fix(left);
+  @include z-index(side-menu);
   display: block;
   width: 0;
   height: 0;
   overflow: visible;
-  z-index: $z-index--side-menu;
   color: white;
 
   &--overlay {

@@ -1,0 +1,12 @@
+/// @name center content
+/// added to a parent element
+/// will center all items within both horizontally and vertically
+/// @param {string} $flow [column] - describes the order of the content
+///   to flow either horizontally {row} or vertically {column} 
+
+@mixin center-content($flow:column) {
+  display: flex;
+  flex-flow: $flow;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,8 +1,8 @@
 .x-global-menu {
   @include fix(top);
+  @include z-index(global-menu);
   @include row;
   height: $global-menu-height;
-  z-index: $z-index--global-menu;
   background-color: color(global-menu);
   border-bottom: 1px solid color(divider);
   transform: translateY(-100%);

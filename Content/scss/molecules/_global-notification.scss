@@ -13,16 +13,16 @@
   @include padding-multiplied(bottom, 3);
   @include padding-multiplied(left, 3);
   @include fix(top);
-  z-index: $z-index--global-notification;
-  background-color: RoyalBlue; //$col-link;
+  @include z-index(global-notification);
+  background-color: RoyalBlue; // TODO $col-link;
   color: white; // TODO use variable
   font-weight: bold;
   text-align: center;
   transform: translateY(-100%);
 
-  &.-success { background-color: MediumSeaGreen; }
-  &.-warning { background-color: GoldenRod; }
-  &.-error { background-color: FireBrick; }
+  &.-success { background-color: MediumSeaGreen; } // TODO use variable
+  &.-warning { background-color: GoldenRod; } // TODO use variable
+  &.-error { background-color: FireBrick; } // TODO use variable
 
   &.x-active,
   &.x-play-animation {

@@ -1,7 +1,7 @@
 .x-global-search {
   @include fix(cover);
+  @include z-index(search);
   @include theme(color(app));
-  z-index: $z-index--search;
   opacity: 0;
   transform-origin: top right;
   transform: translateY(-#{uom(8)}) scale(0.5);

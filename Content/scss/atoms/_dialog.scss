@@ -1,14 +1,21 @@
 .x-dialog {
-  @include padding(top, right, left);
+  @include padding-multiplied(top, 2);
+  @include padding-multiplied(right, 2);
+  @include padding-multiplied(bottom, 2);
+  @include padding-multiplied(left, 2);
+  @include z-index(dialog);
   @include z-depth(5);
   display: block;
   max: {
     width: 80vw;
     height: 80vh;
   }
+  margin: {
+    right: auto;
+    left: auto;
+  }
   overflow: auto;
   position: relative;
-  z-index: $z-index--dialog;
   border-radius: $border-radius;
   background-color: color(app);
 

@@ -1,0 +1,28 @@
+/// @name z-index
+/// Creates SASS map from the z-indices set in _settings.scss or _defaults.scss
+/// and returns colour based on key
+/// @param {string | number} $z [0] - The key for the value to return
+///   should be a name, but will just append value if not in list
+/// @returns z-index: #{computed value};
+/// @example
+///   @include z-index(dialog);
+///   @returns z-index: #{value of $z-indices[dialog]};
+
+$z-indices: (
+  notification: $z-index--global-notification,
+  dialog: $z-index--dialog,
+  overlay: $z-index--overlay,
+  side-menu: $z-index--side-menu,
+  tooltip: $z-index--tooltip,
+  global-menu: $z-index--global-menu,
+  search: $z-index--search
+);
+
+@mixin z-index($z:0) {
+  @if map-has-key($z-indices, to-lower-case($z)) {
+    z-index: #{map-get($z-indices, to-lower-case($z))};
+  }
+  @else {
+    z-index: #{$z};
+  }
+}

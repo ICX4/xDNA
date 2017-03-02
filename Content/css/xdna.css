@@ -323,10 +323,10 @@ abbr {
   [data-tooltip]::before, [data-tooltip]::after,
   abbr::before,
   abbr::after {
+    z-index: 5200;
     position: absolute;
     bottom: 100%;
     left: 50%;
-    z-index: 5200;
     transform: translateX(-50%) translateY(1rem);
     opacity: 0;
     transition: transform 350ms ease, opacity 350ms ease;
@@ -378,6 +378,7 @@ abbr::before {
   padding-right: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
+  z-index: 5200;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: block;
   width: 20rem;
@@ -385,19 +386,18 @@ abbr::before {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  z-index: 5200;
   transform: translateX(-50%);
   background-color: #fff;
   color: #000;
   border-radius: 2px;
   text-align: left; }
   .x-help::after {
+    z-index: 5200;
     content: "";
     display: block;
     position: absolute;
     top: 100%;
     left: 50%;
-    z-index: 5200;
     transform: translateX(-50%);
     width: 0;
     height: 0;
@@ -554,16 +554,19 @@ input[type="checkbox" i].x-checkbox {
     color: #4472c4; }
 
 .x-dialog {
-  padding-top: 1rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  z-index: 5500;
   box-shadow: 0 27px 24px 0 rgba(0, 0, 0, 0.2), 0 40px 77px 0 rgba(0, 0, 0, 0.22);
   display: block;
   max-width: 80vw;
   max-height: 80vh;
+  margin-right: auto;
+  margin-left: auto;
   overflow: auto;
   position: relative;
-  z-index: 5500;
   border-radius: 2px;
   background-color: #fff; }
   .x-dialog.-inactive {
@@ -825,10 +828,10 @@ input[type="checkbox" i].x-checkbox {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 5100;
   display: flex;
   flex-flow: row nowrap;
   height: 4rem;
-  z-index: 5100;
   background-color: #fff;
   border-bottom: 1px solid #d9d9d9;
   transform: translateY(-100%);
@@ -882,11 +885,11 @@ input[type="checkbox" i].x-checkbox {
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 5300;
   display: block;
   width: 0;
   height: 0;
   overflow: visible;
-  z-index: 5300;
   color: white; }
   .x-side-menu--overlay {
     position: fixed;
@@ -1017,7 +1020,7 @@ input[type="checkbox" i].x-checkbox {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 5600;
+  z-index: global-notification;
   background-color: RoyalBlue;
   color: white;
   font-weight: bold;
@@ -1032,15 +1035,38 @@ input[type="checkbox" i].x-checkbox {
   .x-global-notification.x-active, .x-global-notification.x-play-animation {
     animation: x-notification-drop-down 3000ms; }
 
+.x-login {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5400;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 4rem;
+  background-color: #f7f7f7; }
+  .x-login .x-dialog {
+    width: 30rem; }
+  .x-login .x-fieldset.-contain {
+    width: 100%; }
+  .x-login .x-input {
+    flex: 1; }
+
 .x-global-search {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 5000;
   background-color: #fff;
   color: #000;
-  z-index: 5000;
   opacity: 0;
   transform-origin: top right;
   transform: translateY(-8rem) scale(0.5);
