@@ -1,16 +1,21 @@
-/*
+/*!
  * xDNA
  * CSS framework for businessDNA
- * Copyright (c) 2016 by ICX4.LTD
+ * Copyright (c) 2017 by ICX4.LTD
  */
 
-// this is the main file for xDNA
-// collating all the files
-// this file should contain only @imports
-// no css to go in here
+/// this is the main file for xDNA
+/// collating all the files
+/// this file should contain only @imports
+/// no css to go in here
 
-// helpers
-// see this file for specifics
+/// helpers
+/// contains:
+///  - variables
+///  - functions
+///  - mixins
+///  - normalise
+/// see this file for specifics
 @import 'helpers';
 
 // atoms
