@@ -1,0 +1,23 @@
+/// LIGHTER (function)
+/// lightens a color by a percentage
+/// use this instead of SASS function lighten
+/// as it gives a more uniform scale
+/// @author Hugo Giraudel (https://sass-guidelin.es/)
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @returns {Color}
+@function lighter($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// DARKER (function)
+/// lightens a color by a percentage
+/// use this instead of SASS function darken
+/// as it gives a more uniform scale
+/// @author Hugo Giraudel (https://sass-guidelin.es/)
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @returns {Color}
+@function darker($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}

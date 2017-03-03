@@ -1,13 +1,17 @@
-// converts a hex color to rgb format
-// note:
-//   this does not generate 'rgb(<content>)'
-//   only the <content> part
-//   as it is intended for more complex string interpolation
-//   (see 'electrons/mixinx/_z.scss' for example)
-// usage:
-//   color: rgb(#{hex-to-rgb(#fff)});
-// output:
-//   color: rgb(255, 255, 255);
+/// HEX TO RGB (function)
+/// converts a hex color to rgb format
+/// @author aepicos
+/// @param {Color} $color - hex color
+/// @returns {String} - '{red}, {green}, {blue}'
+/// note:
+///   this does not generate 'rgb({content})'
+///   only the {content} part
+///   as it is intended for more complex string interpolation
+///   (see 'helpers/mixins/_z.scss' for example)
+/// @example sass - usage
+///   color: rgb(#{hex-to-rgb(#fff)});
+/// @example css - output
+///   color: rgb(255, 255, 255);
 @function hex-to-rgb($color) {
   @return '#{red($color)}, #{green($color)}, #{blue($color)}';
 }

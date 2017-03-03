@@ -1,3 +1,6 @@
+/// @name mq {function}
+/// @TODO is this being used?
+
 @function mq($mq--size) {
   @if $mq--size == phone {
     @return $phone;

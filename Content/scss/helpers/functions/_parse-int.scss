@@ -1,7 +1,8 @@
-// Remove the unit of a length
-// @param {Number or String} $number Number to remove unit from
-// @return {Number} Unitless number
-// @author Hugo Giraudel (https://css-tricks.com/snippets/sass/strip-unit-function/)
+/// PARSE INT (function)
+/// removes the unit of a length
+/// @author Hugo Giraudel (https://css-tricks.com/snippets/sass/strip-unit-function/)
+/// @param {Number | String} $number - number to remove unit from
+/// @returns {Number} - unitless number
 
 @function parse-int($number) {
   @if type-of($number) == 'number' and not unitless($number) {

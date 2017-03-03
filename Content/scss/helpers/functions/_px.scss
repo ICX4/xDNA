@@ -1,3 +1,11 @@
-@function px($n) {
-  @return #{$n * $rem-base}px;
+/// PX (function)
+/// returns a pixel value for a rem value
+/// @author aepicos
+/// @param {Length} $rem - rem value
+/// @returns {Length} - calculated value in px
+/// @requires scss/_settings.scss | scss/helpers/variables/_defaults.scss
+/// @TODO is this required / being used?
+
+@function px($rem) {
+  @return #{$rem * $rem-base}px;
 }

@@ -1,11 +1,17 @@
-// first
-// gets first item in a list
+/// FIRST (function)
+/// gets first item in a list
+/// @author Hugo Giraudel
+/// @param {Array} $list
+/// @returns {...} - first item in $list
 @function first($list) {
   @return nth($list, 1);
 }
 
-// last
-// gets last item in a list
+/// LAST (function)
+/// gets last item in a list
+/// @author Hugo Giraudel
+/// @param {Array} $list
+/// @returns {...} - last item in $list
 @function last($list) {
   @return nth($list, length($list));
 }

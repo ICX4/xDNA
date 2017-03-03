@@ -1,3 +1,10 @@
+/// TIMING (function)
+/// returns a multiplier of default transition timing
+/// @author aepicos
+/// @param {Number} $multiplier [1]
+/// returns {Time} - timing in milliseconds
+/// @requires scss/_settings.scss | scss/helpers/variables/_defaults.scss
+
 @function timing($multiplier: 1) {
   @return #{$multiplier * $default-transition-time-in-ms}ms;
 }

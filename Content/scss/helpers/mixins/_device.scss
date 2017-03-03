@@ -1,9 +1,12 @@
-// desc create a media query from device size
-// @required
-//   electrons/variables/_devices.scss
-// @param
-//   {string} $min-width - device name for minimum size
-//   {string} $max-width - device name for maximum size
+/// @name device {mixin}
+/// create a media query from device size
+/// @param {string} $min-width - device name for minimum size
+/// @param {string} $max-width - device name for maximum size
+/// @returns @media query with {min-width (| max-width)]
+/// @requires
+///   _settings.scss | helpers/variables/_defaults.scss
+///   helpers/variables/_devices.scss
+
 @mixin device($min-width, $max-width: false) {
   $request-min: false;
   $request-max: false;

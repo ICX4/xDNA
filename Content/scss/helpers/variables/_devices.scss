@@ -1,6 +1,6 @@
-$phone: strip-unit($maximum-px-size-for-phone-view);
-$tablet: strip-unit($maximum-px-size-for-tablet-view);
-$desktop: strip-unit($maximum-px-size-for-normal-desktop-view);
+$phone: parse-int($maximum-px-size-for-phone-view);
+$tablet: parse-int($maximum-px-size-for-tablet-view);
+$desktop: parse-int($maximum-px-size-for-normal-desktop-view);
 
 $devices: (
   phone: (

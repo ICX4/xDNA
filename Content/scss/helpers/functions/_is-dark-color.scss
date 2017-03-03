@@ -1,3 +1,13 @@
+/// IS DARK COLOR (function)
+/// returns true if the requested colour is dark
+/// @author aepicos
+/// @param {Color} - hex color
+/// @returns {Bool}
+/// @example sass - usage
+///   color: if(is-dark-color(#333), #fff, #000);
+/// @example css - output
+///   color: #fff;
+
 @function is-dark-color($color) {
   @return (230 - red($color) - green($color) - blue($color) > 0);
 }

@@ -9,15 +9,14 @@
 // functions (that may be required for variables)
 @import 'helpers/functions/color';
 @import 'helpers/functions/parse-int';
-@import 'helpers/functions/strip-unit';
 @import 'helpers/functions/list-functions';
+@import 'helpers/functions/color-functions';
 @import 'helpers/functions/hex-to-rgb';
 
 // variables
 @import 'helpers/variables/devices';
 @import 'helpers/variables/z-index';
 @import 'helpers/variables/styles';
-@import 'helpers/variables/grid';
 @import 'helpers/variables/transitions';
 
 // functions (that require variable input)

@@ -1,7 +1,9 @@
-// Returns a multiplied version of the base unit of measure
-// @param {Number} $multiplier How many base units of measure to return
-//  @default 1
-// @return {String} Multiplied unit of measure with unit
+/// UOM (function)
+/// returns a multiplied version of the base unit of measure
+/// @author aepicos
+/// @param {Number} $multiplier [1] - how many base units of measure to return
+/// @returns {Length} - multiplied unit of measure with unit
+/// @requires _settings.scss | helpers/variables/_defaults.scss
 
 @function uom($multiplier: 1) {
   @return $multiplier * $unit-of-measure;
