@@ -4,7 +4,9 @@
 /// @author aepicos
 /// @param {String} $color - the key for the value to return
 /// @returns {Color} - hex color code from map
-/// @requires _settings.scss | helpers/variables/_defaults.scss
+/// @requires
+///   settings | helpers/variables/defaults
+///   helpers/mixins/color-functions
 /// @example sass - usage
 ///   background-color: color(app);
 /// @example css - output
@@ -25,10 +27,10 @@ $color-scheme: (
 
   overlay: $overlay-base-color,
 
-  backdrop: mix($text-color, $application-color, 3%),
+  backdrop: darker($application-color, 5%),
   shadow: $text-color,
-  focus: mix($button-and-link-color, $application-color, 50%),
-  divider: mix($text-color, $application-color, 15%),
+  focus: lighter($button-and-link-color, 50%),
+  divider: darker($application-color, 15%),
 
   icx4-green: #70af47,
   icx4-red: #ee257b,

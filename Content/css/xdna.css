@@ -9,28 +9,8 @@
   100% {
     transform: rotate3d(0, 0, 1, 360deg); } }
 @font-face {
-  font-family: "Merlo Light";
-  src: url("../fonts/merlo/merlo-light-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Merlo Medium";
-  src: url("../fonts/merlo/merlo-medium-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
   font-family: "Work Sans";
   src: url("../fonts/work-sans/worksans-regular-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Work Sans Hairline";
-  src: url("../fonts/work-sans/worksans-hairline-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-hairline-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Work Sans Thin";
-  src: url("../fonts/work-sans/worksans-thin-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-thin-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 @font-face {
@@ -38,18 +18,8 @@
   src: url("../fonts/work-sans/worksans-light-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-@font-face {
-  font-family: "Work Sans Medium";
-  src: url("../fonts/work-sans/worksans-medium-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Alegreya Italic";
-  src: url("../fonts/alegreya/alegreya-italic-webfont.woff2") format("woff2"), url("../fonts/alegreya/alegreya-italic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
 html {
-  font-family: "Work Sans", sans-serif;
+  font-family:  "Work Sans", sans-serif;
   box-sizing: border-box;
   font-size: 100%;
   -ms-text-size-adjust: 100%;
@@ -62,9 +32,10 @@ html {
   border: 0; }
 
 body {
+  font-family:  "Work Sans", sans-serif;
   margin: 0;
   overflow-y: scroll;
-  font-size: 0.8rem; }
+  font-size: 0.8125rem; }
 
 article,
 aside,
@@ -282,11 +253,11 @@ progress {
   padding-bottom: 0.5rem;
   display: block;
   min-width: 1rem;
-  height: calc(0.8rem + 1rem);
+  height: calc(0.8125rem + 1rem);
   min-height: 1rem;
   border-width: 1px;
   border-style: solid;
-  line-height: 0.8rem;
+  line-height: 0.8125rem;
   border-color: transparent;
   font-size: 85%;
   text-decoration: none;
@@ -340,7 +311,7 @@ abbr {
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    font-size: 0.8rem;
+    font-size: 0.8125rem;
     font-weight: normal;
     text-align: center; }
   [data-tooltip]::after,
@@ -412,11 +383,11 @@ abbr::before {
   padding-bottom: 0.5rem;
   display: block;
   min-width: 1rem;
-  height: calc(0.8rem + 1rem);
+  height: calc(0.8125rem + 1rem);
   min-height: 1rem;
   border-width: 1px;
   border-style: solid;
-  line-height: 0.8rem;
+  line-height: 0.8125rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   box-shadow: 0 0 0 0px #a2b9e2;
@@ -431,11 +402,11 @@ abbr::before {
   .x-input:focus {
     border-color: #4472c4; }
   .x-input.-size-2 {
-    height: calc(0.8rem + 2rem);
+    height: calc(0.8125rem + 2rem);
     padding-top: 1rem;
     padding-bottom: 1rem; }
   .x-input.-size-3 {
-    height: calc(0.8rem + 3rem);
+    height: calc(0.8125rem + 3rem);
     padding-top: 1.5rem;
     padding-bottom: 1.5rem; }
 
@@ -453,11 +424,11 @@ input[type="checkbox" i].x-checkbox {
   padding-bottom: 0.5rem;
   display: block;
   min-width: 1rem;
-  height: calc(0.8rem + 1rem);
+  height: calc(0.8125rem + 1rem);
   min-height: 1rem;
   border-width: 1px;
   border-style: solid;
-  line-height: 0.8rem;
+  line-height: 0.8125rem;
   border-color: transparent; }
   .x-checkbox + .x-label {
     display: inline-block; }
@@ -469,11 +440,11 @@ input[type="checkbox" i].x-checkbox {
   padding-bottom: 0.5rem;
   display: block;
   min-width: 1rem;
-  height: calc(0.8rem + 1rem);
+  height: calc(0.8125rem + 1rem);
   min-height: 1rem;
   border-width: 1px;
   border-style: solid;
-  line-height: 0.8rem;
+  line-height: 0.8125rem;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   box-shadow: 0 0 0 0px #a2b9e2;
@@ -523,11 +494,11 @@ input[type="checkbox" i].x-checkbox {
     .x-button[disabled], .x-button[disabled]:focus, .x-button[disabled]:hover, .x-button[disabled]:hover, .x-button[disabled]:hover:focus, .x-button[disabled]:hover:hover {
       box-shadow: none; }
   .x-button.-size-2 {
-    height: calc(0.8rem + 2rem);
+    height: calc(0.8125rem + 2rem);
     padding-top: 1rem;
     padding-bottom: 1rem; }
   .x-button.-size-3 {
-    height: calc(0.8rem + 3rem);
+    height: calc(0.8125rem + 3rem);
     padding-top: 1.5rem;
     padding-bottom: 1.5rem; }
 
@@ -994,7 +965,7 @@ input[type="checkbox" i].x-checkbox {
   .x-nested-menu .x-link {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    height: calc(0.8rem + 2rem);
+    height: calc(0.8125rem + 2rem);
     position: relative; }
     .x-nested-menu .x-link[data-send]::after {
       content: url(../img/icon/chevron-right--grey.svg);
@@ -1050,7 +1021,7 @@ input[type="checkbox" i].x-checkbox {
   padding-right: 4rem;
   padding-bottom: 4rem;
   padding-left: 4rem;
-  background-color: #f7f7f7; }
+  background-color: #f2f2f2; }
   .x-login .x-dialog {
     width: 30rem; }
   .x-login img {
@@ -1097,7 +1068,7 @@ input[type="checkbox" i].x-checkbox {
     padding-right: 8rem;
     padding-bottom: 8rem;
     padding-left: 8rem;
-    background-color: #f7f7f7; }
+    background-color: #f2f2f2; }
   .x-global-search .x-close-icon {
     top: 4rem; }
   .x-global-search--box {
@@ -1204,8 +1175,8 @@ table.x-active th {
   padding-bottom: 1rem; }
 
 .x-title {
-  font-family: "Work Sans Hairline", "Work Sans", sans-serif;
-  font-size: 1.44163rem; }
+  font-family: "Work Sans Light", "Work Sans", sans-serif;
+  font-size: 1.46415rem; }
 
 .x-page--header {
   padding-right: 1rem;

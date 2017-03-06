@@ -2,6 +2,7 @@
 // 2. setting a vertical scrollbar even if page doesn't require it
 //    to avoid unsightly jump if content is added
 body {
+  @include font-family();
   margin: 0; // 1
   overflow: {
     y: scroll; // 2

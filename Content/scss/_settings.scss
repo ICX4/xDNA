@@ -33,12 +33,20 @@ $use-xdna-input-focus-styles: true;
 $global-menu-height: 4rem;
 
 
+// fonts
+$generic-font-family: sans-serif; // sans-serif | serif
+
+$default-font-family: "Work Sans";
+$title-font-family: "Work Sans Light";
+
+
+
 
 // TODO review below
 
 $rem-base: 16px;
 
-$base-font-size: 0.8rem;
+$base-font-size: 0.8125rem; // 13/16
 
 $golden-ratio: 1.61803398875;
 

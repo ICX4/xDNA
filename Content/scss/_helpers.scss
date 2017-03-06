@@ -7,10 +7,10 @@
 @import 'helpers/variables/defaults';
 
 // functions (that may be required for variables)
+@import 'helpers/functions/color-functions';
 @import 'helpers/functions/color';
 @import 'helpers/functions/parse-int';
 @import 'helpers/functions/list-functions';
-@import 'helpers/functions/color-functions';
 @import 'helpers/functions/hex-to-rgb';
 
 // variables

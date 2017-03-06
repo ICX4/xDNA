@@ -1,3 +1,18 @@
+/// DIM (mixin)
+/// sets basic styles to an element
+/// based on type requested
+/// @author aepicos
+/// @param {string} $type []{block|item|input} - requested dimension type
+/// @requires
+///   mixins/margin-multiplied
+///   mixins/padding-multiplied
+///   mixins/input-focus
+/// @exmaple sass - usage
+///   input {
+///     @include dim(input);
+///     ...
+///   }
+
 @mixin dim($type) {
   @if $type == block {
     @include margin-multiplied(bottom, 0.5);

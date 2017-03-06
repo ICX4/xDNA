@@ -12,6 +12,7 @@
 ///   color: rgb(#{hex-to-rgb(#fff)});
 /// @example css - output
 ///   color: rgb(255, 255, 255);
+
 @function hex-to-rgb($color) {
   @return '#{red($color)}, #{green($color)}, #{blue($color)}';
 }

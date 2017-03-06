@@ -1,11 +1,16 @@
-/// @name device {mixin}
+/// DEVICE (mixin)
 /// create a media query from device size
+/// @author aepicos
 /// @param {string} $min-width - device name for minimum size
-/// @param {string} $max-width - device name for maximum size
-/// @returns @media query with {min-width (| max-width)]
+/// @param {string} $max-width [false] - device name for maximum size
+/// @returns @media query with {min-width (| max-width)}
 /// @requires
 ///   _settings.scss | helpers/variables/_defaults.scss
 ///   helpers/variables/_devices.scss
+/// @example sass - usage
+///   @include device(phone, tablet) {
+///     ...
+///   }
 
 @mixin device($min-width, $max-width: false) {
   $request-min: false;

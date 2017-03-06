@@ -1,16 +1,25 @@
-@mixin font-family($family: body) {
-  @if $family == header or $family == title {
-    font-family:
-      "Work Sans Hairline",
-      "Work Sans",
-      sans-serif;
-  }
-  @else if $family == mono or $family == monospace {
+/// FONT FAMILY (mixin)
+/// adds a font-family declaration based on the type of element
+/// @author aepicos
+/// @param {String} $family [false]{header(|title)|mono(|monospace)} - type of elemet family is applied to
+/// @example sass - usage
+///   .title {
+///     @include font-family(header);
+///   }
+/// @example css - output
+///   .title {
+///     font-family: {$title-font-family}, {$default-font-family}, {$generic-font-family};
+///   }
+
+$test: true;
+
+@mixin font-family($family: false) {
+  @if $family == mono or $family == monospace {
     font-family: monospace;
   }
   @else {
-    font-family:
-      "Work Sans",
-      sans-serif;
+    $font-family-string: if($family == header or $family == title, "#{$title-font-family}"#{','},#{''}) "#{$default-font-family}", #{$generic-font-family};
+
+    font-family: $font-family-string;
   }
 }

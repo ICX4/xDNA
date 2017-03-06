@@ -1,3 +1,7 @@
+/// COL (mixin)
+/// arranges children in a column
+/// @author aepicos
+
 @mixin col {
   display: flex;
   flex-flow: column nowrap;

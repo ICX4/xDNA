@@ -4,28 +4,8 @@
   100% {
     transform: rotate3d(0, 0, 1, 360deg); } }
 @font-face {
-  font-family: "Merlo Light";
-  src: url("../fonts/merlo/merlo-light-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Merlo Medium";
-  src: url("../fonts/merlo/merlo-medium-webfont.woff2") format("woff2"), url("../fonts/merlo/merlo-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
   font-family: "Work Sans";
   src: url("../fonts/work-sans/worksans-regular-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Work Sans Hairline";
-  src: url("../fonts/work-sans/worksans-hairline-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-hairline-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Work Sans Thin";
-  src: url("../fonts/work-sans/worksans-thin-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-thin-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 @font-face {
@@ -33,18 +13,8 @@
   src: url("../fonts/work-sans/worksans-light-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
-@font-face {
-  font-family: "Work Sans Medium";
-  src: url("../fonts/work-sans/worksans-medium-webfont.woff2") format("woff2"), url("../fonts/work-sans/worksans-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
-  font-family: "Alegreya Italic";
-  src: url("../fonts/alegreya/alegreya-italic-webfont.woff2") format("woff2"), url("../fonts/alegreya/alegreya-italic-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
 html {
-  font-family: "Work Sans", sans-serif;
+  font-family:  "Work Sans", sans-serif;
   box-sizing: border-box;
   font-size: 100%;
   -ms-text-size-adjust: 100%;
@@ -57,9 +27,10 @@ html {
   border: 0; }
 
 body {
+  font-family:  "Work Sans", sans-serif;
   margin: 0;
   overflow-y: scroll;
-  font-size: 0.8rem; }
+  font-size: 0.8125rem; }
 
 article,
 aside,
@@ -327,7 +298,7 @@ progress {
   align-items: center;
   justify-content: center;
   height: 60vh;
-  background-color: #f7f7f7; }
+  background-color: #f2f2f2; }
   .search-hero form {
     padding: 1rem;
     box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -352,7 +323,7 @@ progress {
   .colour-swatch.-overlay {
     background-color: #000; }
   .colour-swatch.-backdrop {
-    background-color: #f7f7f7; }
+    background-color: #f2f2f2; }
   .colour-swatch.-focus {
     background-color: #a2b9e2; }
   .colour-swatch.-divider {

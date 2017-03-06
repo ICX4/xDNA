@@ -1,21 +1,3 @@
-// MERLO
-// for headers
-@font-face {
-  font-family: "Merlo Light";
-  src: url("../fonts/merlo/merlo-light-webfont.woff2") format("woff2"),
-       url("../fonts/merlo/merlo-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Merlo Medium";
-  src: url("../fonts/merlo/merlo-medium-webfont.woff2") format("woff2"),
-       url("../fonts/merlo/merlo-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 // WORK SANS
 // for body
 @font-face {
@@ -27,43 +9,9 @@
 }
 
 @font-face {
-  font-family: "Work Sans Hairline";
-  src: url("../fonts/work-sans/worksans-hairline-webfont.woff2") format("woff2"),
-       url("../fonts/work-sans/worksans-hairline-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Work Sans Thin";
-  src: url("../fonts/work-sans/worksans-thin-webfont.woff2") format("woff2"),
-       url("../fonts/work-sans/worksans-thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Work Sans Light";
   src: url("../fonts/work-sans/worksans-light-webfont.woff2") format("woff2"),
        url("../fonts/work-sans/worksans-light-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Work Sans Medium";
-  src: url("../fonts/work-sans/worksans-medium-webfont.woff2") format("woff2"),
-       url("../fonts/work-sans/worksans-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-// ALEGREYA
-// quote
-@font-face {
-  font-family: "Alegreya Italic";
-  src: url("../fonts/alegreya/alegreya-italic-webfont.woff2") format("woff2"),
-       url("../fonts/alegreya/alegreya-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }

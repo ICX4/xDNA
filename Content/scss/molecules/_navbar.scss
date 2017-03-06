@@ -8,7 +8,6 @@
   }
 
   &--dropdown {
-    //@include col;
     @include padding(left, right);
     @include padding-multiplied(top, 0.5);
     @include padding-multiplied(bottom, 0.5);
