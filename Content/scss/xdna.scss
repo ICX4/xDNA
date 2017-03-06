@@ -11,42 +11,32 @@
 /// this file should contain only @imports
 /// no css to go in here
 
-/// helpers
+/// ABSTRACTS
 /// contains:
 ///  - variables
-///  - functions
+///  - functions (incl. core)
 ///  - mixins
-///  - normalise
 /// see this file for specifics
-@import 'helpers';
+@import 'abstracts';
 
-// atoms
-@import 'atoms/link';
-@import 'atoms/icon';
-@import 'atoms/tooltip';
-@import 'atoms/help';
-@import 'atoms/input';
-@import 'atoms/button';
-@import 'atoms/tab';
-@import 'atoms/dialog';
-@import 'atoms/overlay';
-@import 'atoms/spinner';
+/// ANIMATIONS
+/// contains all generic @keyframe animations
+@import 'animations';
 
-// molecules
-@import 'molecules/close-icon';
-@import 'molecules/card';
-@import 'molecules/row';
-@import 'molecules/tab-bar';
-@import 'molecules/pagination';
-@import 'molecules/carousel';
-@import 'molecules/col';
-@import 'molecules/navbar';
-@import 'molecules/global-menu';
-@import 'molecules/side-menu';
-@import 'molecules/nested-menu';
-@import 'molecules/global-notification';
+/// BASE
+/// contains all reset/normalise styles
+@import 'base';
 
-@import 'organisms/login';
-@import 'organisms/global-search';
+/// COMPONENTS
+/// contains TODO describe
+@import 'components';
+
+/// COMPOSITES
+/// contains TODO describe
+@import 'composites';
+
+/// PARTIALS
+/// all specific composites
+@import 'partials';
 
 @import '_scratchpad';

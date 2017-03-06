@@ -1,0 +1,19 @@
+// settings
+// (user set variables)
+@import 'settings';
+
+// defaults
+// default fallbacks for above settings
+@import 'abstracts/variables/defaults';
+
+// core functions (that may be required for variables)
+@import 'abstracts/functions/core';
+
+// variables
+@import 'abstracts/variables';
+
+// functions (that require variable input)
+@import 'abstracts/functions';
+
+// mixins
+@import 'abstracts/mixins';
