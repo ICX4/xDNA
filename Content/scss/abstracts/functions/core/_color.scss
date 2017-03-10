@@ -27,10 +27,10 @@ $color-scheme: (
 
   overlay: $overlay-base-color,
 
-  backdrop: darker($application-color, 5%),
+  backdrop: darker($application-color, 5%), //lighter(#c0dac8, 60%),
   shadow: $text-color,
   focus: lighter($button-and-link-color, 50%),
-  divider: darker($application-color, 15%),
+  divider: rgba(black, 0.1), //darker($application-color, 15%),
 
   icx4-green: #70af47,
   icx4-red: #ee257b,

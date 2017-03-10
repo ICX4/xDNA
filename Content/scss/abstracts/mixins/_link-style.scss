@@ -1,3 +1,10 @@
+$link-style--hover-effect: true;
+
+@mixin link-style--no-hover {
+  $link-style--hover-effect: false !global;
+}
+
+
 @mixin link-style {
   font-size: 85%;
   text: {
@@ -5,4 +12,13 @@
     transform: uppercase;
   }
   cursor: pointer;
+
+  @if $link-style--hover-effect {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // reset global variable for modifier
+  $link-style--hover-effect: true !global;
 }

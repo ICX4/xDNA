@@ -1,4 +1,103 @@
-@mixin row {
+// TODO review where to put default
+$row-align-type: center;
+$row-remove-children-margin: false;
+
+/// ROW -STRETCH (mixin modifier)
+/// sets the global $row-align-type to STRETCH for use in ROW (mixin)
+/// always use together with ROW (mixin) immediately AFTER
+/// @author aepicos
+/// @example sass - usage
+///   .parent {
+///     @include row--stretch;
+///     @include row();
+///
+///     .child { ... }
+///   }
+/// @example css - output
+///   .parent {
+///     ...
+///     align-items: stretch;
+///   }
+
+@mixin row--stretch {
+  $row-align-type: stretch !global;
+}
+
+
+/// ROW -TOP (mixin modifier)
+/// sets the global $row-align-type to FLEX-START for use in ROW (mixin)
+/// always use together with ROW (mixin) immediately AFTER
+/// @author aepicos
+/// @example sass - usage
+///   .parent {
+///     @include row--top;
+///     @include row();
+///   }
+/// @example css - output
+///   .parent {
+///     ...
+///     align-items: flex-start;
+///   }
+
+@mixin row--top {
+  $row-align-type: flex-start !global;
+}
+
+
+/// ROW -REMOVE-MARGIN (mixin modifier)
+/// removes top and bottom margin from children in row
+/// always use together with ROW (mixin) immediately AFTER
+/// @author aepicos
+/// @example sass - usage
+///   .parent {
+///     @include row--remove-margin;
+///     @include row();
+///   }
+/// @example css - output
+///   .parent {
+///     ...
+///   }
+///   .parent > * {
+///     margin-top: 0;
+///     margin-bottom: 0;
+///     ...
+///   }
+
+@mixin row--remove-margin {
+  $row-remove-children-margin: true !global;
+}
+
+
+/// ROW (mixin)
+/// aligns children in a flex box row
+/// uses and resets $row-align-type
+/// see
+///   ROW -STRETCH (mixin modifier)
+///   ROW -TOP (mixin modifier)
+/// @author aepicos
+/// @param {String} $wrap [wrap]{wrap|nowrap}
+/// @example sass - usage
+///   .parent {
+///     @include row(nowrap);
+///
+///     .child { ... }
+///   }
+
+@mixin row($wrap:wrap) {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row #{$wrap};
+  align-items: $row-align-type;
+
+  @if $row-remove-children-margin {
+    > * {
+      margin: {
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  // reset global variables for modifiers
+  $row-align-type: center !global;
+  $row-remove-children-margin: false !global;
 }

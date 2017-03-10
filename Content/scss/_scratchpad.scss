@@ -5,6 +5,14 @@ blockquote {
   border-left: uom(0.5) solid color(focus);
 }
 
+
+
+
+
+
+
+
+
 .x-fieldset.-contain {
   @include margin-multiplied(bottom, 0.5);
   @include input-focus();
@@ -110,16 +118,26 @@ table.x-active {
 
 
 .x-header {
-  height: auto;
-  //overflow: auto; TODO
   @include padding(top, bottom);
+  display: block;
 }
 
 .x-title {
-  @include h(1);
+  @include font-family(title);
+  @include h(3);
+  color: #2cb6c7; // TODO make var
+
+  &.-larger { @include h(1); }
+  &.-large { @include h(2); }
+  &.-small { @include h(4); }
+  &.-smaller { @include h(5); }
 }
 
 .x-page {
+
+  &--title {
+    @include h(1);
+  }
 
   &--header {
     @include padding(right, left);
@@ -139,6 +157,10 @@ body {
 
 .x-content {
   @include padding(top, right, bottom, left);
+
+  &.-backdrop {
+    @include theme(color(backdrop));
+  }
 
   > * + * {
     @include margin(top);

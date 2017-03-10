@@ -1,5 +1,5 @@
 .x-navbar {
-  @include row;
+  @include row(nowrap);
   list-style: none;
 
   > * {

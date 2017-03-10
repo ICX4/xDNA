@@ -1,0 +1,40 @@
+.x-check-label {
+  @include padding-multiplied(left, 1.5);
+  @extend .x-label;
+  position: relative;
+
+  &::before {
+    @include margin-multiplied(right, 0.5);
+    content: "\02713";
+    display: inline-block;
+    width: uom();
+    height: uom();
+    position: absolute;
+    top: uom(0.3); // TODO magic number
+    left: 0;
+    border: {
+      width: 1px;
+      style: solid;
+      color: color(divider);
+      radius: $border-radius;
+    }
+    background-color: color(app);
+    color: transparent;
+    line-height: uom();
+    text-align: center;
+
+  }
+
+  &--check {
+    @extend .screen-reader;
+
+    &:checked + .x-check-label {
+      font-weight: bold;
+
+      &::before {
+        background-color: color(link);
+        color: color(text-inverted);
+      }
+    }
+  }
+}

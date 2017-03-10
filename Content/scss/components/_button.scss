@@ -1,6 +1,6 @@
 .x-button {
   @include dim(input);
-  @include row();
+  @include row(nowrap);
   @include padding(right, left);
   @include link-style;
   @include input-focus();

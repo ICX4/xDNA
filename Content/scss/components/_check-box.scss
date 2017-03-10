@@ -1,0 +1,53 @@
+.x-check-box {
+  @include margin(right);
+  @include margin-multiplied(bottom, 0.5);
+  @include padding(top, right, bottom);
+  @include padding-multiplied(left, 2.5);
+  @include click;
+  display: inline-block;
+  position: relative;
+
+  &,
+  &::before {
+    border: {
+      width: 1px;
+      style: solid;
+      color: color(divider);
+      radius: $border-radius;
+    }
+  }
+
+  &::before {
+    content: "\02713";
+    display: block;
+    width: uom();
+    height: uom();
+    position: absolute;
+    top: uom();
+    left: uom();
+    background-color: color(app);
+    color: transparent;
+    font-weight: bold;
+    line-height: uom();
+    text-align: center;
+  }
+
+
+  &--check {
+    @extend .screen-reader;
+
+    &:checked + .x-check-box {
+      @include z-depth(1);
+      background-color: #c0dac8; // TODO var
+
+      &::before {
+        background-color: color(link);
+        color: color(text-inverted);
+      }
+    }
+  }
+
+  &.-full-width {
+    display: block;
+  }
+}

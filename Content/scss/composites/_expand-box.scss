@@ -1,0 +1,36 @@
+.x-expand-box {
+  @include theme(color(app));
+  @include padding(top, bottom);
+  @include z-depth(0);
+  display: block;
+  border: 1px solid color(divider);
+
+  &--header {
+    @include row(nowrap);
+    @include padding(right, left);
+    cursor: pointer;
+  }
+
+  &--content {
+    @include margin(top);
+    display: none;
+  }
+
+  .-x-expand-box--icon {
+    transform: rotate(0deg);
+    transition: transform timing(0.5) ease;
+  }
+
+  &.x-active {
+    @include z-depth(2);
+    border: 0;
+
+    .x-expand-box--content {
+      display: block;
+    }
+
+    .-x-expand-box--icon {
+      transform: rotate(90deg);
+    }
+  }
+}

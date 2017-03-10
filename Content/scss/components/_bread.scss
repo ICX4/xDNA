@@ -1,0 +1,52 @@
+.x-bread- {
+
+  &crumb {
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(right, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+
+    &:not(:last-of-type)::after {
+      content: "\0203A";
+      display: inline-block;
+      @include padding-multiplied(left, 0.5);
+      opacity: 0.5;
+    }
+  }
+
+  &box {
+    @include margin(right);
+    @include padding(top, bottom);
+    @include padding-multiplied(left, 2);
+    @include padding-multiplied(right, 2);
+    @include z-depth(0);
+    position: relative;
+    background-color: color(app);
+    border: 1px solid color(divider);
+
+    &:hover {
+      @include z-depth(1);
+    }
+
+    &:not(:last-of-type)::before,
+    &:not(:last-of-type)::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: calc(50% - #{uom()});
+      border: {
+        width: 1rem 0 1rem 1rem;
+        style: solid;
+      }
+    }
+    &:not(:last-of-type)::before {
+      border-color: transparent #{color(divider)};
+      left: 100%;
+    }
+    &:not(:last-of-type)::after {
+      border-color: transparent color(app);
+      left: calc(100% - 1px);
+    }
+  }
+}

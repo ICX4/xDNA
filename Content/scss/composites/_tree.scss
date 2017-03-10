@@ -1,0 +1,48 @@
+.x-tree {
+
+  &--icon {
+    fill: silver; // TODO var me
+    transform: rotate(0deg);
+    transition: transform timing(0.5) ease;
+  }
+
+  &--check {
+    @extend .screen-reader;
+
+    &:checked {
+
+      + .x-tree--header  .x-tree--icon {
+        transform: rotate(90deg);
+        fill: color(link);
+      }
+    }
+  }
+
+  &--header {
+    @include row();
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+
+    .x-tree > & {
+      @include link-style--no-hover;
+      @include link-style;
+      color: color(link);
+      font-weight: bold;
+    }
+  }
+
+  &--child {
+    @include margin(left);
+    display: none;
+    list-style: none;
+
+    .x-tree--check:checked ~ & {
+      display: block;
+    }
+  }
+
+  &--item {
+    @include padding-multiplied(top, 0.5);
+    @include padding-multiplied(bottom, 0.5);
+  }
+}

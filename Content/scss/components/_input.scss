@@ -17,7 +17,32 @@
 }
 
 .x-file-input {
-  @extend .screen-reader;
+  @include row;
+
+  &--label,
+  &--upload {
+    @extend .x-button;
+    @extend .x-button.-primary;
+  }
+
+  &--check {
+    @extend .screen-reader;
+  }
+
+  .x-file-input--upload {
+    display: none;
+  }
+
+  &.-file {
+    .x-file-input--label {
+      background-color: color(app);
+      color: color(link);
+    }
+
+    .x-file-input--upload {
+      display: block;
+    }
+  }
 }
 
 input[type="checkbox" i].x-checkbox {
@@ -35,6 +60,7 @@ input[type="checkbox" i].x-checkbox {
 
 .x-label {
   @include dim(item);
+  margin-bottom: 0;
 
   .x-checkbox + & {
     display: inline-block;

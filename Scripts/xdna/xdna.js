@@ -302,10 +302,11 @@ var x = {
   // FILE INPUT
   fileInput: function(_fileInputs) {
     Array.prototype.forEach.call(_fileInputs, function(fileInput) {
-      var label	 = fileInput.nextElementSibling;
+      var input = fileInput.querySelector('input');
+      var label	 = fileInput.querySelector('label');
       var labelValue = label.innerHTML;
 
-      fileInput.addEventListener('change', function(_event) {
+      input.addEventListener('change', function(_event) {
         var fileName = '';
 
         if (this.files && this.files.length === 1) {
@@ -313,6 +314,7 @@ var x = {
         }
         if (fileName) {
           label.querySelector('span').innerHTML = fileName;
+          fileInput.classList.add('-file');
         }
         else {
           label.innerHTML = labelValue;

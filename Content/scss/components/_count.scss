@@ -1,0 +1,20 @@
+.x-count {
+  color: silver; // TODO var
+  font: {
+    size: 80%;
+    weight: 400;
+  }
+  &:not(.-pill)::before { content: "("; }
+  &:not(.-pill)::after { content: ")"; }
+
+  &.-pill {
+    @include padding-multiplied(top, 0.1);
+    @include padding-multiplied(right, 0.3);
+    @include padding-multiplied(bottom, 0.1);
+    @include padding-multiplied(left, 0.3);
+    display: inline-block;
+    border-radius: 0.5em;
+    background-color: silver;
+    color: color(text-inverted);
+  }
+}

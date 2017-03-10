@@ -1,7 +1,8 @@
 .x-global-menu {
+  @include row--stretch;
+  @include row(nowrap);
   @include fix(top);
   @include z-index(global-menu);
-  @include row;
   height: $global-menu-height;
   background-color: color(global-menu);
   border-bottom: 1px solid color(divider);
@@ -13,7 +14,8 @@
   }
 
   &--group {
-    @include row;
+    @include row--stretch;
+    @include row(nowrap);
     width: auto;
 
     &.-right {
