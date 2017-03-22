@@ -19,7 +19,24 @@ blockquote {
 
 
 
+.x-section {
+  @include padding();
+  border-radius: $border-radius;
 
+  &--title {
+    @extend .x-title;
+    @extend .x-title.-smaller;
+    @include margin-multiplied(bottom, 2);
+  }
+
+  &.-backdrop {
+    background-color: color(backdrop);
+  }
+
+  &.-centered {
+    text-align: center;
+  }
+}
 
 
 

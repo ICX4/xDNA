@@ -65,4 +65,8 @@ input[type="checkbox" i].x-checkbox {
   .x-checkbox + & {
     display: inline-block;
   }
+
+  &.-subtle {
+    color: rgba(color(text), 0.5);
+  }
 }

@@ -7,8 +7,9 @@
   }
 
   &.-even {
-    & > * + * {
-      margin-left: auto;
+    & > * {
+      @include padding(right, left);
+      flex: 1;
     }
   }
 
@@ -17,6 +18,12 @@
 
     & > * + * {
       @include margin(left);
+    }
+  }
+
+  &.-divided {
+    > *:not(:first-child) {
+      border-left: 1px solid color(divider);
     }
   }
 }
