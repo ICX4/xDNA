@@ -1,7 +1,6 @@
 .x-expand-box {
   @include theme(color(app));
   @include padding(top, bottom);
-  //@include z-depth(0);
   display: block;
   border: {
     width: 1px;
@@ -27,8 +26,6 @@
   }
 
   &.x-active {
-    //@include z-depth(2);
-    //border: 0;
 
     .x-expand-box--content {
       display: block;
@@ -36,6 +33,16 @@
 
     .-x-expand-box--icon {
       transform: rotate(90deg);
+    }
+  }
+
+  // FLOAT (modifier)
+  &.-float {
+    @include z-depth(0);
+
+    &.x-active {
+      @include z-depth(2);
+      border: 0;
     }
   }
 }
