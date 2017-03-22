@@ -4,6 +4,7 @@
 html {
   @include font-family();
   box-sizing: border-box; // 3
+  min-height: 100%;
   font-size: 100%;
   -ms-text-size-adjust: 100%; // 2
   -webkit-text-size-adjust: 100%; // 2

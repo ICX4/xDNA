@@ -28,7 +28,7 @@
     @include padding-multiplied(bottom, 0.5);
     display: block;
     min-width: uom();
-    height: calc(#{$base-font-size} + #{uom()});
+    //height: calc(#{$base-font-size} + #{uom()});
     min-height: uom();
     border: {
       width: 1px;

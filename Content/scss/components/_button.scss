@@ -14,6 +14,10 @@
     radius: $border-radius;
   }
 
+  &:hover {
+    text-decoration: none;
+  }
+
   > *:not(:first-child) {
     @include padding-multiplied(left, 0.5);
   }

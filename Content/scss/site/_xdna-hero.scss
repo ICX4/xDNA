@@ -1,6 +1,4 @@
 .xdna-hero {
-  @include margin-multiplied(left, -1);
-  @include margin-multiplied(right, -1);
   display: flex;
   align-items:center;
   justify-content:center;

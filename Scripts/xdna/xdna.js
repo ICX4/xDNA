@@ -12,6 +12,15 @@ var el = {
     return document.querySelectorAll(_selector);
   },
 
+  ancestor: function(_me, _ancestorClass) {
+    while ((_me = _me.parentElement) && !_me.classList.contains(_ancestorClass));
+    return _me;
+  },
+
+  sibling: function(_me, _siblingSelector) {
+    return _me.parentNode.querySelector(_siblingSelector);
+  },
+
   create: function(_tagName, _className) {
     var newElement = document.createElement(_tagName);
 
@@ -50,6 +59,8 @@ var el = {
 };
 
 var x = {
+
+  activeClass: 'x-active',
 
   // object
   // NESTED MENU
@@ -158,7 +169,7 @@ var x = {
         nav.appendChild(xLink);
 
         if (index === '-0') {
-          nav.classList.add('x-active');
+          nav.classList.add(x.activeClass);
         }
       }
 
@@ -205,8 +216,34 @@ var x = {
   },
 
   // function
+  // CLOSE ALL
+  closeAll: function(_target) {
+    var activeElements = el.getAll('.' + x.activeClass);
+    var target = el.ancestor(_target, x.activeClass);
+
+    if (target) {
+      console.log(activeElements.length);
+      [].forEach.call(activeElements, function(activeElement) {
+        if (activeElement === target) {
+          console.log(activeElements);
+          //activeElements.splice(activeElement, 1);
+        }
+      });
+      console.log(activeElements.length);
+    }
+    else {
+      console.log('no target');
+    }
+    var activeElements = el.getAll('.' + x.activeClass);
+
+    for (var i = 0, ii = activeElements.length; i < ii; i++) {
+      activeElements[i].classList.remove(x.activeClass);
+    }
+  },
+
+  // function
   // DATA SENDERS
-  dataSenders: function (_dataSenders) {
+  dataSenders: function(_dataSenders) {
     if (!!_dataSenders) {
       for (var i = 0, ii = _dataSenders.length; i < ii; i++) {
 
@@ -218,7 +255,7 @@ var x = {
             var dataReceivers = el.getAll('[data-receive="' + broadcast + '"]');
 
             for (var k = 0, kk = dataReceivers.length; k < kk; k++) {
-              dataReceivers[k].classList.toggle('x-active');
+              dataReceivers[k].classList.toggle(x.activeClass);
             }
           }
         }, false);
@@ -260,9 +297,9 @@ var x = {
     triggers: '[data-notification]',
 
     animate: function() {
-      x.notification.panel.classList.remove('x-active');
+      x.notification.panel.classList.remove(x.activeClass);
       void x.notification.panel.offsetWidth;
-      x.notification.panel.classList.add('x-active');
+      x.notification.panel.classList.add(x.activeClass);
     },
 
     setType: function(_type) {
@@ -458,4 +495,7 @@ setTimeout(function() {
   x.notification.init();
   x.scrollFocus.init();
   x.help();
+
+console.log('********** READY **********');
+
 }, 5000);

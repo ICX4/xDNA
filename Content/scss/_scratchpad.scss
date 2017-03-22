@@ -7,6 +7,16 @@ blockquote {
 
 
 
+.x-badge {
+  @include dim(item);
+  @include padding(left, right);
+  background-color: red;
+  color: white;
+  display: inline-block;
+  border-radius: uom();
+}
+
+
 
 
 
@@ -39,19 +49,48 @@ blockquote {
   }
 }
 
-table {
-  width: 100%;
-}
 
-table {
-  @include margin(bottom);
+.x-table {
+
+  $hover-color: mix(beige, navajowhite); // TODO make global var
+  $row-color: whitesmoke; // TODO make global var
+
+  width: 100%;
   border: {
     collapse: collapse;
     spacing: 0;
   }
+
+  th,
+  td {
+    font-weight: normal;
+    text-align: left;
+    border-width: 0;
+  }
+
+  tbody {
+    tr {
+      background-color: $row-color;
+      border-bottom: 4px solid white;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+  }
+
+  th {
+    padding: 0.5rem 1rem;
+    color: color(link);;
+    font-size: 12px;
+  }
+
+  td {
+    padding: 1rem;
+  }
 }
 
-thead {
+/*thead {
   font-size: 85%;
   color: color(link);
   border-bottom: 2px solid;
@@ -80,9 +119,9 @@ tr:nth-child(2n) {
 }
 tr:nth-child(2n-1) {
   background-color: white;
-}
+}*/
 
-table.x-active {
+.x-table.x-active {
 
   &, tr, th, td { display: block; }
   thead { display: none; }
@@ -134,13 +173,33 @@ table.x-active {
 }
 
 .x-page {
+  @include padding();
 
-  &--title {
-    @include h(1);
+  > *:not(.-x-full-width) {
+    max-width: 1200px;
+    margin: {
+      right: auto;
+      left: auto;
+    }
   }
 
   &--header {
-    @include padding(right, left);
+    @include padding-multiplied(top, 3);
+    @include padding-multiplied(bottom, 2);
+  }
+
+  &--title {
+    @include h(5);
+    color: #2cb6c7; // TODO make var
+  }
+
+  &--subtitle {
+    @include h(6);
+    opacity: 0.6;
+  }
+
+  > * + * {
+    margin-top: uom();
   }
 }
 
@@ -156,7 +215,12 @@ body {
 
 
 .x-content {
-  @include padding(top, right, bottom, left);
+
+  &:not(.-inline) {
+    @include padding(right, left);
+  }
+
+  @include padding(top, bottom);
 
   &.-backdrop {
     @include theme(color(backdrop));

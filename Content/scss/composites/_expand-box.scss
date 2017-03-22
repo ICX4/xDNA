@@ -1,9 +1,14 @@
 .x-expand-box {
   @include theme(color(app));
   @include padding(top, bottom);
-  @include z-depth(0);
+  //@include z-depth(0);
   display: block;
-  border: 1px solid color(divider);
+  border: {
+    width: 1px;
+    style: solid;
+    color: color(divider);
+    radius: $border-radius;
+  }
 
   &--header {
     @include row(nowrap);
@@ -22,8 +27,8 @@
   }
 
   &.x-active {
-    @include z-depth(2);
-    border: 0;
+    //@include z-depth(2);
+    //border: 0;
 
     .x-expand-box--content {
       display: block;

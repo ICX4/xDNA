@@ -3,6 +3,7 @@
 //    to avoid unsightly jump if content is added
 body {
   @include font-family();
+  min-height: 100%;
   margin: 0; // 1
   overflow: {
     y: scroll; // 2

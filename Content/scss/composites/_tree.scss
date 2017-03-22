@@ -32,7 +32,7 @@
   }
 
   &--child {
-    @include margin(left);
+    @include margin-multiplied(left, 1.2);
     display: none;
     list-style: none;
 
