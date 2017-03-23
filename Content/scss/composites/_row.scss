@@ -13,11 +13,38 @@
     }
   }
 
+  &.-top {
+    align-items: flex-start;
+  }
+
+
   &.-padded {
     @include padding(top, bottom);
+  }
+
+  &.-padded-items {
+    & > * {
+      @include padding();
+    }
+  }
+
+  &.-padded,
+  &.-padded-items {
 
     & > * + * {
       @include margin(left);
+    }
+  }
+
+  &.-centered {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &.-center-items {
+
+    & > * {
+      text-align: center;
     }
   }
 

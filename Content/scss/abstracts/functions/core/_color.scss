@@ -30,7 +30,7 @@ $color-scheme: (
   backdrop: darker($application-color, 5%), //lighter(#c0dac8, 60%),
   shadow: $text-color,
   focus: lighter($button-and-link-color, 50%),
-  divider: rgba(black, 0.1), //darker($application-color, 15%),
+  divider: rgba(if(is-dark-color($application-color), white, black), 0.1),
 
   icx4-green: #70af47,
   icx4-red: #ee257b,

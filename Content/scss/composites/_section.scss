@@ -1,0 +1,29 @@
+.x-section {
+  @include margin-multiplied(bottom, 3);
+  @include padding();
+  border: 1px solid color(divider);
+  border-radius: $border-radius;
+
+  &--title {
+    @extend .x-title;
+    @extend .x-title.-smaller;
+    @include margin-multiplied(bottom, 2);
+  }
+
+  &.-backdrop,
+  &.-raised {
+    border: 0;
+  }
+
+  &.-backdrop {
+    background-color: color(backdrop);
+  }
+
+  &.-raised {
+    @include z-depth(2);
+  }
+
+  &.-centered {
+    text-align: center;
+  }
+}

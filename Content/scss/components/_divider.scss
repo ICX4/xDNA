@@ -1,0 +1,52 @@
+.x-divider {
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  min-width: uom(4);
+  height:auto;
+  min-height: uom(6);
+  align-self:stretch; // as it is most likely in  a flex row
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: color(divider);
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
+  &.-or,
+  &.-and {
+
+    &::before {
+      background: {
+        color: transparent;
+        image: linear-gradient(to bottom,
+          #{color(divider)} 0%,
+          #{color(divider)} calc(50% - #{uom()}),
+          transparent calc(50% - #{uom()}),
+          transparent calc(50% + #{uom()}),
+          #{color(divider)} calc(50% + #{uom()}),
+          #{color(divider)} 100%);
+      }
+    }
+
+    &::after {
+      display: block;
+      width: uom(2);
+      height: uom(2);
+      border: {
+        width: 1px;
+        style: solid;
+        color: color(divider);
+        radius: 50%;
+      }
+      line-height: uom(2);
+      text-align: center;
+    }
+  }
+  &.-or::after { content: 'or'; }
+  &.-and::after { content: '\00026'; }
+}

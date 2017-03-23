@@ -19,26 +19,6 @@ blockquote {
 
 
 
-.x-section {
-  @include padding();
-  border-radius: $border-radius;
-
-  &--title {
-    @extend .x-title;
-    @extend .x-title.-smaller;
-    @include margin-multiplied(bottom, 2);
-  }
-
-  &.-backdrop {
-    background-color: color(backdrop);
-  }
-
-  &.-centered {
-    text-align: center;
-  }
-}
-
-
 
 .x-fieldset.-contain {
   @include margin-multiplied(bottom, 0.5);
@@ -193,7 +173,7 @@ tr:nth-child(2n-1) {
   @include padding();
 
   > *:not(.-x-full-width) {
-    max-width: 1200px;
+    max-width: $max-page-width;
     margin: {
       right: auto;
       left: auto;
@@ -206,7 +186,7 @@ tr:nth-child(2n-1) {
   }
 
   &--title {
-    @include h(5);
+    @include h(3);
     color: #2cb6c7; // TODO make var
   }
 
@@ -228,10 +208,25 @@ body {
 @include scrollbar();
 
 
+.x-banner {
+  @include padding(bottom);
 
+  & > * {
+    max-width: $max-page-width;
+    margin: {
+      right: auto;
+      left: auto;
+    }
+  }
+
+  &.-backdrop {
+    background-color: color(backdrop);
+  }
+}
 
 
 .x-content {
+  max-width: $max-page-width;
 
   &:not(.-inline) {
     @include padding(right, left);
