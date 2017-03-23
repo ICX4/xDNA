@@ -45,18 +45,43 @@
   }
 }
 
-input[type="checkbox" i].x-checkbox {
-  width: uom(1.4);
-  height: uom(1.4);
-  border:1px solid red;
+input[type="checkbox"].x-checkbox,
+input[type="radio"].x-radio {
+  @include margin-multiplied(right, 0.5);
+  -webkit-appearance: none;
+  appearance: none;
+  width: uom();
+  height: uom();
+  position: relative;
+  outline: 0;
 
   &::after {
-    content: " ";
+    content: "\02714";
+    display: inline-block;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border: 1px solid color(divider);
+    color: transparent;
+    background-color: color(app);
+    font-weight: bold;
+    line-height: uom();
+    text-align: center;
   }
 
-  &:checked::after {
+  &:checked {
+
+    &::after {
+      color: color(text-inverted);
+      background-color: color(link);
+    }
   }
 }
+input[type="checkbox"].x-checkbox::after { border-radius: $border-radius; }
+input[type="radio"].x-radio::after { border-radius: 50%; }
+
 
 .x-label {
   @include dim(item);
