@@ -16,6 +16,17 @@
   }
 }
 
+.x-text {
+  @include dim(input);
+  width: calc(100% - #{uom()});
+  min-height: 5rem;
+  line-height: 1.3;
+
+  &:focus {
+    border-color: color(link);
+  }
+}
+
 .x-file-input {
   @include row;
 
