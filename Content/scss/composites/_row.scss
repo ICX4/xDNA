@@ -2,13 +2,17 @@
   @include row();
   width: 100%;
 
+  & > * + * {
+    @include margin(left);
+  }
+
   &.-no-wrap {
     flex-flow: row nowrap;
   }
 
   &.-even {
     & > * {
-      @include padding(right, left);
+      //@include padding(right, left); // TODO review
       flex: 1;
     }
   }
@@ -25,14 +29,6 @@
   &.-padded-items {
     & > * {
       @include padding();
-    }
-  }
-
-  &.-padded,
-  &.-padded-items {
-
-    & > * + * {
-      @include margin(left);
     }
   }
 

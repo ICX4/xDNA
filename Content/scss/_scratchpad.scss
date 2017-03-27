@@ -6,6 +6,97 @@ blockquote {
 }
 
 
+.x-postit {
+  @include margin();
+  @include padding();
+  @include z-depth(2);
+  min: {
+    width: uom(10);
+    height: uom(10);
+  }
+  background-color: #f9f4d6; // TODO make var
+}
+
+
+
+
+
+
+.x-padding {
+  @include padding();
+
+  &.-backdrop {
+    background-color: color(backdrop);
+  }
+}
+
+.x {
+  @include padding();
+  background-color: color(app);
+
+  & > *:not(.x-row) {
+    display: block;
+  }
+
+  & > * {
+    max-width: $max-page-width;
+    margin: {
+      right: auto;
+      left: auto;
+    }
+  }
+
+  & > * + * {
+    @include margin(top);
+  }
+
+  &.-full-width > * {
+    max-width: 100%;
+  }
+
+  &.-backdrop {
+    background-color: color(backdrop);
+  }
+
+  &.-underlined {
+    border-bottom: 1px solid color(divider);
+  }
+
+  &.-divided > * + * {
+    @include padding(top);
+    border-top: 1px solid color(divider);
+  }
+
+  // From the Department for the Bleeding Obvious:
+  // Don't do this, developers. Just. Do. Not.
+  style,
+  script {
+    display: none !important;
+  }
+}
+
+.x-content {
+  &:not(.-row) > * + * {
+    @include margin(top);
+  }
+
+  &.-row {
+    display: flex;
+    flex-flow: row wrap;
+
+    > * + * {
+      @include margin(left);
+    }
+  }
+}
+
+
+
+
+
+
+
+
 
 .x-badge {
   @include dim(item);
@@ -172,15 +263,6 @@ tr:nth-child(2n-1) {
 }
 
 .x-page {
-  @include padding();
-
-  > *:not(.-x-full-width) {
-    max-width: $max-page-width;
-    margin: {
-      right: auto;
-      left: auto;
-    }
-  }
 
   &--header {
     @include padding-multiplied(top, 3);
@@ -223,24 +305,5 @@ body {
 
   &.-backdrop {
     background-color: color(backdrop);
-  }
-}
-
-
-.x-content {
-  max-width: $max-page-width;
-
-  &:not(.-inline) {
-    @include padding(right, left);
-  }
-
-  @include padding(top, bottom);
-
-  &.-backdrop {
-    @include theme(color(backdrop));
-  }
-
-  > * + * {
-    @include margin(top);
   }
 }
