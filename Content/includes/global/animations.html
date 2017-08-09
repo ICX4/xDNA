@@ -3,4 +3,24 @@
   <header class="section-header">
     <h3>Animations</h3>
   </header>
+
+  <div class="x-row">
+    <div class="animation-div -rotate-clockwise">Rotate clockwise</div>
+    <div class="animation-div -rotate-anti-clockwise">Rotate anti-clockwise</div>
+    <div class="animation-div -shake">Shake</div>
+    <div class="animation-div -swing">Swing</div>
+    <div class="animation-div -rubber">Rubber</div>
+  </div>
+
+  <div class="example -hidden">
+    <style>
+      .my-element:hover {
+        animation: rotate-clockwise 2000ms linear infinite;
+        animation: rotate-anti-clockwise 2000ms linear infinite;
+        animation: shake 1000ms;
+        animation: swing 750ms;
+        animation: rubber 1000ms both;
+      }
+    </style>
+  </div>
 </section>

@@ -13,7 +13,7 @@
   @include padding-multiplied(bottom, 3);
   @include padding-multiplied(left, 3);
   @include fix(top);
-  @include z-index(global-notification);
+  @include z-index(notification);
   background-color: RoyalBlue; // TODO $col-link;
   color: white; // TODO use variable
   font-weight: bold;

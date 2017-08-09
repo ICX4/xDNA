@@ -5,7 +5,7 @@ setTimeout(function() {
 
   for (var i = 0, ii = symbols.length; i < ii; i++) {
     innerHTML += '<div class="x-card">';
-    innerHTML += '  <div class="x-content">';
+    innerHTML += '  <div class="x-padding">';
     innerHTML += '    <svg class="x-icon -' + symbols[i].id.substring(6) + '">';
     innerHTML += '      <use xlink:href="#' + symbols[i].id + '"></use>';
     innerHTML += '    <\/svg>';

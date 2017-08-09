@@ -1,9 +1,11 @@
-.x-bread- {
+.x-bread {
 
-  &crumb {
+  &-crumb {
     @include padding-multiplied(top, 0.5);
     @include padding-multiplied(right, 0.5);
     @include padding-multiplied(bottom, 0.5);
+
+    display: inline-block;
 
     &:not(:last-of-type)::after {
       content: "\0203A";
@@ -13,12 +15,14 @@
     }
   }
 
-  &box {
+  &-box {
     @include margin(right);
     @include padding(top, bottom);
     @include padding-multiplied(left, 2);
     @include padding-multiplied(right, 2);
     @include z-depth(0);
+
+    display: inline-block;
     position: relative;
     background-color: color(app);
     border: 1px solid color(divider);

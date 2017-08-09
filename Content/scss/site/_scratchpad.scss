@@ -62,3 +62,28 @@
     }
   }
 }
+
+.animation-div {
+  padding: 1rem 2rem;
+  background-color: rgba(black, 0.1);
+
+  &.-rotate-clockwise:hover {
+    animation: rotate-clockwise 2000ms linear infinite;
+  }
+
+  &.-rotate-anti-clockwise:hover {
+    animation: rotate-anti-clockwise 2000ms linear infinite;
+  }
+
+  &.-shake:hover {
+    animation: shake 1000ms;
+  }
+
+  &.-swing:hover {
+    animation: swing 750ms;
+  }
+
+  &.-rubber:hover {
+    animation: rubber 1000ms both;
+  }
+}

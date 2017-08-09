@@ -1,97 +1,166 @@
-/*
-Error: Undefined variable: "$application-color".
-        on line 16 of scss/abstracts/functions/core/_color.scss
-        from line 5 of scss/abstracts/functions/_core.scss
-        from line 7 of scss/_abstracts.scss
-        from line 3 of scss/site.scss
+.xdna-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url("../img/css.jpg");
+  background-size: cover;
+  color: #fff;
+  text-align: center; }
+  .xdna-hero::before, .xdna-hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../img/dna.jpg");
+    background-position: center center;
+    background-size: cover;
+    transform: scale(1);
+    transition: transform 1050ms 0ms, opacity 700ms 350ms; }
+  .xdna-hero::before {
+    opacity: 1; }
+  .xdna-hero::after {
+    opacity: 0.7; }
+  .xdna-hero:hover::before, .xdna-hero:hover::after {
+    opacity: 0;
+    transition: transform 6300ms 0ms, opacity 5250ms 1050ms; }
+  .xdna-hero:hover::before {
+    transform: scale(1.2) translateX(-3vw) rotate(-14deg); }
+  .xdna-hero:hover::after {
+    transform: scale(1.6) translateX(5vw) rotate(24deg); }
+  .xdna-hero.js-scroll-focus {
+    opacity: 0;
+    transition: opacity 700ms; }
+    .xdna-hero.js-scroll-focus.-in-focus {
+      opacity: 1; }
+  .xdna-hero article {
+    max-width: 40rem;
+    position: relative;
+    z-index: 1; }
+    .xdna-hero article a {
+      color: #0b7da6; }
 
-Backtrace:
-scss/abstracts/functions/core/_color.scss:16
-scss/abstracts/functions/_core.scss:5
-scss/_abstracts.scss:7
-scss/site.scss:3
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/map_literal.rb:53:in `block in _perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/map_literal.rb:52:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/map_literal.rb:52:in `_perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:471:in `visit_variable'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block (2 levels) in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:328:in `block in visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `block in with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:88:in `with_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:325:in `visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:294:in `watch'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin.rb:109:in `method_missing'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:360:in `watch_or_update'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
-C:/Ruby22-x64/bin/sass:23:in `load'
-C:/Ruby22-x64/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$application-color\".\A         on line 16 of scss/abstracts/functions/core/_color.scss\A         from line 5 of scss/abstracts/functions/_core.scss\A         from line 7 of scss/_abstracts.scss\A         from line 3 of scss/site.scss"; }
+.search-hero {
+  margin-left: -1rem;
+  margin-right: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  background-color: #f2f2f2; }
+  .search-hero form {
+    padding: 1rem;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    width: 60vw;
+    min-width: 500px;
+    max-width: calc(100% - 2rem);
+    background-color: #fff;
+    border-radius: 2px; }
+
+.colour-swatch {
+  width: 100%;
+  height: 6rem; }
+  .colour-swatch.-app {
+    background-color: #fff; }
+  .colour-swatch.-text {
+    background-color: #000; }
+  .colour-swatch.-link {
+    background-color: #0b7da6; }
+  .colour-swatch.-highlight {
+    background-color: #fbfcc5; }
+  .colour-swatch.-overlay {
+    background-color: #000; }
+  .colour-swatch.-backdrop {
+    background-color: #f2f2f2; }
+  .colour-swatch.-focus {
+    background-color: #85bed3; }
+  .colour-swatch.-divider {
+    background-color: rgba(0, 0, 0, 0.1); }
+  .colour-swatch.-icx4-green {
+    background-color: #70af47; }
+  .colour-swatch.-icx4-red {
+    background-color: #ee257b; }
+  .colour-swatch.-icx4-blue {
+    background-color: #2ec0cf; }
+  .colour-swatch.-icx4-grey {
+    background-color: #3a3a3c; }
+
+.section-header {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .section-header h3 {
+    font-weight: 100;
+    font-size: 2rem; }
+
+.example.-row {
+  display: flex;
+  flex-direction: row; }
+.example.-hidden {
+  display: none; }
+
+.example-code {
+  margin-bottom: 1rem;
+  display: block;
+  background-color: whitesmoke;
+  border: 1px solid silver;
+  border-radius: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
+.grid-test {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  list-style: none; }
+  .grid-test > * {
+    flex: 1 0 100%; }
+  .grid-test > * {
+    height: 75px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    box-shadow: 0 0 0 2px white inset; }
+    @media (min-width: 481px) {
+      .grid-test > *:nth-child(1) {
+        max-width: 25%; }
+      .grid-test > *:nth-child(2) {
+        max-width: 41.6666666667%; }
+      .grid-test > *:nth-child(3) {
+        max-width: 33.3333333333%; }
+      .grid-test > *:nth-child(n+4):nth-child(-n+9) {
+        max-width: 50%; } }
+    @media (min-width: 1025px) {
+      .grid-test > *:nth-child(1) {
+        max-width: 25%; }
+      .grid-test > *:nth-child(2) {
+        max-width: 41.6666666667%; }
+      .grid-test > *:nth-child(3) {
+        max-width: 33.3333333333%; }
+      .grid-test > *:nth-child(n+4):nth-child(-n+9) {
+        max-width: 33.3333333333%; }
+      .grid-test > *:nth-child(7) {
+        margin-left: 33.3333333333%;
+        margin-right: 33.3333333333%; } }
+
+.animation-div {
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.1); }
+  .animation-div.-rotate-clockwise:hover {
+    animation: rotate-clockwise 2000ms linear infinite; }
+  .animation-div.-rotate-anti-clockwise:hover {
+    animation: rotate-anti-clockwise 2000ms linear infinite; }
+  .animation-div.-shake:hover {
+    animation: shake 1000ms; }
+  .animation-div.-swing:hover {
+    animation: swing 750ms; }
+  .animation-div.-rubber:hover {
+    animation: rubber 1000ms both; }
+
+/*# sourceMappingURL=site.css.map */

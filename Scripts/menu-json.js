@@ -34,6 +34,26 @@ var menuJSON = [
       "Text":"Atoms",
       "Link":"",
       "ChildMenuItems":[
+        {
+          "Text":"Icons",
+          "Link":"#icons",
+          "ChildMenuItems":[]
+        },
+        {
+          "Text":"Text elements",
+          "Link":"#text",
+          "ChildMenuItems":[]
+        },
+        {
+          "Text":"Count",
+          "Link":"#count",
+          "ChildMenuItems":[]
+        },
+        {
+           "Text":"Badge",
+           "Link":"#badge",
+           "ChildMenuItems":[]
+        },
          {
             "Text":"Buttons",
             "Link":"#buttons",
@@ -45,13 +65,13 @@ var menuJSON = [
            "ChildMenuItems":[]
          },
          {
-           "Text":"Text elements",
-           "Link":"#text",
+           "Text":"Checkable label",
+           "Link":"#check-label",
            "ChildMenuItems":[]
          },
          {
-           "Text":"Icons",
-           "Link":"#icons",
+           "Text":"Checkable box",
+           "Link":"#check-box",
            "ChildMenuItems":[]
          },
          {
@@ -96,8 +116,33 @@ var menuJSON = [
      "Link":"",
      "ChildMenuItems":[
        {
+         "Text":"Row",
+         "Link":"#row",
+         "ChildMenuItems":[]
+       },
+       {
+         "Text":"Column",
+         "Link":"#col",
+         "ChildMenuItems":[]
+       },
+       {
+         "Text":"Section",
+         "Link":"#section",
+         "ChildMenuItems":[]
+       },
+       {
          "Text":"Tab-bar",
          "Link":"#tab-bar",
+         "ChildMenuItems":[]
+       },
+       {
+         "Text":"Tree",
+         "Link":"#tree",
+         "ChildMenuItems":[]
+       },
+       {
+         "Text":"Expanding box",
+         "Link":"#expand-box",
          "ChildMenuItems":[]
        },
        {

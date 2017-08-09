@@ -2,8 +2,8 @@
   @include row();
   width: 100%;
 
-  & > * + * {
-    @include margin(left);
+  & > * {
+    @include margin(right);
   }
 
   &.-no-wrap {
