@@ -24,17 +24,17 @@
   @if $type == item or $type == input {
     @include margin-multiplied(right, 0.5);
     @include margin-multiplied(bottom, 0.5); // TODO review
-    @include padding-multiplied(top, 0.5);
-    @include padding-multiplied(bottom, 0.5);
+    // @include padding-multiplied(top, 0.5);
+    // @include padding-multiplied(bottom, 0.5); // select-boxes on mac ignores padding!
     display: block;
-    min-width: uom();
-    //height: calc(#{$base-font-size} + #{uom()});
+    // work-around for padding oddity on mac select-boxes
+    height: calc(#{$base-font-size} + #{uom()});
     min-height: uom();
     border: {
       width: 1px;
       style: solid;
     }
-    line-height: $base-font-size;
+    line-height: calc(#{$base-font-size} + #{uom()});
   }
 
   @if $type == item {

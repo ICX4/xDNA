@@ -1,4 +1,14 @@
 
+.row-content {
+  min-width: 100px;
+  margin: 2px;
+  background-color: color(divider);
+  padding: 4px;
+
+  &.-no-style {
+    background-color: transparent;
+  }
+}
 
 .section-header {
   @include margin-multiplied(top, 3);

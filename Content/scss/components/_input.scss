@@ -1,5 +1,7 @@
-.x-input {
+.x-input,
+.x-select {
   @include dim(input);
+  min-width: uom(11);
 
   &:focus {
     border-color: color(link);
@@ -7,11 +9,8 @@
 
   @for $i from 2 through 3 {
     &.-size-#{$i} {
-      height: calc(#{$base-font-size} + #{uom($i)});
-      padding: {
-        top: #{uom($i * 0.5)};
-        bottom: #{uom($i * 0.5)};
-      }
+      height: calc(#{$base-font-size} + #{uom()} + #{uom(0.25) * $i});
+      line-height: calc(#{$base-font-size} + #{uom()} + #{uom(0.25) * $i});
     }
   }
 }

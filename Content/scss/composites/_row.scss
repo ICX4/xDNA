@@ -14,7 +14,15 @@
     & > * {
       //@include padding(right, left); // TODO review
       flex: 1;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
     }
+  }
+
+  &.-space {
+    justify-content: space-between;
   }
 
   &.-top {
@@ -33,8 +41,10 @@
   }
 
   &.-centered {
-    margin-right: auto;
-    margin-left: auto;
+    margin: {
+      right: auto;
+      left: auto;
+    }
   }
 
   &.-center-items {
@@ -47,6 +57,13 @@
   &.-divided {
     > *:not(:first-child) {
       border-left: 1px solid color(divider);
+    }
+  }
+
+  &-item {
+
+    &.-align-right {
+      margin-left: auto;
     }
   }
 }
