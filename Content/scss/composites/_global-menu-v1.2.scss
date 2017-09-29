@@ -1,0 +1,80 @@
+$global-menu-background-color: #36384f;
+$global-menu-text-color: white;
+$global-menu-user-icon-background-color: #3c6a7e;
+
+.x-global-menu {
+  @include row--stretch;
+  @include row(nowrap);
+  @include fix(top);
+  @include z-index(global-menu);
+  height: $global-menu-height;
+  background-color: $global-menu-background-color;
+  transform: translateY(-100%);
+  transition: transform 350ms ease;
+
+  &.-show {
+    transform: translateY(0%);
+  }
+
+  &--group {
+    @include row--stretch;
+    @include row(nowrap);
+    width: auto;
+
+    &.-right {
+      margin-left: auto;
+    }
+  }
+
+  &--item,
+  // next line required to override Clik CSS
+  .x-global-menu--item:not([href]):not([tabindex]) {
+    @include padding();
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    min-width: $global-menu-height;
+    color: $global-menu-text-color;
+    line-height: $global-menu-height;
+    cursor: pointer;
+
+    + .x-global-menu--item {
+      border-left: 0;
+    }
+
+    &.-search {
+      padding: uom(0.5);
+      position: relative;
+
+      > * {
+        @include padding-multiplied(right, 0);
+        @include padding-multiplied(left, 0);
+        height: #{$global-menu-height - uom()};
+        background-color: transparent;
+        border-color: transparent;
+      }
+
+      > input {
+        @include margin-multiplied(right, 0);
+        width: 16vw;
+      }
+
+      > button {
+        position: absolute;
+        top: uom(0.5);
+        right: 0;
+      }
+    }
+
+    &.-user {
+      background-color: $global-menu-user-icon-background-color;
+      color: $global-menu-text-color;
+    }
+  }
+
+  // overrides
+  .x-fieldset.-contain {
+    margin-bottom: 0;
+    border-color: transparent;
+  }
+}

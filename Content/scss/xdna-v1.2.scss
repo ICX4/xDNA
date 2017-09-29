@@ -1,0 +1,46 @@
+@charset "utf-8"; // force character encoding to avoid conflicts
+
+/*!
+ * xDNA
+ * CSS framework for businessDNA
+ * Copyright (c) 2017 by ICX4.LTD
+ */
+
+/// this is the main file for xDNA
+/// collating all the files
+/// this file should contain only @imports
+/// no css to go in here
+
+/// SETTINGS
+/// user set variables
+@import 'SETTINGS';
+
+/// ABSTRACTS
+/// contains:
+///  - variables
+///  - functions (incl. core)
+///  - mixins
+/// see this file for specifics
+@import 'abstracts-v1.2';
+
+/// ANIMATIONS
+/// contains all generic @keyframe animations
+// @import 'animations';
+
+/// BASE
+/// contains all reset/normalise styles
+@import 'base';
+
+/// COMPONENTS
+/// contains TODO describe
+@import 'components';
+
+/// COMPOSITES
+/// contains TODO describe
+@import 'composites-v1.2';
+
+/// PARTIALS
+/// all specific composites
+@import 'partials';
+
+@import '_scratchpad';

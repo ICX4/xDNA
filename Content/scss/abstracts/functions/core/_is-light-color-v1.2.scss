@@ -1,0 +1,14 @@
+// @function IS LIGHT COLOR
+// checks against a threshold to see if the color passed to it is light
+// @author based on Gacek's stackoverflow javascript answer (https://stackoverflow.com/questions/1855884/determine-font-color-based-on-background-color)
+// @param $color {color}
+// @return boolean
+// @example
+//   color: if(is-light-color({color}), {dark-text-color}, {light-text-color});
+@function is-light-color($color) {
+  $r: red($color) * 0.299;
+  $g: green($color) * 0.587;
+  $b: blue($color) * 0.114;
+
+  @return (1 - ($r + $g + $b) / 255) < 0.5;
+}

@@ -1,0 +1,53 @@
+$side-menu-background-color: #36384f; // TODO replace with variable
+
+.x-side-menu {
+  @include fix(left);
+  @include z-index(side-menu);
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: visible;
+  color: white;
+
+  &--overlay {
+    @include overlay-style;
+
+    .x-side-menu.x-active & {
+      @include overlay-style-active;
+    }
+  }
+
+  &--menu {
+    @include fix(left);
+    @include padding(right, left);
+    @include theme($side-menu-background-color);
+    display: flex;
+    flex-flow: column nowrap;
+    width: $side-menu-width;
+    overflow: {
+      x: hidden;
+      y: auto;
+    }
+    transform: translate3d(-#{$side-menu-width}, 0, 0);
+    transition: transform timing(0.3) ease;
+
+    .x-side-menu.x-active & {
+      transition: timing() ease;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .x-header {
+    // border-bottom: 1px solid color(divider);
+  }
+
+  // overrides
+
+  .x-link {
+    color: if(is-light-color($side-menu-background-color), color(text), color(text-inverted));
+
+    .x-icon {
+      fill: rgba(if(is-light-color($side-menu-background-color), color(text), color(text-inverted)), 0.5);
+    }
+  }
+}
